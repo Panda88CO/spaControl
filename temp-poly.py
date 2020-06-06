@@ -21,7 +21,7 @@ LOGGER = polyinterface.LOGGER
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
         super().__init__(polyglot)
-        self.name = 'RPi Temp Sensors'
+        self.name = 'RPi_Temp_Sensors'
         self.address = 'rpitemp'
         self.primary = self.address
         
