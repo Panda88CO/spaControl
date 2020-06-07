@@ -9,7 +9,7 @@ Make sure that you have a `zip` executable on the system, install using your OS 
 You can install NodeServer from the Polyglot store or manually running
 ```
 cd ~/.polyglot/nodeservers
-git clone https://github.com/Panda88CO/UDI-RPITempSensors.git UDI-RPITempSensors
+git clone https://github.com/Panda88CO/UDI-RPITempSensors.git 
 cd UDI-RPITempSensors
 ./install.sh
 ```
