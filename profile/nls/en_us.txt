@@ -1,8 +1,10 @@
-# controller
+# Yrmp controller
 ND-RPI_TEMP-NAME = RPi Temp Controller
 ND-RPI_TEMP-ICON = GenericCtl
 CMD-TEMP-DISCOVER-NAME = Re-Discover
 ST-TEMP-ST-NAME = NodeServer Online
+STATUS-0 = Off-line
+STATUS-1 = On-lIne
 
 # Temp Sensor
 ND-TEMP_SENSOR-NAME = Temp Sensor
@@ -13,7 +15,7 @@ ST-SENSOR-GV1-NAME = Temp Min 24H C
 ST-SENSOR-GV2-NAME = Temp Max 24H C
 ST-SENSOR-GV3-NAME = Current Temp F
 ST-SENSOR-GV4-NAME = Temp Min 24H F
-ST-SENSOR-GV5-NAME = TEmp Max 24H C
+ST-SENSOR-GV5-NAME = Temp Max 24H C
 ST-SENSOR-GV6-NAME = Year Last Update
 ST-SENSOR-GV7-NAME = Month Last Update
 ST-SENSOR-GV8-NAME = Day Last Update
