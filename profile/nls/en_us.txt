@@ -1,6 +1,6 @@
-# Temp controller
-ND-RPITEMP-NAME = RPi Temp Controller
-ND-RPITEMP-ICON = GenericCtl
+# Yrmp controller
+ND-RPI_TEMP-NAME = RPi Temp Controller
+ND-RPI_TEMP-ICON = GenericCtl
 CMD-TEMP-DISCOVER-NAME = Re-Discover
 ST-TEMP-ST-NAME = NodeServer Online
 STATUS-0 = Off-line

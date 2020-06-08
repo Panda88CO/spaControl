@@ -1,5 +1,5 @@
 <nodeDefs>
-    <nodeDef id="RPITEMP" nls="TEMP">
+    <nodeDef id="RPI_TEMP" nls="TEMP">
         <editors />
         <sts>
             <st id="ST" editor="BOOL" />
@@ -11,7 +11,7 @@
             </accepts>
         </cmds>
     </nodeDef>
-    <nodeDef id="TEMPSENSOR" nls="SENSOR">
+    <nodeDef id="TEMP_SENSOR" nls="SENSOR">
         <editors />
         <sts>
             <st id="ST"  editor="SENSOR_ST" />

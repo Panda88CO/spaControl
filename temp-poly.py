@@ -20,9 +20,8 @@ LOGGER = polyinterface.LOGGER
 
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
-        LOGGER.info('init Temp Sensor controller')
         super().__init__(polyglot)
-        self.name = 'RPiTempSensors'
+        self.name = 'RPi_Temp_Sensors'
         self.address = 'rpitemp'
         self.primary = self.address
         
@@ -71,7 +70,7 @@ class Controller(polyinterface.Controller):
                self.name[i] = 'TempSensor'+str(i) 
                LOGGER.debug('Default Sensor Name added')
 
-    id = 'RPITEMP'
+    id = 'RPI_TEMP'
     commands = {'DISCOVER': discover}
     drivers = [{'driver': 'ST', 'value': 1, 'uom': 2}]
 
@@ -276,7 +275,7 @@ class TEMPsensor(polyinterface.Node):
                {'driver': 'GV9', 'value': 0, 'uom': 20},              
                {'driver': 'GV10', 'value': 0, 'uom': 44},              
               ]
-    id = 'TEMPSENSOR'
+    id = 'TEMP_SENSOR'
     
     commands = { 'UPDATE': updateTemp }
 
@@ -290,7 +289,7 @@ if __name__ == "__main__":
 #    signal.signal(signal.SIGTERM, signal_term_handler)
     try:
         LOGGER.info('Starting Server  COE')
-        polyglot = polyinterface.Interface('TEMPSENSORS')
+        polyglot = polyinterface.Interface('TEMP_SENSORS')
         
         polyglot.start()
         control = Controller(polyglot)
