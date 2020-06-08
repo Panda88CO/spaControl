@@ -1,11 +1,11 @@
 {
-    "name": "TEMP_SENSORS",
+    "name": "TEMPSENSORS",
     "docs": "https://github.com/Panda88CO/UDI-RPITempSensors",
     "type": "python3",
     "executable": "temp-poly.py",
     "install": "install.sh",
     "description": "Raspberry Pi DS18... Temperature Sensor "Raspberry Pi DS18B20 Temperature Sensor r control"",
-    "notice": "Only 1 4.7K Ohm pull up resistor needed",
+    "notice": "Only 1 4.7K Ohm pull up resistor is needed",
     "shortPoll": "15",
     "longPoll": "60",
     "credits": [
