@@ -27,15 +27,14 @@ class Controller(polyinterface.Controller):
         
     def start(self):
         LOGGER.info('Started Temp Sensor controller')
-        #mySensors = W1ThermSensor()
-        #if mySensors:
-        #   LOGGER.info('No sensors detected')
-        #else:
-         #  self.nbrSensors = len(W1ThermSensor.get_available_sensors())
-        #self.check_params()
-        #LOGGER.debug(GPIO.RPI_INFO)
+        mySensors = W1ThermSensor()
+        if len(W1ThermSensor.get_available_sensors()) == 0:
+           LOGGER.debug( 'No sensors detected')
+        else:
+           self.nbrSensors = len(W1ThermSensor.get_available_sensors())
+           LOGGER.debug( int(self.nbrSensors) + ' Sensors detected')
+        self.check_params()
         self.discover()
-        #LOGGER.debug(GPIO.RPI_INFO)
 
     def stop(self):
         LOGGER.debug('Cleaning up Temp Sensors')
@@ -49,6 +48,7 @@ class Controller(polyinterface.Controller):
         pass
 
     def query(self, command=None):
+        LOGGER.debug('querry Info')
         for node in self.nodes:
             self.nodes[node].reportDrivers()
 
@@ -85,11 +85,10 @@ class TEMPsensor(polyinterface.Node):
 
     def start(self):
         LOGGER.debug('TempSensor start')
-
-        #self.startTime = datetime.datetime.now()
-        #self.tempMinC24H = 0
-        #self.tempMaxC24H = 0
-        #self.updateInfo()
+        self.startTime = datetime.datetime.now()
+        self.tempMinC24H = 0
+        self.tempMaxC24H = 0
+        self.updateInfo()
         return True
 
     def updateInfo(self):

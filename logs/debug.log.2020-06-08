@@ -1,0 +1,121 @@
+2020-06-08 18:30:23,411 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-08 18:30:23,412 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-08 18:30:23,494 MainThread polyinterface      INFO     temp-poly:<module>: Starting Server  COE
+2020-06-08 18:30:23,511 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-08 18:30:23,511 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-08 18:30:23,512 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-08 18:30:23,513 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-08 18:30:23,514 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-08 18:30:23,582 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-08 18:30:23,584 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/6 -  MID: 1 Result: 0
+2020-06-08 18:30:23,584 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-08 18:30:23,587 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-08 18:30:23,591 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-08 18:30:23,596 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-08 18:30:23,665 MQTT       polyinterface      INFO     polyinterface:addNode: Adding node RPi_Temp_Sensors(rpitemp)
+2020-06-08 18:30:23,666 MQTT       polyinterface      INFO     polyinterface:_gotConfig: Waiting on Controller node to be added.......
+2020-06-08 18:30:23,668 NodeServer polyinterface      INFO     temp-poly:start: Started Temp Sensor controller
+2020-06-08 18:30:23,684 NodeServer polyinterface      DEBUG    temp-poly:discover: discover
+2020-06-08 18:30:38,624 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:30:38,630 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:30:49,471 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-08 18:30:49,471 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-08 18:30:49,473 MQTT       polyinterface      DEBUG    temp-poly:stop: Cleaning up Temp Sensors
+2020-06-08 18:30:49,475 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-08 18:30:49,476 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-08 18:40:43,982 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-08 18:40:43,985 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-08 18:40:44,154 MainThread polyinterface      INFO     temp-poly:<module>: Starting Server  COE
+2020-06-08 18:40:44,257 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-08 18:40:44,258 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-08 18:40:44,263 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-08 18:40:44,264 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-08 18:40:44,267 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-08 18:40:44,481 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-08 18:40:44,483 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/6 -  MID: 1 Result: 0
+2020-06-08 18:40:44,484 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-08 18:40:44,487 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-08 18:40:44,503 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-08 18:40:44,520 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-08 18:40:44,685 NodeServer polyinterface      INFO     temp-poly:start: Started Temp Sensor controller
+2020-06-08 18:40:45,706 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./temp-poly.py", line 30, in start
+    mySensors = W1ThermSensor()
+  File "/usr/lib/python3/dist-packages/w1thermsensor/core.py", line 118, in __init__
+    raise NoSensorFoundError("Unknown", "")
+w1thermsensor.errors.NoSensorFoundError: No Unknown temperature sensor with id '' found
+2020-06-08 18:40:59,571 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:40:59,573 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:14,576 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:14,577 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:29,577 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:29,667 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:44,584 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:44,585 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:59,583 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:41:59,584 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:42:14,594 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:42:14,595 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:42:27,911 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-08 18:42:27,912 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-08 18:42:27,914 MQTT       polyinterface      DEBUG    temp-poly:stop: Cleaning up Temp Sensors
+2020-06-08 18:42:27,916 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-08 18:42:27,918 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-08 18:42:35,264 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-08 18:42:35,268 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-08 18:42:35,329 MainThread polyinterface      INFO     temp-poly:<module>: Starting Server  COE
+2020-06-08 18:42:35,351 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-08 18:42:35,354 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-08 18:42:35,357 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-08 18:42:35,358 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-08 18:42:35,360 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-08 18:42:35,438 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-08 18:42:35,439 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/6 -  MID: 1 Result: 0
+2020-06-08 18:42:35,440 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-08 18:42:35,442 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-08 18:42:35,449 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-08 18:42:35,455 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-08 18:42:35,554 NodeServer polyinterface      INFO     temp-poly:start: Started Temp Sensor controller
+2020-06-08 18:42:35,570 NodeServer polyinterface      INFO     temp-poly:start: No sensors detected
+2020-06-08 18:42:35,577 NodeServer polyinterface      DEBUG    temp-poly:check_params: Getting Sensor Names from custom Params
+2020-06-08 18:42:35,578 NodeServer polyinterface      DEBUG    temp-poly:discover: discover
+2020-06-08 18:42:50,491 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:42:50,492 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 18:42:55,186 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-08 18:42:55,187 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-08 18:42:55,189 MQTT       polyinterface      DEBUG    temp-poly:stop: Cleaning up Temp Sensors
+2020-06-08 18:42:55,191 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-08 18:42:55,193 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-08 19:01:12,254 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-08 19:01:18,667 MainThread polyinterface      INFO     temp-poly:<module>: Starting Server  COE
+2020-06-08 19:01:19,756 MainThread polyinterface      ERROR    polyinterface:__init__: Profile Number not found in STDIN or .env file. Exiting.
+2020-06-08 19:01:59,934 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-08 19:01:59,936 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-08 19:01:59,992 MainThread polyinterface      INFO     temp-poly:<module>: Starting Server  COE
+2020-06-08 19:02:00,009 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-08 19:02:00,010 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-08 19:02:00,011 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-08 19:02:00,011 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.177', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-08 19:02:00,012 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-08 19:02:00,079 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-08 19:02:00,080 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/6 -  MID: 1 Result: 0
+2020-06-08 19:02:00,081 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-08 19:02:00,082 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-08 19:02:00,086 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-08 19:02:00,090 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-08 19:02:00,172 NodeServer polyinterface      INFO     temp-poly:start: Started Temp Sensor controller
+2020-06-08 19:02:00,176 NodeServer polyinterface      INFO     temp-poly:start: No sensors detected
+2020-06-08 19:02:15,114 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 19:02:15,115 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 19:02:30,111 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 19:02:30,112 Controller polyinterface      DEBUG    temp-poly:updateInfo: Update Info
+2020-06-08 19:02:33,879 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-08 19:02:33,881 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-08 19:02:33,884 MQTT       polyinterface      DEBUG    temp-poly:stop: Cleaning up Temp Sensors
+2020-06-08 19:02:33,887 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-08 19:02:33,889 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
