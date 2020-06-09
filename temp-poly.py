@@ -115,6 +115,7 @@ class TEMPsensor(polyinterface.Node):
 
     
     def query(self, command=None):
+        LOGGER.debug('TempSensor querry')
         #self.updateInfo()
         #self.reportDrivers()
 
