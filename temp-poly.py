@@ -21,7 +21,7 @@ LOGGER = polyinterface.LOGGER
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
         super().__init__(polyglot)
-        self.name = 'RPi_Temp_Sensors'
+        self.name = 'RpiTempSensors'
         self.address = 'rpitemp'
         self.primary = self.address
         
@@ -29,48 +29,54 @@ class Controller(polyinterface.Controller):
         LOGGER.info('Started Temp Sensor controller')
         mySensors = W1ThermSensor()
         if len(W1ThermSensor.get_available_sensors()) == 0:
-           LOGGER.debug( 'No sensors detected')
+           LOGGER.info( 'No sensors detected')
         else:
            self.nbrSensors = len(W1ThermSensor.get_available_sensors())
-           LOGGER.debug( int(self.nbrSensors) + ' Sensors detected')
-        self.check_params()
+           LOGGER.info( str(self.nbrSensors) + ' Sensors detected')
+        #self.check_params()
         self.discover()
 
     def stop(self):
-        LOGGER.debug('Cleaning up Temp Sensors')
+        LOGGER.info('Cleaning up Temp Sensors')
 
     def shortPoll(self):
+        LOGGER.info('shortPoll')
         for node in self.nodes:
             self.nodes[node].updateInfo()
             
     def updateInfo(self):
-        LOGGER.debug('Update Info')
+        LOGGER.info('Update Info')
         pass
 
     def query(self, command=None):
-        LOGGER.debug('querry Info')
+        LOGGER.info('querry Info')
         for node in self.nodes:
             self.nodes[node].reportDrivers()
 
     def discover(self, command=None):
-        LOGGER.debug('discover')
-        #for i  in W1ThermSensor.get_available_sensors():
-        #    address = 'sensor'+str(i)
-        #    name = self.name[i]
-        #    sensorID = i.id
-        #    if not address in self.nodes:
-        #      self.addNode(TEMPsensor(self, self.address, address, name, sensorID))
+        LOGGER.info('discover')
+        count = 0
+        for mySensor in (W1ThermSensor.get_available_sensors()):
+            count = count+1
+            address = 'rpiTemp'+str(count)
+            name = 'sensor'+str(count)
+            currentSensor = mySensor.id
+            LOGGER.info( address + name + currentSensor)
+            if not address in self.nodes:
+               self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
 
     def check_params(self, command=None):
         # Looking for custom defined names - allowing sensor detection order to change and not affect ISY
-        LOGGER.debug('Getting Sensor Names from custom Params' ) 
+        LOGGER.info('Getting Sensor Names from custom Params' )
+        #i = 0 
         #for mySensor in W1ThermSensor.get_available_sensors():     
+        #    i = i+1
         #    if mySensor.id in self.polyConfig['customParams']:
-        #       LOGGER.debug('A customParams for name for sensor detected')
+        #       LOGGER.info('A customParams for name for sensor detected')
         #       self.name[i] = self.polyConfig['customParams'][mySensor.id]
         #    else:
         #       self.name[i] = 'TempSensor'+str(i) 
-        #       LOGGER.debug('Default Sensor Name added')
+        #       LOGGER.info('Default Sensor Name added' + self.name[i])
 
     id = 'RPITEMP'
     commands = {'DISCOVER': discover}
@@ -78,45 +84,58 @@ class Controller(polyinterface.Controller):
 
 
 class TEMPsensor(polyinterface.Node):
-    def __init__(self, controller, primary, address, name, sonsorIDSensor):
+    def __init__(self, controller, primary, address, name, sensorID):
         super().__init__(controller, primary, address, name)
-        LOGGER.debug('TempSensor init')
-        #self.pinid = pinid
+        LOGGER.info('TempSensor init' + sensorID)
+        self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, sensorID )
+        self.startTime = datetime.datetime.now()
+        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
+        self.tempMinC24H = self.tempC
+        self.tempMaxC24H = self.tempC     
+        LOGGER.info(sensorID + 'initialized')
+
 
     def start(self):
-        LOGGER.debug('TempSensor start')
+        LOGGER.info('TempSensor start')
         self.startTime = datetime.datetime.now()
-        self.tempMinC24H = 0
-        self.tempMaxC24H = 0
+        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
+        self.tempMinC24H = self.tempC
+        self.tempMaxC24H = self.tempC
         self.updateInfo()
+        LOGGER.info(str(self.tempC) + 'TempSensor Reading')
         return True
 
+    def stop(self):
+        LOGGER.info('Cleaning up Temp Sensors')
+
     def updateInfo(self):
-        LOGGER.debug('TempSensor updateInfo')
+        LOGGER.info('TempSensor updateInfo')
         #self.currentTime
-        #self.setDriver('GV0', self.temp)
-        #self.setDriver('GV1', tempMinC24H )
-        #self.setDriver('GV2', tempMaxC24H )
-        #self.setDriver('GV3', round(self.temp*9/5+32.0, 1))
-        #self.setDriver('GV4', round(self.tempMinC24H*9.0/5+32.0, 1))
-        #self.setDriver('GV5', round(self.tempMaxC24H*9.0/5+32.0, 1))
-        #self.setDriver('GV6', self.debounce_time)
-        #self.setDriver('GV7', self.debounce_time)
-        #self.setDriver('GV8', self.debounce_time)
-        #self.setDriver('GV9', self.debounce_time)
-        #self.setDriver('GV10', self.debounce_time)
+        self.setDriver('GV0', round(float(self.tempC),1))
+        self.setDriver('GV1', round(float(self.tempMinC24H),1))
+        self.setDriver('GV2', round(float(self.tempMaxC24H),1))
+        self.setDriver('GV3', round(self.tempC*9/5+32.0, 1))
+        self.setDriver('GV4', round(self.tempMinC24H*9.0/5+32.0, 1))
+        self.setDriver('GV5', round(self.tempMaxC24H*9.0/5+32.0, 1))
+        self.setDriver('GV6', 2020)
+        self.setDriver('GV7', 6)
+        self.setDriver('GV8', 9)
+        self.setDriver('GV9', 11)
+        self.setDriver('GV10',13)
         return True                                                    
         
     def updateTemp(self, command):
-        LOGGER.debug('TempSensor updateTemp')
-        #self.temp = 0
+        LOGGER.info('TempSensor updateTemp')
+        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
+        self.tempMinC24H = self.tempC
+        self.tempMaxC24H = self.tempC
         return True
 
     
     def query(self, command=None):
-        LOGGER.debug('TempSensor querry')
-        #self.updateInfo()
-        #self.reportDrivers()
+        LOGGER.info('TempSensor querry')
+        self.updateInfo()
+        self.reportDrivers()
 
     drivers = [{'driver': 'ST', 'value': 0, 'uom': 2},
                {'driver': 'GV0', 'value': 0, 'uom': 4},
