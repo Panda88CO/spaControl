@@ -58,7 +58,7 @@ class Controller(polyinterface.Controller):
         count = 0
         for mySensor in (W1ThermSensor.get_available_sensors()):
             count = count+1
-            address = 'rpiTemp'+str(count)
+            address = 'rpitemp'+str(count)
             name = 'sensor'+str(count)
             currentSensor = mySensor.id
             LOGGER.info( address + name + currentSensor)
