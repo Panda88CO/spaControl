@@ -3664,3 +3664,364 @@ UnboundLocalError: local variable 'temp' referenced before assignment
 2020-06-11 16:13:01,055 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
 2020-06-11 16:13:01,062 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
 2020-06-11 16:13:01,063 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:13:16,028 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:13:16,028 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:13:16,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:13:16,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:13:16,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:13:16,034 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:13:16,035 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:13:16,068 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:13:16,071 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:13:31,026 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:13:31,026 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:13:31,026 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:13:31,028 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:13:31,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:13:31,031 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:13:31,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:13:31,050 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:13:31,052 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:13:46,027 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:13:46,028 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:13:46,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:13:46,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:13:46,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:13:46,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:13:46,037 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:13:46,055 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:13:46,059 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:14:01,024 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:14:01,025 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:01,025 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:01,027 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:14:01,028 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:01,028 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:01,030 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:14:01,031 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:01,033 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 14, uom: 44
+2020-06-11 16:14:01,038 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:14:01,058 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:01,060 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 14, uom: 44
+2020-06-11 16:14:01,064 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:14:01,082 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:14:01,083 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:01,085 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:01,086 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:01,087 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:01,089 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:01,091 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:14:01,099 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:01,100 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:14:16,028 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:14:16,029 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:16,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:16,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:16,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:16,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:16,037 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:14:16,065 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:16,067 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:14:31,029 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:14:31,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:31,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:31,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:31,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:31,036 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:31,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:14:31,080 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:31,082 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:14:46,028 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:14:46,029 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:46,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:46,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:14:46,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:14:46,034 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:46,037 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:14:46,059 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:14:46,061 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:15:01,024 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:15:01,025 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:01,026 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:01,028 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:15:01,029 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:01,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:01,032 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:15:01,037 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:01,039 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 15, uom: 44
+2020-06-11 16:15:01,041 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:15:01,063 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:01,065 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 15, uom: 44
+2020-06-11 16:15:01,067 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:15:01,078 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:15:01,078 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:01,079 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:01,081 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:01,083 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:01,085 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:01,087 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:15:01,099 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:01,101 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:15:16,029 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:15:16,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:16,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:16,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:16,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:16,037 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:16,044 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:15:16,058 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:16,060 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:15:31,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:15:31,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:31,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:31,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:31,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:31,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:31,037 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:15:31,058 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:31,060 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:15:46,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:15:46,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:46,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:46,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:15:46,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:15:46,036 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:46,038 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:15:46,052 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:15:46,054 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:16:01,025 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:16:01,026 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:01,026 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:01,028 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:16:01,029 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:01,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:01,033 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:16:01,034 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:01,036 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 16, uom: 44
+2020-06-11 16:16:01,038 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:16:01,056 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:01,059 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 16, uom: 44
+2020-06-11 16:16:01,063 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:16:01,077 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:16:01,079 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:01,080 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:01,083 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:01,084 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:01,088 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:01,091 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:16:01,104 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:01,108 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:16:16,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:16:16,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:16,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:16,034 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:16,035 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:16,037 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:16,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:16:16,058 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:16,063 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:16:31,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:16:31,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:31,036 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:31,038 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:31,038 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:31,040 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:31,041 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:16:31,057 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:31,058 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:16:46,031 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:16:46,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:46,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:46,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:16:46,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:16:46,036 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:46,038 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:16:46,058 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:16:46,059 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:17:01,026 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:17:01,026 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:01,027 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:01,029 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:17:01,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:01,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:01,034 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:17:01,036 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:01,037 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 17, uom: 44
+2020-06-11 16:17:01,041 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:17:01,064 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:01,066 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 17, uom: 44
+2020-06-11 16:17:01,072 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:17:01,092 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:17:01,093 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:01,093 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:01,095 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:01,095 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:01,096 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:01,097 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:17:01,104 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:01,105 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:17:16,033 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:17:16,034 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:16,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:16,036 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:16,038 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:16,043 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:16,048 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:17:16,080 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:16,083 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:17:31,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:17:31,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:31,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:31,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:31,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:31,036 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:31,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:17:31,059 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:31,061 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:17:46,031 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:17:46,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:46,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:46,034 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:17:46,035 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:17:46,037 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:46,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:17:46,064 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:17:46,067 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:18:01,026 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:18:01,026 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:01,027 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:01,029 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:18:01,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:01,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:01,033 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:18:01,034 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:01,036 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 18, uom: 44
+2020-06-11 16:18:01,042 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:18:01,071 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:01,073 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 18, uom: 44
+2020-06-11 16:18:01,079 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:18:01,099 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:18:01,101 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:01,103 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:01,105 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:01,106 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:01,108 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:01,111 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:18:01,117 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:01,118 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:18:16,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:18:16,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:16,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:16,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:16,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:16,038 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:16,040 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:18:16,061 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:16,066 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:18:31,031 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:18:31,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:31,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:31,034 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:31,036 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:31,038 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:31,040 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:18:31,057 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:31,060 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:18:46,029 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:18:46,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:46,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:46,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:18:46,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:18:46,033 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:46,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:18:46,041 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:18:46,042 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:19:01,028 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:19:01,029 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:01,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:01,031 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:19:01,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:01,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:01,035 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:19:01,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:01,037 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 19, uom: 44
+2020-06-11 16:19:01,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:19:01,060 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:01,062 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 19, uom: 44
+2020-06-11 16:19:01,069 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:19:01,078 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:19:01,082 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:01,082 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:01,084 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:01,085 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:01,086 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:01,088 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:19:01,098 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:01,100 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:19:16,030 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:19:16,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:16,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:16,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:16,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:16,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:16,037 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:19:16,050 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:16,052 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:19:31,031 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:19:31,031 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:31,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:31,034 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:31,035 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:31,037 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:31,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:19:31,060 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:31,063 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:19:46,029 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:19:46,029 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:46,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:46,030 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:19:46,031 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:19:46,033 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:46,035 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:19:46,042 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:19:46,043 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:20:01,027 Controller polyinterface      INFO     temp-poly:longPoll: longPoll
+2020-06-11 16:20:01,028 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:01,028 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:01,032 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:20:01,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:01,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:01,035 Controller polyinterface      INFO     temp-poly:update24Hqueue: Update24H queue
+2020-06-11 16:20:01,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:01,037 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 20, uom: 44
+2020-06-11 16:20:01,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:20:01,055 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:01,056 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 20, uom: 44
+2020-06-11 16:20:01,057 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:20:01,069 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:20:01,070 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:01,072 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:01,073 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:01,081 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:01,083 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:01,084 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:20:01,097 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:01,098 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:20:16,031 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:20:16,032 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:16,032 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:16,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:16,034 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:16,035 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:16,036 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:20:16,043 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:16,044 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-11 16:20:31,032 Controller polyinterface      INFO     temp-poly:shortPoll: shortPoll
+2020-06-11 16:20:31,033 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:31,033 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:31,036 Controller polyinterface      INFO     temp-poly:updateInfo: Update Info
+2020-06-11 16:20:31,037 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Rpi Temp Sensors(rpitemp)
+2020-06-11 16:20:31,040 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:31,042 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Test123(rpitemp1)
+2020-06-11 16:20:31,060 Controller polyinterface      INFO     temp-poly:updateInfo: TempSensor updateInfo
+2020-06-11 16:20:31,062 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)

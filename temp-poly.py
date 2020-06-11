@@ -150,14 +150,17 @@ class TEMPsensor(polyinterface.Node):
             self.queue24H.append(self.tempC)
             if self.tempC < self.tempMinC24H:
                 self.tempMinC24H = self.tempC 
+                LOGGER.debug('24H temp table updated Min')
             elif self.tempC > self.tempMaxC24H:
                 self.tempMaxC24H = self.tempC 
+                LOGGER.debug('24H temp table updated Max')
         else:
             self.queue24H.put(self.tempC)
             temp = self.queue24H.pop()
             if ((temp == self.tempMaxC24H) or (temp == self.tempMaxC24H)):
                 self.tempMaxC24H = max(self.queue24H)
                 self.tempMinC24H = min(self.queue24H)
+                LOGGER.debug('24H temp table updated')
         pass
 
     def updateInfo(self):
