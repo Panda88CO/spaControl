@@ -1,5 +1,5 @@
 {
-    "name": "TEMPSENSORS",
+    "name": "TempSensors",
     "docs": "https://github.com/Panda88CO/UDI-RPITempSensors",
     "type": "python3",
     "executable": "temp-poly.py",

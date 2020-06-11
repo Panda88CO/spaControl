@@ -54,7 +54,7 @@ iO.setmode(iO.BCM)
 # which relay switch on/off and then
 # define them as "Output"
 
-relaySensors = 26
+relaySensors = 21
 iO.setwarnings(False)
 iO.setup(relaySensors, iO.OUT)
 
@@ -70,9 +70,11 @@ iO.output(relaySensors, False)
 # Set a pointer to our W1Thermsensor object,
 # which will give us easy access to the sensors
 
-mySensor = W1ThermSensor()
-numberSensors = len(W1ThermSensor.get_available_sensors())
-
+try:
+    mySensor = W1ThermSensor()
+    numberSensors = len(W1ThermSensor.get_available_sensors())
+except:
+    print('error')
 # -------------------------------------
 # Define sensors by ID (we had to experimentally
 # discover these by writing a little script that
