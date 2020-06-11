@@ -14,7 +14,6 @@
     <nodeDef id="TEMPSENSOR" nls="SENSOR">
         <editors />
         <sts>
-            <st id="ST"  editor="SENSOR_ST" />
             <st id="GV0" editor="TEMPC" />
             <st id="GV1" editor="TEMPC24H_MIN" />
             <st id="GV2" editor="TEMPC24H_MAX" />
@@ -26,6 +25,7 @@
             <st id="GV8" editor="LAST_UPDATE_Y" />                
             <st id="GV9" editor="LAST_UPDATE_H" />
             <st id="GV10" editor="LAST_UPDATE_M" />
+            <st id="ST"  editor="SENSOR_ST" />
         </sts>
         <cmds>
             <sends>

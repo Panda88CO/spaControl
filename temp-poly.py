@@ -2,11 +2,13 @@
 
 import polyinterface
 import sys
+import json
 import RPi.GPIO as GPIO
 import os
 import glob
 import time
 import datetime
+import queue
 import os,subprocess
 from subprocess import call
 from w1thermsensor import W1ThermSensor
@@ -18,6 +20,7 @@ LOGGER = polyinterface.LOGGER
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
         super().__init__(polyglot)
+        LOGGER.info('_init_')
         self.name = 'Rpi Temp Sensors'
         self.address = 'rpitemp'
         self.primary = self.address
@@ -29,29 +32,35 @@ class Controller(polyinterface.Controller):
 
 
     def start(self):
-        LOGGER.info('Started Temp Sensor controller')
-        time.sleep(5)
+        LOGGER.info('start - Temp Sensor controller')
         try:
-            if len(W1ThermSensor.get_available_sensors()) == 0:
-                LOGGER.info( 'No sensors detected')
-                self.nbrSensors = 0
-            else:
-                self.nbrSensors = len(W1ThermSensor.get_available_sensors())
-                LOGGER.info( str(self.nbrSensors) + ' Sensors detected')
-                self.discover()
+            self.mySensors = W1ThermSensor()
+            self.nbrSensors = len(self.mySensors.get_available_sensors())
+            LOGGER.info( str(self.nbrSensors) + ' Sensors detected')
+            self.discover()  
         except:
             LOGGER.info('ERROR initializing w1thermSensors ')
             #self.stop()
         self.updateInfo()
 
     def stop(self):
-        LOGGER.info('Cleaning up Temp Sensors')
+        #W1ThermSensor.get_available_sensors()
+        LOGGER.info('stop - Cleaning up Temp Sensors')
+
 
     def shortPoll(self):
         LOGGER.info('shortPoll')
         for node in self.nodes:
             self.nodes[node].updateInfo()
+            self.nodes[node].reportDrivers()
             
+    def longPoll(self):
+        LOGGER.info('longPoll')
+        for node in self.nodes:
+            self.nodes[node].updateInfo()
+            self.nodes[node].reportDrivers()
+            self.nodes[node].update24Hqueue()
+
     def updateInfo(self):
         LOGGER.info('Update Info')
         pass
@@ -59,19 +68,19 @@ class Controller(polyinterface.Controller):
     def query(self, command=None):
         LOGGER.info('querry Info')
         for node in self.nodes:
+            self.nodes[node].updateInfo()
             self.nodes[node].reportDrivers()
 
     def discover(self, command=None):
         LOGGER.info('discover')
         count = 0
-        for customP in self.polyConfig['customParams']:
-            LOGGER.debug( customP + '  '+ self.polyConfig['customParams'].customP)
-
-        for mySensor in (W1ThermSensor.get_available_sensors()):
+        for mySensor in self.mySensors.get_available_sensors():
             count = count+1
-            currentSensor = mySensor.id
+            currentSensor = mySensor.id.lower()
             LOGGER.debug(currentSensor)
             address = 'rpitemp'+str(count)
+            #self.tempName = None
+            #self.check_params()
             if currentSensor in self.polyConfig['customParams']:
                LOGGER.info('A customParams name for sensor detected')
                name = self.polyConfig['customParams'][currentSensor]
@@ -109,7 +118,9 @@ class TEMPsensor(polyinterface.Node):
         self.startTime = datetime.datetime.now()
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.tempMinC24H = self.tempC
-        self.tempMaxC24H = self.tempC     
+        self.tempMaxC24H = self.tempC    
+        self.24Hqueue = queue.Queue()
+
         LOGGER.info(sensorID + ' initialized')
 
 
@@ -124,23 +135,40 @@ class TEMPsensor(polyinterface.Node):
         return True
 
     def stop(self):
-        LOGGER.info('Cleaning up Temp Sensors')
+        LOGGER.info('STOP - Cleaning up Temp Sensors')
+        #self.sensor = None
+
+    def findMinMax24H Queue(self):
+
+        pass
+
+
+    def update24Hqueue (self):
+        timeDiff = self.currentTime - self.startTime
+        if timediff.days <= 1:
+            self.24Hqueue.put(self.tempC)
+        else:
+            self.24Hqueue.get()
+            self.24Hqueue.put(self.tempC)
+
+
+        pass
 
     def updateInfo(self):
         LOGGER.info('TempSensor updateInfo')
         self.currentTime = datetime.datetime.now()
-        self.setDriver('ST', 1)
         self.setDriver('GV0', round(float(self.tempC),1))
         self.setDriver('GV1', round(float(self.tempMinC24H),1))
         self.setDriver('GV2', round(float(self.tempMaxC24H),1))
         self.setDriver('GV3', round(self.tempC*9/5+32.0, 1))
         self.setDriver('GV4', round(self.tempMinC24H*9.0/5+32.0, 1))
         self.setDriver('GV5', round(self.tempMaxC24H*9.0/5+32.0, 1))
-        self.setDriver('GV6', int(self.currentTime.strftime("%Y")))
-        self.setDriver('GV7', int(self.currentTime.strftime("%m")))
-        self.setDriver('GV8', int(self.currentTime.strftime("%d")))
+        self.setDriver('GV6', int(self.currentTime.strftime("%m")))
+        self.setDriver('GV7', int(self.currentTime.strftime("%d")))
+        self.setDriver('GV8', int(self.currentTime.strftime("%Y")))
         self.setDriver('GV9', int(self.currentTime.strftime("%H")))
         self.setDriver('GV10',int(self.currentTime.strftime("%M")))
+        self.setDriver('ST', 1)
         return True                                                    
         
     def updateTemp(self, command):
@@ -156,18 +184,18 @@ class TEMPsensor(polyinterface.Node):
         self.updateInfo()
         self.reportDrivers()
 
-    drivers = [{'driver': 'ST', 'value': 0, 'uom': 2},
-               {'driver': 'GV0', 'value': 0, 'uom': 4},
+    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 4},
                {'driver': 'GV1', 'value': 0, 'uom': 4},
                {'driver': 'GV2', 'value': 0, 'uom': 4},
                {'driver': 'GV3', 'value': 0, 'uom': 17},
                {'driver': 'GV4', 'value': 0, 'uom': 17},
                {'driver': 'GV5', 'value': 0, 'uom': 17},              
-               {'driver': 'GV6', 'value': 0, 'uom': 9},               
-               {'driver': 'GV7', 'value': 0, 'uom': 77},
-               {'driver': 'GV8', 'value': 0, 'uom': 47},              
+               {'driver': 'GV6', 'value': 0, 'uom': 47},               
+               {'driver': 'GV7', 'value': 0, 'uom': 9},
+               {'driver': 'GV8', 'value': 0, 'uom': 77},              
                {'driver': 'GV9', 'value': 0, 'uom': 20},              
-               {'driver': 'GV10', 'value': 0, 'uom': 44},              
+               {'driver': 'GV10', 'value': 0, 'uom': 44},
+               {'driver': 'ST', 'value': 0, 'uom': 2}              
               ]
     id = 'TEMPSENSOR'
     

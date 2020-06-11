@@ -14,9 +14,12 @@ import RPi.GPIO as iO
 import os,subprocess
 from subprocess import call
 from w1thermsensor import W1ThermSensor
+from collections import deque
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
+
+
 
 # ======================================================================
 # Define our subroutines:
