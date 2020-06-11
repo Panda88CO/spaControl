@@ -20,7 +20,22 @@ os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
 
+tQ = []
+tQ.append(1)
+tQ.append(2)
+tQ.append(3)
+tQ.append(4)
+print(max(tQ), min(tQ))
+tQ.pop()
+print(max(tQ), min(tQ))
+tQ.append(5)
+tQ.append(3)
+print(max(tQ), min(tQ))
 
+currentTime1 = datetime.datetime.now()
+currentTime2 = datetime.datetime.now()
+timeDiff = currentTime2 - currentTime1
+print(timeDiff.days, timeDiff.seconds)
 # ======================================================================
 # Define our subroutines:
 # --------------------------------------------------

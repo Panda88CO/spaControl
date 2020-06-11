@@ -61,6 +61,10 @@ class Controller(polyinterface.Controller):
             self.nodes[node].reportDrivers()
             self.nodes[node].update24Hqueue()
 
+    def update24Hqueue (self):
+         LOGGER.info('Update24H queue')
+         pass
+
     def updateInfo(self):
         LOGGER.info('Update Info')
         pass
@@ -119,7 +123,7 @@ class TEMPsensor(polyinterface.Node):
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.tempMinC24H = self.tempC
         self.tempMaxC24H = self.tempC    
-        self.24Hqueue = queue.Queue()
+        self.queue24H = []
 
         LOGGER.info(sensorID + ' initialized')
 
@@ -138,20 +142,22 @@ class TEMPsensor(polyinterface.Node):
         LOGGER.info('STOP - Cleaning up Temp Sensors')
         #self.sensor = None
 
-    def findMinMax24H Queue(self):
-
-        pass
 
 
     def update24Hqueue (self):
         timeDiff = self.currentTime - self.startTime
-        if timediff.days <= 1:
-            self.24Hqueue.put(self.tempC)
+        if timeDiff.days <= 1:
+            self.queue24H.append(self.tempC)
+            if self.tempC < self.tempMinC24H:
+                self.tempMinC24H = self.tempC 
+            elif self.tempC > self.tempMaxC24H:
+                self.tempMaxC24H = self.tempC 
         else:
-            self.24Hqueue.get()
-            self.24Hqueue.put(self.tempC)
-
-
+            self.queue24H.put(self.tempC)
+            temp = self.queue24H.pop()
+            if ((temp == self.tempMaxC24H) or (temp == self.tempMaxC24H)):
+                self.tempMaxC24H = max(self.queue24H)
+                self.tempMinC24H = min(self.queue24H)
         pass
 
     def updateInfo(self):
