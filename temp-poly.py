@@ -123,7 +123,9 @@ class TEMPsensor(polyinterface.Node):
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.tempMinC24H = self.tempC
-        self.tempMaxC24H = self.tempC    
+        self.tempMaxC24H = self.tempC
+        self.tempShortPollMin = self.tempC
+        self.tempShortPollMax = self.tempC
         self.currentTime = datetime.datetime.now()
         self.updateInfo()
         LOGGER.info(str(self.tempC) + ' TempSensor Reading')
@@ -158,6 +160,10 @@ class TEMPsensor(polyinterface.Node):
         LOGGER.info('TempSensor updateInfo')
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
+        if self.tempC < self.tempShortPollMin:
+            self.tempShortPollMin = self.tempC 
+        elif self.tempC > self.tempShortPollMax:
+            self.tempShortPollMax = self.tempC         
         self.currentTime = datetime.datetime.now()
         self.setDriver('GV0', round(float(self.tempC),1))
         self.setDriver('GV1', round(float(self.tempMinC24H),1))
@@ -172,6 +178,7 @@ class TEMPsensor(polyinterface.Node):
         self.setDriver('GV10',int(self.currentTime.strftime("%M")))
         self.setDriver('ST', 1)
         self.reportDrivers()
+
         return True                                                    
         
     
