@@ -52,13 +52,11 @@ class Controller(polyinterface.Controller):
         LOGGER.info('shortPoll')
         for node in self.nodes:
             self.nodes[node].updateInfo()
-            self.nodes[node].reportDrivers()
             
     def longPoll(self):
         LOGGER.info('longPoll')
         for node in self.nodes:
             self.nodes[node].updateInfo()
-            self.nodes[node].reportDrivers()
             self.nodes[node].update24Hqueue()
 
     def update24Hqueue (self):
@@ -83,8 +81,6 @@ class Controller(polyinterface.Controller):
             currentSensor = mySensor.id.lower()
             LOGGER.debug(currentSensor)
             address = 'rpitemp'+str(count)
-            #self.tempName = None
-            #self.check_params()
             if currentSensor in self.polyConfig['customParams']:
                LOGGER.info('A customParams name for sensor detected')
                name = self.polyConfig['customParams'][currentSensor]
@@ -92,7 +88,7 @@ class Controller(polyinterface.Controller):
                LOGGER.debug('Default Naming')
                name = 'Sensor'+str(count)
             
-            LOGGER.info( address + name + currentSensor)
+            LOGGER.info( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
 
@@ -117,23 +113,18 @@ class Controller(polyinterface.Controller):
 class TEMPsensor(polyinterface.Node):
     def __init__(self, controller, primary, address, name, sensorID):
         super().__init__(controller, primary, address, name)
-        LOGGER.info('TempSensor init' + sensorID)
-        self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, sensorID )
         self.startTime = datetime.datetime.now()
-        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
-        self.tempMinC24H = self.tempC
-        self.tempMaxC24H = self.tempC    
         self.queue24H = []
-
-        LOGGER.info(sensorID + ' initialized')
+        self.sensorID = str(sensorID)
 
 
     def start(self):
         LOGGER.info('TempSensor start')
-        self.currentTime = datetime.datetime.now()
+        self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.tempMinC24H = self.tempC
-        self.tempMaxC24H = self.tempC
+        self.tempMaxC24H = self.tempC    
+        self.currentTime = datetime.datetime.now()
         self.updateInfo()
         LOGGER.info(str(self.tempC) + ' TempSensor Reading')
         return True
@@ -165,6 +156,8 @@ class TEMPsensor(polyinterface.Node):
 
     def updateInfo(self):
         LOGGER.info('TempSensor updateInfo')
+        self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
+        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.currentTime = datetime.datetime.now()
         self.setDriver('GV0', round(float(self.tempC),1))
         self.setDriver('GV1', round(float(self.tempMinC24H),1))
@@ -178,20 +171,14 @@ class TEMPsensor(polyinterface.Node):
         self.setDriver('GV9', int(self.currentTime.strftime("%H")))
         self.setDriver('GV10',int(self.currentTime.strftime("%M")))
         self.setDriver('ST', 1)
+        self.reportDrivers()
         return True                                                    
         
-    def updateTemp(self, command):
-        LOGGER.info('TempSensor updateTemp')
-        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
-        self.tempMinC24H = self.tempC
-        self.tempMaxC24H = self.tempC
-        return True
-
     
     def query(self, command=None):
         LOGGER.info('TempSensor querry')
         self.updateInfo()
-        self.reportDrivers()
+
 
     drivers = [{'driver': 'GV0', 'value': 0, 'uom': 4},
                {'driver': 'GV1', 'value': 0, 'uom': 4},
@@ -208,7 +195,7 @@ class TEMPsensor(polyinterface.Node):
               ]
     id = 'TEMPSENSOR'
     
-    commands = { 'UPDATE': updateTemp }
+    commands = { 'UPDATE': updateInfo }
 
 
 
