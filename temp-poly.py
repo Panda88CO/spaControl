@@ -15,6 +15,28 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 
+try:
+    infile = open(fileName, 'r')
+    sensorList = json.load(infile)
+    infile.close()
+except:
+    sensorList = {}
+    sensorList['sensors']=[]
+    
+sensorList['sensors'].append({
+                                "serialNumber": "0000ffff",
+                                "ISYname":      "test123"      
+                            })
+sensorList['sensors'].append({
+                                "serialNumber": "0000aaaa",
+                                "ISYname":      "test321"      
+                            })
+print(sensorList)
+with open(fileName, 'w') as outfile:
+    json.dump(sensorList, outfile)
+outfile.close()
+
+
 
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
@@ -31,6 +53,7 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('modprobe OS calls not successful')
             self.setDriver('ST', 0)
 
+
     def start(self):
         LOGGER.info('start - Temp Sensor controller')
         try:
@@ -38,7 +61,7 @@ class Controller(polyinterface.Controller):
             self.nbrSensors = len(self.mySensors.get_available_sensors())
             LOGGER.info( str(self.nbrSensors) + ' Sensors detected')
             self.discover()
-             self.setDriver('ST', 1)
+            self.setDriver('ST', 1)
         except:
             LOGGER.info('ERROR initializing w1thermSensors ')
             self.setDriver('ST', 0)
@@ -75,6 +98,8 @@ class Controller(polyinterface.Controller):
             self.nodes[node].updateInfo()
             self.nodes[node].update24Hqueue()
 
+
+
     def discover(self, command=None):
         LOGGER.info('discover')
         count = 0
@@ -93,6 +118,7 @@ class Controller(polyinterface.Controller):
             LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
+
 
     def check_params(self, command=None):
         # Looking for custom defined names - allowing sensor detection order to change and not affect ISY

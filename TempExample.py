@@ -15,9 +15,34 @@ import os,subprocess
 from subprocess import call
 from w1thermsensor import W1ThermSensor
 from collections import deque
+import json
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
+
+fileName = './sensors123.json'
+#sensorList = {}
+try:
+    infile = open(fileName, 'r')
+    sensorList = json.load(infile)
+    infile.close()
+except:
+    sensorList = {}
+    sensorList['sensors']=[]
+    
+sensorList['sensors'].append({
+                                "serialNumber": "0000ffff",
+                                "ISYname":      "test123"      
+                            })
+sensorList['sensors'].append({
+                                "serialNumber": "0000aaaa",
+                                "ISYname":      "test321"      
+                            })
+print(sensorList)
+with open(fileName, 'w') as outfile:
+    json.dump(sensorList, outfile)
+outfile.close()
+
 
 
 tQ = []
