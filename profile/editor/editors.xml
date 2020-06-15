@@ -2,9 +2,6 @@
     <editor id="BOOL">
         <range uom="2" subset="0,1" />
     </editor>
-    <editor id="SENSOR_ST">
-        <range uom="2" subset="0,1" nls="STATUS" />
-    </editor>
     <editor id="TEMPC">
         <range uom="4" min="-40" max="100" step="1" prec="1"/>
     </editor>
@@ -14,16 +11,7 @@
     <editor id="TEMPC24H_MAX">
         <range uom="4" min="-40" max="100" step="1" prec="1"/>
     </editor>
-    <editor id="TEMPF">
-        <range uom="17" min="-40" max="212" step="1" prec="1"/>
-    </editor>  
-     <editor id="TEMPF24H_MAX">
-        <range uom="17" min="-40" max="212" step="1" prec="1"/>
-    </editor>
-    <editor id="TEMPF24H_MIN">
-        <range uom="17" min="-40" max="212" step="1" prec="1"/>
-    </editor> 
-    <editor id="LAST_UPDATE_MO">
+        <editor id="LAST_UPDATE_MO">
         <range uom="47" subset="1-12" />
     </editor>  
     <editor id="LAST_UPDATE_D">

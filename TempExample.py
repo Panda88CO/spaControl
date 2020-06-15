@@ -20,15 +20,11 @@ import json
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
-fileName = './sensors123.json'
-#sensorList = {}
-try:
-    infile = open(fileName, 'r')
+fileName = './sensors.json'
+sensorList = {}
+with open(fileName)as infile:
     sensorList = json.load(infile)
-    infile.close()
-except:
-    sensorList = {}
-    sensorList['sensors']=[]
+infile.close()
     
 sensorList['sensors'].append({
                                 "serialNumber": "0000ffff",
@@ -42,7 +38,6 @@ print(sensorList)
 with open(fileName, 'w') as outfile:
     json.dump(sensorList, outfile)
 outfile.close()
-
 
 
 tQ = []

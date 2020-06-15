@@ -2,6 +2,7 @@
 
 import polyinterface
 import sys
+import json
 import RPi.GPIO as GPIO
 import os
 import glob
@@ -15,29 +16,6 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 
-try:
-    infile = open(fileName, 'r')
-    sensorList = json.load(infile)
-    infile.close()
-except:
-    sensorList = {}
-    sensorList['sensors']=[]
-    
-sensorList['sensors'].append({
-                                "serialNumber": "0000ffff",
-                                "ISYname":      "test123"      
-                            })
-sensorList['sensors'].append({
-                                "serialNumber": "0000aaaa",
-                                "ISYname":      "test321"      
-                            })
-print(sensorList)
-with open(fileName, 'w') as outfile:
-    json.dump(sensorList, outfile)
-outfile.close()
-
-
-
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
         super().__init__(polyglot)
@@ -45,6 +23,7 @@ class Controller(polyinterface.Controller):
         self.name = 'Rpi Temp Sensors'
         self.address = 'rpitemp'
         self.primary = self.address
+
         try:
             os.system('modprobe w1-gpio')
             os.system('modprobe w1-therm')
@@ -55,7 +34,7 @@ class Controller(polyinterface.Controller):
 
 
     def start(self):
-        LOGGER.info('start - Temp Sensor controller')
+        LOGGER.debug('start - Temp Sensor controller')
         try:
             self.mySensors = W1ThermSensor()
             self.nbrSensors = len(self.mySensors.get_available_sensors())
@@ -89,40 +68,38 @@ class Controller(polyinterface.Controller):
          pass
 
     def updateInfo(self):
-        LOGGER.info('Update Info')
+        LOGGER.debug('Update Info')
         pass
 
     def query(self, command=None):
-        LOGGER.info('querry Info')
+        LOGGER.debug('querry')
         for node in self.nodes:
             self.nodes[node].updateInfo()
             self.nodes[node].update24Hqueue()
 
 
-
     def discover(self, command=None):
-        LOGGER.info('discover')
+        LOGGER.debug('discover')
         count = 0
         for mySensor in self.mySensors.get_available_sensors():
             count = count+1
-            currentSensor = mySensor.id.lower()
-            LOGGER.info(currentSensor + 'Sensor Serial Number Detected - use custom params to rename')
+            currentSensor = mySensor.id.lower() 
+            LOGGER.info(currentSensor+ 'Sensor Serial Number Detected - use Custom Params to rename')
             address = 'rpitemp'+str(count)
+            # check if sensor serial number exist in custom parapms and then replace name
             if currentSensor in self.polyConfig['customParams']:
                LOGGER.debug('A customParams name for sensor detected')
                name = self.polyConfig['customParams'][currentSensor]
             else:
                LOGGER.debug('Default Naming')
                name = 'Sensor'+str(count)
-            
-            LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
+            #LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
-
+        
 
     def check_params(self, command=None):
-        # Looking for custom defined names - allowing sensor detection order to change and not affect ISY
-        LOGGER.info('Check Params' )
+        LOGGER.debug('Check Params' )
        
     id = 'RPITEMP'
     commands = {'DISCOVER': discover}
@@ -138,7 +115,7 @@ class TEMPsensor(polyinterface.Node):
 
 
     def start(self):
-        LOGGER.info('TempSensor start')
+        LOGGER.debug('TempSensor start')
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.tempMinC24H = self.tempC
@@ -148,13 +125,13 @@ class TEMPsensor(polyinterface.Node):
         self.currentTime = datetime.datetime.now()
         self.updateInfo()
         LOGGER.debug(str(self.tempC) + ' TempSensor Reading')
-        #return True
+
 
     def stop(self):
-        LOGGER.info('STOP - Cleaning up Temp Sensors')
-        #self.sensor = None
+        LOGGER.debug('STOP - Cleaning up Temp Sensors')
 
 
+    # keep a 24H log om measuremets and keep Min and Max 
     def update24Hqueue (self):
         timeDiff = self.currentTime - self.startTime
         if self.tempMinC24HUpdated:
@@ -173,10 +150,10 @@ class TEMPsensor(polyinterface.Node):
         LOGGER.debug('24H temp table updated')
         self.tempMinC24HUpdated = False
         self.tempMaxC24HUpdated = False
-        #pass
+ 
 
     def updateInfo(self):
-        LOGGER.info('TempSensor updateInfo')
+        LOGGER.debug('TempSensor updateInfo')
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         if self.tempC < self.tempMinC24H:
@@ -189,37 +166,29 @@ class TEMPsensor(polyinterface.Node):
         self.setDriver('GV0', round(float(self.tempC),1))
         self.setDriver('GV1', round(float(self.tempMinC24H),1))
         self.setDriver('GV2', round(float(self.tempMaxC24H),1))
-        self.setDriver('GV3', round(self.tempC*9/5+32.0, 1))
-        self.setDriver('GV4', round(self.tempMinC24H*9.0/5+32.0, 1))
-        self.setDriver('GV5', round(self.tempMaxC24H*9.0/5+32.0, 1))
         self.setDriver('GV6', int(self.currentTime.strftime("%m")))
         self.setDriver('GV7', int(self.currentTime.strftime("%d")))
         self.setDriver('GV8', int(self.currentTime.strftime("%Y")))
         self.setDriver('GV9', int(self.currentTime.strftime("%H")))
         self.setDriver('GV10',int(self.currentTime.strftime("%M")))
-        self.setDriver('ST', 1)
         self.reportDrivers()
 
         #return True                                                    
         
     
     def query(self, command=None):
-        LOGGER.info('TempSensor querry')
+        LOGGER.debug('TempSensor querry')
         self.updateInfo()
 
 
     drivers = [{'driver': 'GV0', 'value': 0, 'uom': 4},
                {'driver': 'GV1', 'value': 0, 'uom': 4},
-               {'driver': 'GV2', 'value': 0, 'uom': 4},
-               {'driver': 'GV3', 'value': 0, 'uom': 17},
-               {'driver': 'GV4', 'value': 0, 'uom': 17},
-               {'driver': 'GV5', 'value': 0, 'uom': 17},              
+               {'driver': 'GV2', 'value': 0, 'uom': 4},          
                {'driver': 'GV6', 'value': 0, 'uom': 47},               
                {'driver': 'GV7', 'value': 0, 'uom': 9},
                {'driver': 'GV8', 'value': 0, 'uom': 77},              
                {'driver': 'GV9', 'value': 0, 'uom': 20},              
-               {'driver': 'GV10', 'value': 0, 'uom': 44},
-               {'driver': 'ST', 'value': 0, 'uom': 2}              
+               {'driver': 'GV10', 'value': 0, 'uom': 44}      
               ]
     id = 'TEMPSENSOR'
     
@@ -228,11 +197,10 @@ class TEMPsensor(polyinterface.Node):
 
 
 if __name__ == "__main__":
-#    signal.signal(signal.SIGTERM, signal_term_handler)
+
     try:
         LOGGER.info('Starting Temperaure Server')
         polyglot = polyinterface.Interface('Temp_Sensors')
-        
         polyglot.start()
         control = Controller(polyglot)
         control.runForever()

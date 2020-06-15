@@ -16,16 +16,12 @@
         <sts>
             <st id="GV0" editor="TEMPC" />
             <st id="GV1" editor="TEMPC24H_MIN" />
-            <st id="GV2" editor="TEMPC24H_MAX" />
-            <st id="GV3" editor="TEMPF" />
-            <st id="GV4" editor="TEMPF24H_MIN" />
-            <st id="GV5" editor="TEMPF24H_MAX" />                
+            <st id="GV2" editor="TEMPC24H_MAX" />            
             <st id="GV6" editor="LAST_UPDATE_MO" />
             <st id="GV7" editor="LAST_UPDATE_D" /> 
             <st id="GV8" editor="LAST_UPDATE_Y" />                
             <st id="GV9" editor="LAST_UPDATE_H" />
             <st id="GV10" editor="LAST_UPDATE_M" />
-            <st id="ST"  editor="SENSOR_ST" />
         </sts>
         <cmds>
             <sends>
