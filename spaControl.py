@@ -129,7 +129,8 @@ class GPIOcontrol(polyinterface.Node):
         self.opin = GPIOpin
 
     def start(self):
-#
+    #
+    
     def stop(self):
     #
     def ctrlRelay(self, command):
