@@ -3,8 +3,8 @@ ND-RPITEMP-NAME = RPi Temp Controller
 ND-RPITEMP-ICON = GenericCtl
 CMD-TEMP-DISCOVER-NAME = Update
 ST-TEMP-ST-NAME = NodeServer Online
-STATUS-0 = Off-line
-STATUS-1 = On-lIne
+STATUS-0 = Off line
+STATUS-1 = On lIne
 
 # Relay
 ND-RELAY-NAME = Relay
@@ -15,7 +15,7 @@ STATUS-1 = Resistor EN
 
 # Temp Sensor
 ND-TEMPSENSOR-NAME = Temp Sensor
-ND-TEMPSENSOR-ICON = Input
+ND-TEMPSENSOR-ICON = TempSensor
 ST-SENSOR-GV0-NAME = Current Temp C
 ST-SENSOR-GV1-NAME = Temp Min 24H C
 ST-SENSOR-GV2-NAME = Temp Max 24H C
@@ -26,4 +26,12 @@ ST-SENSOR-GV9-NAME = Hour
 ST-SENSOR-GV10-NAME = Min
 CMD-SENSOR-UPDATE-NAME = Update Temp
 
+# GPIOs
+ND-POUT-NAME = Relay Control
+ND-POUT-ICON = Switch
+ST-POUT-GV0-NAME = Spa Heat
+CMD-POUT-DON-NAME = Heat Away
+CMD-POUT-DOF-NAME = Heat Here
 
+PIN_STATE-0 = Heat Away
+PIN_STATE-1 = Heat Here
