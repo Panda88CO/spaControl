@@ -11,6 +11,20 @@
             </accepts>
         </cmds>
     </nodeDef>
+
+    <nodeDef id="RELAY" nls="RELAY">
+        <editors />
+        <sts>
+            <st id="ST" editor="RELAY_EN" />
+        </sts>
+        <cmds>
+            </sends>
+            <cmd id="TOGGLE_RELAY">
+            <sends>
+            <accepts/>
+         </cmds>
+    </nodeDef>
+
     <nodeDef id="TEMPSENSOR" nls="SENSOR">
         <editors />
         <sts>
