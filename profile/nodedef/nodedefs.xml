@@ -30,4 +30,17 @@
             <accepts />
         </cmds>
     </nodeDef>
+        <nodeDef id="PINOUT'" nls="POUT">
+        <editors />
+        <sts>
+            <st id="GV0" editor="BOOL />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="HEATON" />
+                <cmd id="HEATOFF" />
+            </accepts>
+        </cmds>
+    </nodeDef>
 </nodeDefs>
