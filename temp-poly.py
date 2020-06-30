@@ -15,6 +15,10 @@ from w1thermsensor import W1ThermSensor
 
 
 LOGGER = polyinterface.LOGGER
+#BRCM pin naming - 3 IOpin on my relay board
+GPIO_PINS_BCM = [20, 21, 26]
+PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
+
 
 class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
@@ -35,6 +39,8 @@ class Controller(polyinterface.Controller):
 
     def start(self):
         LOGGER.debug('start - Temp Sensor controller')
+        self.check_params(self)
+
         try:
             self.mySensors = W1ThermSensor()
             self.nbrSensors = len(self.mySensors.get_available_sensors())
@@ -49,7 +55,9 @@ class Controller(polyinterface.Controller):
         self.reportDrivers()
 
     def stop(self):
-        LOGGER.debug('stop - Cleaning up Temp Sensors')
+        LOGGER.debug('stop - Cleaning up Temp Sensors & GPIO')
+        GPIO.cleanup()
+
 
 
     def shortPoll(self):
@@ -96,15 +104,51 @@ class Controller(polyinterface.Controller):
             #LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
-        
+
+
+        # GPIO Pins
+        GPIO.setmode(GPIO.BCM)
+        for out_pin in GPIO_PINS_BCM:
+            address = 'gpiopin'+str(out_pin)
+            name = 'Output ' + str(out_pin)
+            if not address in self.node:
+                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
 
     def check_params(self, command=None):
-        LOGGER.debug('Check Params' )
+        LOGGER.debug('Check Params' )\
+        # Need to handle Custom Parameters Here ratther than in discovery
+
        
     id = 'RPITEMP'
     commands = {'DISCOVER': discover}
     drivers = [{'driver': 'ST', 'value': 1, 'uom': 2}]
 
+
+class GPIOcontrol(polyinterface.Node):
+    def __init__(self, controller, primary, address, name, GPIOpin):
+        self.opin = GPIOpin
+
+    def start(self):
+#
+    def stop(self):
+    #
+    def ctrlRelay(self, command):
+        cmd = command.get('cmd')
+        if cmd in ['DON', 'DOF']:
+           GPIO.setup(self.opin, GPIO.OUT) 
+           if cmd == 'DON':
+              GPIO.output(self.opin, GPIO.HIGH)
+           else:
+              GPIO.output(self.opin, GPIO.LOW)  
+
+
+    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 2}
+              ] 
+
+    commands = { 'DON' : ctrlRelay,
+                 'DOF' : ctrlRelay}
+
+    id = 'PINOUT'
 
 class TEMPsensor(polyinterface.Node):
     def __init__(self, controller, primary, address, name, sensorID):
