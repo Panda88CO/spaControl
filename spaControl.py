@@ -141,33 +141,49 @@ class Controller(polyinterface.Controller):
 class GPIOcontrol(polyinterface.Node):
     def __init__(self, controller, primary, address, name, GPIOpin):
         self.opin = GPIOpin
+        GPIO.setup(self.opin, GPIO.OUT) 
         LOGGER.info('init GPIOControl')
 
     def start(self):
         LOGGER.info('start GPIOControl')
-        print()
+        self.setDriver('GV0', GPIO.input(self.opin))
+        
     
     def stop(self):
-        print()
+        LOGGER.info('stop GPIOControl')
+        
 
     def ctrlRelay(self, command):
         LOGGER.info('ctrlRelay GPIOControl')
         cmd = command.get('cmd')
-        if cmd in ['DON', 'DOF']:
+        if cmd in ['HEATON', 'HEATOFF']:
            GPIO.setup(self.opin, GPIO.OUT) 
-           if cmd == 'DON':
+           if cmd == 'HEATON':
               GPIO.output(self.opin, GPIO.HIGH)
+              self.setDriver('GV0', 1)
            else:
               GPIO.output(self.opin, GPIO.LOW)  
+              self.setDriver('GV0', 0)
+        else:
+              self.setDriver('GV0', 2)
+        self.reportDrivers()
 
+              
+    def query(self, command=None):
+        LOGGER.debug('TempSensor querry')
+        self.updateInfo()
 
-    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 2}
+    def updateInfo(self):
+        self.setDriver('GV0', GPIO.input(self.opin))
+        self.reportDrivers()
+
+    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
               ] 
 
-    commands = { 'DON' : ctrlRelay,
-                 'DOF' : ctrlRelay}
+    commands = { 'HEATON' : ctrlRelay,
+                 'HEATOFF' : ctrlRelay}
 
-    id = 'POUT'
+    id = 'PINOUT'
 
 class TEMPsensor(polyinterface.Node):
     def __init__(self, controller, primary, address, name, sensorID):

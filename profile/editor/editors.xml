@@ -1,4 +1,7 @@
 <editors>
+    <editor id="SPAHEAT">
+        <range uom="25" subset="0-2" nls="HEAT_STATE" 
+    </editor>
     <editor id="BOOL">
         <range uom="2" subset="0,1" />
     </editor>
