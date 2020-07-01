@@ -1,4 +1,4 @@
-# UDI Polyglot v2 Temperature Sensors 
+# UDI Polyglot v2 Spa Controller
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Panda88CO/spaControl/LICENSE)
 
