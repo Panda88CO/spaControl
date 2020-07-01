@@ -1,0 +1,874 @@
+2020-06-30 18:15:03,190 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:15:03,191 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:15:03,198 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:15:03,199 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:15:03,200 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:15:03,200 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:15:03,200 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:15:03,201 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:15:03,202 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:15:03,203 MainThread polyinterface      INFO     spaControl:__init__: _init_  GPIOpins
+2020-06-30 18:15:03,203 MainThread polyinterface      INFO     spaControl:__init__: Output :21
+2020-06-30 18:15:03,217 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:15:03,218 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:15:03,218 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:15:03,219 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:15:03,223 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:15:03,225 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:15:03,268 MQTT       polyinterface      INFO     polyinterface:addNode: Adding node RPi Spa_Control(rpispa)
+2020-06-30 18:15:03,269 MQTT       polyinterface      INFO     polyinterface:_gotConfig: Waiting on Controller node to be added.......
+2020-06-30 18:15:03,270 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:15:03,283 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:15:03,288 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:15:03,294 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:15:03,298 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:15:03,298 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:15:03,299 NodeServer polyinterface      INFO     spaControl:discover: Start  GPIOpins
+2020-06-30 18:15:03,299 NodeServer polyinterface      INFO     spaControl:discover: Output :21
+2020-06-30 18:15:03,299 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:15:03,300 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:15:03,301 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:15:03,302 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:15:03,302 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:15:03,304 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:15:03,304 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:15:03,305 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:03,305 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:15:04,077 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:15:04,989 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:05,869 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.5, uom: 4
+2020-06-30 18:15:05,872 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV1: 25.5, uom: 4
+2020-06-30 18:15:05,876 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV2: 25.5, uom: 4
+2020-06-30 18:15:05,878 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV6: 6, uom: 47
+2020-06-30 18:15:05,880 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 30, uom: 9
+2020-06-30 18:15:05,882 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV8: 2020, uom: 77
+2020-06-30 18:15:05,884 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV9: 18, uom: 20
+2020-06-30 18:15:05,886 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 15, uom: 44
+2020-06-30 18:15:05,892 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:15:05,902 Controller polyinterface      DEBUG    spaControl:start: 25.5 TempSensor Reading
+2020-06-30 18:15:05,903 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:15:06,829 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:07,722 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV0: 25.2, uom: 4
+2020-06-30 18:15:07,726 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV1: 25.2, uom: 4
+2020-06-30 18:15:07,729 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV2: 25.2, uom: 4
+2020-06-30 18:15:07,731 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV6: 6, uom: 47
+2020-06-30 18:15:07,734 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV7: 30, uom: 9
+2020-06-30 18:15:07,736 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV8: 2020, uom: 77
+2020-06-30 18:15:07,739 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV9: 18, uom: 20
+2020-06-30 18:15:07,741 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 15, uom: 44
+2020-06-30 18:15:07,744 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:15:07,754 Controller polyinterface      DEBUG    spaControl:start: 25.187 TempSensor Reading
+2020-06-30 18:15:18,235 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:15:18,236 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:18,236 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:18,237 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:19,150 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:15:19,160 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:20,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:15:33,235 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:15:33,236 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:33,237 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:33,237 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:34,109 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.4, uom: 4
+2020-06-30 18:15:34,111 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV1: 25.4, uom: 4
+2020-06-30 18:15:34,116 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:15:34,127 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:35,949 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:15:48,236 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:15:48,236 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:48,237 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:15:48,237 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:49,149 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.5, uom: 4
+2020-06-30 18:15:49,152 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:15:49,161 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:15:50,109 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:16:03,241 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:16:03,242 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:03,242 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:16:03,243 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:03,243 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:16:03,244 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:04,109 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 16, uom: 44
+2020-06-30 18:16:04,111 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:16:04,120 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:16:04,121 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:05,071 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 16, uom: 44
+2020-06-30 18:16:05,074 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:16:05,081 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:16:05,082 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:16:05,086 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:05,087 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:05,087 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:06,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:16:06,039 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:06,909 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:16:18,242 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:16:18,242 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:18,242 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:18,242 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:19,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:16:19,165 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:20,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:16:33,242 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:16:33,243 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:33,243 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:33,243 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:34,109 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:16:34,127 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:35,070 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:16:48,245 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:16:48,246 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:48,246 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:16:48,247 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:49,150 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:16:49,161 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:16:50,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:17:03,240 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:17:03,241 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:03,241 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:17:03,242 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:03,242 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:17:03,243 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:04,190 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 17, uom: 44
+2020-06-30 18:17:04,192 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:17:04,201 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:17:04,202 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:05,079 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 17, uom: 44
+2020-06-30 18:17:05,080 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:17:05,086 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:17:05,087 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:17:05,087 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:05,088 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:05,088 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:06,049 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:17:06,057 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:06,990 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:17:18,247 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:17:18,248 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:18,248 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:18,249 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:19,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:17:19,159 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:20,039 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:17:33,251 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:17:33,252 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:33,252 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:33,252 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:34,190 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:17:34,202 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:35,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:17:48,254 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:17:48,254 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:48,255 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:17:48,255 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:49,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:17:49,158 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:17:50,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:18:03,243 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:18:03,244 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:03,244 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:18:03,245 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:03,245 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:18:03,245 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:04,190 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 18, uom: 44
+2020-06-30 18:18:04,192 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:18:04,207 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:18:04,208 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:05,150 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 18, uom: 44
+2020-06-30 18:18:05,153 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:18:05,162 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:18:05,163 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:18:05,163 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:05,164 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:05,164 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:06,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:18:06,034 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:06,910 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:18:18,258 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:18:18,258 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:18,258 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:18,259 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:19,150 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:18:19,158 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:20,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:18:33,258 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:18:33,259 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:33,259 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:33,260 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:34,200 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:18:34,211 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:35,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:18:48,262 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:18:48,262 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:48,263 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:18:48,263 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:49,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:18:49,161 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:18:50,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:19:01,772 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:19:01,772 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:19:01,773 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:19:01,774 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:19:01,775 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:19:33,795 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:19:33,795 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:19:33,805 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:19:33,808 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:19:33,809 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:19:33,810 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:19:33,810 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:19:33,811 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:19:33,814 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:19:33,815 MainThread polyinterface      INFO     spaControl:__init__: _init_  GPIOpins
+2020-06-30 18:19:33,815 MainThread polyinterface      INFO     spaControl:__init__: Output :21
+2020-06-30 18:19:33,840 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:19:33,844 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:19:33,845 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:19:33,850 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:19:33,855 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:19:33,861 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:19:33,909 MQTT       polyinterface      INFO     polyinterface:addNode: Adding node RPi Spa_Control(rpispa)
+2020-06-30 18:19:33,910 MQTT       polyinterface      INFO     polyinterface:_gotConfig: Waiting on Controller node to be added.......
+2020-06-30 18:19:33,912 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:19:33,925 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:19:33,931 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:19:33,936 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:19:33,949 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:19:33,950 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:19:33,950 NodeServer polyinterface      INFO     spaControl:discover: Start  GPIOpins
+2020-06-30 18:19:33,951 NodeServer polyinterface      INFO     spaControl:discover: Output :21
+2020-06-30 18:19:33,953 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:19:33,954 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:19:33,955 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:19:33,956 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:19:33,956 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:19:33,957 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:19:33,960 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:19:33,960 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:19:33,960 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:19:34,801 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:19:35,709 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:19:36,589 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV0: 25.2, uom: 4
+2020-06-30 18:19:36,591 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV1: 25.2, uom: 4
+2020-06-30 18:19:36,595 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV2: 25.2, uom: 4
+2020-06-30 18:19:36,597 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV6: 6, uom: 47
+2020-06-30 18:19:36,599 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV7: 30, uom: 9
+2020-06-30 18:19:36,601 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV8: 2020, uom: 77
+2020-06-30 18:19:36,603 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV9: 18, uom: 20
+2020-06-30 18:19:36,614 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 19, uom: 44
+2020-06-30 18:19:36,616 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:19:36,626 Controller polyinterface      DEBUG    spaControl:start: 25.25 TempSensor Reading
+2020-06-30 18:19:36,626 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:19:37,549 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:19:38,429 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.6, uom: 4
+2020-06-30 18:19:38,431 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV1: 25.6, uom: 4
+2020-06-30 18:19:38,436 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV2: 25.6, uom: 4
+2020-06-30 18:19:38,437 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV6: 6, uom: 47
+2020-06-30 18:19:38,439 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 30, uom: 9
+2020-06-30 18:19:38,443 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV8: 2020, uom: 77
+2020-06-30 18:19:38,445 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV9: 18, uom: 20
+2020-06-30 18:19:38,447 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 19, uom: 44
+2020-06-30 18:19:38,449 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:19:38,457 Controller polyinterface      DEBUG    spaControl:start: 25.625 TempSensor Reading
+2020-06-30 18:19:45,258 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:19:45,258 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:19:45,259 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:19:45,261 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:19:45,262 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:22:23,273 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:22:23,274 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:22:23,289 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:22:23,291 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:22:23,292 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:22:23,293 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:22:23,293 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:22:23,294 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:22:23,297 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:22:23,305 MainThread polyinterface      INFO     spaControl:__init__: _init_  GPIOpins
+2020-06-30 18:22:23,320 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:22:23,322 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:22:23,322 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:22:23,323 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:22:23,333 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:22:23,336 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:22:23,381 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:22:23,382 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:22:23,383 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:22:23,383 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-06-30 18:22:23,384 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:22:23,384 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-06-30 18:22:23,386 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:22:23,386 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:22:23,397 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:22:23,398 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:22:23,400 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:22:23,433 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:22:23,433 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:22:23,434 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:22:23,445 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:22:23,446 NodeServer polyinterface      INFO     spaControl:discover: Output :20
+2020-06-30 18:22:23,446 NodeServer polyinterface      INFO     spaControl:start: ERROR initializing w1thermSensors 
+2020-06-30 18:22:23,447 NodeServer polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpispa - ST: 0, uom: 2
+2020-06-30 18:22:23,448 NodeServer polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:22:23,448 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:22:23,449 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:22:23,458 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:22:24,349 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:22:25,230 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 22, uom: 44
+2020-06-30 18:22:25,233 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:22:25,250 Controller polyinterface      DEBUG    spaControl:start: 25.562 TempSensor Reading
+2020-06-30 18:22:25,252 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:22:26,189 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:22:27,070 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 22, uom: 44
+2020-06-30 18:22:27,072 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:22:27,083 Controller polyinterface      DEBUG    spaControl:start: 25.187 TempSensor Reading
+2020-06-30 18:22:38,355 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:22:38,355 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:22:38,356 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:22:38,356 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:22:39,230 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:22:39,243 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:22:40,109 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:22:53,355 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:22:53,355 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:22:53,356 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:22:53,356 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:22:54,270 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:22:54,278 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:22:55,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:23:08,357 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:23:08,357 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:08,357 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:08,357 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:09,230 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 23, uom: 44
+2020-06-30 18:23:09,233 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:23:09,246 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:10,190 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 23, uom: 44
+2020-06-30 18:23:10,191 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:23:23,356 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:23:23,357 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:23,357 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:23:23,358 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:23,359 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:23:23,359 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:24,270 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:23:24,279 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:23:24,281 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:25,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:23:25,159 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:23:25,160 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:23:25,161 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:25,161 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:25,161 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:26,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:23:26,036 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:26,909 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:23:38,358 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:23:38,358 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:38,358 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:38,359 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:39,229 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:23:39,266 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:40,190 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:23:53,362 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:23:53,363 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:53,368 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:23:53,368 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:54,270 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:23:54,277 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:23:56,030 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:24:08,365 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:24:08,366 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:08,366 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:08,366 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:09,310 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 24, uom: 44
+2020-06-30 18:24:09,312 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:24:09,323 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:10,269 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 24, uom: 44
+2020-06-30 18:24:10,271 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:24:23,359 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:24:23,359 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:23,360 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:24:23,360 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:23,360 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:24:23,361 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:24,269 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:24:24,278 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:24:24,280 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:25,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:24:25,157 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:24:25,160 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:24:25,163 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:25,166 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:25,169 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:26,110 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:24:26,117 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:27,070 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:24:38,367 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:24:38,368 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:38,368 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:38,369 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:39,310 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:24:39,320 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:40,189 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:24:53,371 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:24:53,371 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:53,372 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:24:53,372 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:54,270 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:24:54,278 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:24:55,230 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:25:08,374 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:25:08,374 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:08,375 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:08,375 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:09,330 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 25, uom: 44
+2020-06-30 18:25:09,335 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:25:09,348 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:10,280 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 25, uom: 44
+2020-06-30 18:25:10,282 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:25:23,360 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:25:23,360 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:23,360 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:25:23,360 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:23,361 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:25:23,361 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:25,159 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:25:25,165 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:25:25,165 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:26,029 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:25:26,038 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:25:26,039 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:25:26,040 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:26,041 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:26,042 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:26,989 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:25:26,998 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:27,950 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:25:38,372 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:25:38,373 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:38,373 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:38,373 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:39,309 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:25:39,313 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:40,189 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:25:53,376 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:25:53,377 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:53,378 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:25:53,378 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:54,269 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:25:54,277 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:25:55,230 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:26:08,378 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:26:08,378 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:08,378 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:08,379 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:09,309 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 26, uom: 44
+2020-06-30 18:26:09,311 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:26:09,324 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:10,270 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 26, uom: 44
+2020-06-30 18:26:10,271 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:26:23,362 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:26:23,363 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:23,363 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:26:23,363 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:23,363 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:26:23,363 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:24,269 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:26:24,278 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:26:24,278 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:25,149 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:26:25,153 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:26:25,154 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:26:25,156 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:25,157 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:25,158 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:26,109 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:26:26,118 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:27,080 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:26:38,380 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:26:38,382 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:38,383 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:38,384 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:39,310 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:26:39,321 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:40,270 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:26:53,384 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:26:53,384 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:53,385 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:26:53,385 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:54,269 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:26:54,280 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:26:55,159 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:27:08,387 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:27:08,387 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:27:08,388 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:27:08,388 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:27:09,310 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 27, uom: 44
+2020-06-30 18:27:09,313 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:27:09,326 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:27:10,270 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 27, uom: 44
+2020-06-30 18:27:10,271 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:27:23,141 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:27:23,141 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:27:23,142 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:27:23,143 MQTT       py.warnings        WARNING  warnings:_showwarnmsg: ./spaControl.py:65: RuntimeWarning: No channels have been set up yet - nothing to clean up!  Try cleaning up at the end of your program instead!
+2020-06-30 18:27:23,145 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:27:23,147 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:27:28,882 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:27:28,882 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:27:28,893 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:27:28,895 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:27:28,896 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:27:28,897 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:27:28,897 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:27:28,898 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:27:28,900 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:27:28,901 MainThread polyinterface      INFO     spaControl:__init__: _init_  GPIOpins
+2020-06-30 18:27:28,929 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:27:28,937 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:27:28,942 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:27:28,947 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:27:28,952 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:27:28,954 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:27:29,001 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:27:29,001 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:27:29,002 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:27:29,002 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-06-30 18:27:29,003 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:27:29,003 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-06-30 18:27:29,010 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:27:29,011 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:27:29,012 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:27:29,012 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:27:29,013 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:27:29,066 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:27:29,066 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:27:29,067 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:27:29,069 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:27:29,069 NodeServer polyinterface      INFO     spaControl:discover: Output :20
+2020-06-30 18:27:29,070 NodeServer polyinterface      INFO     spaControl:start: ERROR initializing w1thermSensors 
+2020-06-30 18:27:29,070 NodeServer polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpispa - ST: 0, uom: 2
+2020-06-30 18:27:29,071 NodeServer polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:27:29,071 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:27:29,072 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:27:29,129 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:27:30,039 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:27:30,910 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:27:30,914 Controller polyinterface      DEBUG    spaControl:start: 25.25 TempSensor Reading
+2020-06-30 18:27:30,914 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:27:31,789 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:27:32,670 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:27:32,680 Controller polyinterface      DEBUG    spaControl:start: 25.562 TempSensor Reading
+2020-06-30 18:27:43,964 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:27:43,965 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:27:43,966 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:27:43,966 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:27:44,910 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:27:44,915 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:27:45,790 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:27:54,324 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:27:54,325 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:27:54,327 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:27:54,328 MQTT       py.warnings        WARNING  warnings:_showwarnmsg: ./spaControl.py:70: RuntimeWarning: No channels have been set up yet - nothing to clean up!  Try cleaning up at the end of your program instead!
+2020-06-30 18:27:54,331 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:27:54,335 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:40:46,806 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:40:46,808 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:40:46,818 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:40:46,821 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:40:46,821 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:40:46,822 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:40:46,822 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:40:46,824 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:40:46,832 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:40:46,839 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:40:46,840 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:40:46,840 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:40:46,841 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:40:46,845 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:40:46,853 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:40:46,902 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:40:46,903 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-06-30 18:40:46,903 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:40:46,904 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-06-30 18:40:46,904 NodeServer polyinterface      INFO     spaControl:start: Start  TempSensors
+2020-06-30 18:40:46,967 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:40:46,969 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:40:46,970 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:40:46,970 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:40:46,971 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:40:46,972 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:40:46,973 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:40:46,984 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:40:46,985 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:40:46,986 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:40:46,990 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:40:46,991 NodeServer polyinterface      INFO     spaControl:discover: output :20
+2020-06-30 18:40:46,997 NodeServer polyinterface      INFO     spaControl:start: ERROR initializing w1thermSensors 
+2020-06-30 18:40:46,998 NodeServer polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpispa - ST: 0, uom: 2
+2020-06-30 18:40:47,000 NodeServer polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:40:47,001 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:40:47,001 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:40:47,069 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:40:47,949 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:40:48,829 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 40, uom: 44
+2020-06-30 18:40:48,830 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:40:48,844 Controller polyinterface      DEBUG    spaControl:start: 25.625 TempSensor Reading
+2020-06-30 18:40:48,845 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:40:49,709 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:40:50,590 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 40, uom: 44
+2020-06-30 18:40:50,592 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:40:50,602 Controller polyinterface      DEBUG    spaControl:start: 25.25 TempSensor Reading
+2020-06-30 18:41:01,874 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:41:01,874 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:01,875 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:01,876 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:02,750 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 41, uom: 44
+2020-06-30 18:41:02,753 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:41:02,768 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:03,709 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 41, uom: 44
+2020-06-30 18:41:03,712 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:41:16,875 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:41:16,876 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:16,876 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:16,877 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:17,789 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:41:17,797 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:18,749 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:41:31,877 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:41:31,878 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:31,878 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:31,879 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:32,829 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:41:32,844 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:33,709 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:41:46,874 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:41:46,874 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:46,874 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:41:46,875 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:46,875 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:41:46,875 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:47,800 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:41:47,813 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:41:47,814 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:48,750 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:41:48,758 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:41:48,760 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:41:48,762 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:48,763 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:41:48,764 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:49,639 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:41:49,645 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:41:50,510 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:42:01,878 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:42:01,879 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:01,880 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:01,880 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:02,749 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 42, uom: 44
+2020-06-30 18:42:02,751 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:42:02,760 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:03,710 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 42, uom: 44
+2020-06-30 18:42:03,712 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:42:16,879 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:42:16,880 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:16,880 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:16,881 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:17,790 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:42:17,805 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:18,750 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:42:31,882 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:42:31,882 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:31,883 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:31,883 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:32,759 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:42:32,763 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:33,721 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:42:46,875 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:42:46,876 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:46,876 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:42:46,876 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:46,877 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:42:46,877 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:47,789 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:42:47,798 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:42:47,799 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:48,759 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:42:48,767 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:42:48,769 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:42:48,769 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:48,770 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:42:48,771 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:49,711 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:42:49,728 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:42:50,669 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:43:01,883 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:43:01,883 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:43:01,884 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:43:01,884 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:43:02,829 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 43, uom: 44
+2020-06-30 18:43:02,831 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:43:02,837 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:43:03,709 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 43, uom: 44
+2020-06-30 18:43:03,710 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:43:15,425 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:43:15,425 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:43:15,426 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:43:15,427 MQTT       py.warnings        WARNING  warnings:_showwarnmsg: ./spaControl.py:69: RuntimeWarning: No channels have been set up yet - nothing to clean up!  Try cleaning up at the end of your program instead!
+2020-06-30 18:43:15,428 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:43:15,429 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:43:18,942 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:43:18,946 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:43:18,962 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:43:18,965 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:43:18,966 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:43:18,969 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:43:18,970 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:43:18,972 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:43:18,983 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:43:18,991 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:43:18,993 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:43:18,997 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:43:18,998 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:43:19,007 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:43:19,019 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:43:19,074 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:43:19,076 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-06-30 18:43:19,078 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:43:19,086 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-06-30 18:43:19,087 NodeServer polyinterface      INFO     spaControl:start: Start  TempSensors
+2020-06-30 18:43:19,144 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:43:19,150 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:43:19,161 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:43:19,168 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:43:19,175 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:43:19,175 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:43:19,177 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:43:19,182 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:43:19,182 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:43:19,183 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:43:19,185 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:43:19,185 NodeServer polyinterface      INFO     spaControl:discover:  dis output :20
+2020-06-30 18:43:19,186 NodeServer polyinterface      DEBUG    spaControl:discover: gpiopin20 pinoutput 20 20
+2020-06-30 18:43:19,186 NodeServer polyinterface      INFO     spaControl:start: ERROR initializing w1thermSensors 
+2020-06-30 18:43:19,187 NodeServer polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpispa - ST: 0, uom: 2
+2020-06-30 18:43:19,188 NodeServer polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:43:19,189 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:43:19,189 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:43:19,240 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:43:20,989 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:43:21,870 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:43:21,882 Controller polyinterface      DEBUG    spaControl:start: 25.25 TempSensor Reading
+2020-06-30 18:43:21,883 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:43:22,749 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:43:23,629 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.7, uom: 4
+2020-06-30 18:43:23,633 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV2: 25.7, uom: 4
+2020-06-30 18:43:23,635 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:43:23,646 Controller polyinterface      DEBUG    spaControl:start: 25.687 TempSensor Reading
+2020-06-30 18:43:27,399 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:43:27,400 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:43:27,401 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:43:27,402 MQTT       py.warnings        WARNING  warnings:_showwarnmsg: ./spaControl.py:69: RuntimeWarning: No channels have been set up yet - nothing to clean up!  Try cleaning up at the end of your program instead!
+2020-06-30 18:43:27,405 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:43:27,406 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:49:49,856 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-06-30 18:49:49,857 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-06-30 18:49:49,868 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-06-30 18:49:49,870 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-06-30 18:49:49,871 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-06-30 18:49:49,872 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-06-30 18:49:49,873 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-06-30 18:49:49,874 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-06-30 18:49:49,875 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-06-30 18:49:49,888 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-06-30 18:49:49,889 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-06-30 18:49:49,890 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-06-30 18:49:49,890 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-06-30 18:49:49,902 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-06-30 18:49:49,903 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-06-30 18:49:49,940 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-06-30 18:49:49,941 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-06-30 18:49:49,941 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-06-30 18:49:49,948 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-06-30 18:49:49,948 NodeServer polyinterface      INFO     spaControl:start: Start  TempSensors
+2020-06-30 18:49:49,997 NodeServer polyinterface      DEBUG    spaControl:start: start - Temp Sensor controller
+2020-06-30 18:49:49,998 NodeServer polyinterface      DEBUG    spaControl:check_params: Check Params
+2020-06-30 18:49:50,003 NodeServer polyinterface      INFO     spaControl:start: 2 Sensors detected
+2020-06-30 18:49:50,004 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-06-30 18:49:50,007 NodeServer polyinterface      INFO     spaControl:discover: 00000b8b9bbdSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:49:50,007 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:49:50,008 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor1(rpitemp1)
+2020-06-30 18:49:50,026 NodeServer polyinterface      INFO     spaControl:discover: 00000b8bb4dfSensor Serial Number Detected - use Custom Params to rename
+2020-06-30 18:49:50,029 NodeServer polyinterface      DEBUG    spaControl:discover: Default Naming
+2020-06-30 18:49:50,032 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node Sensor2(rpitemp2)
+2020-06-30 18:49:50,039 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-06-30 18:49:50,040 NodeServer polyinterface      INFO     spaControl:discover:  dis output :20
+2020-06-30 18:49:50,041 NodeServer polyinterface      DEBUG    spaControl:discover: gpiopin20 pinoutput20 20
+2020-06-30 18:49:50,041 NodeServer polyinterface      INFO     spaControl:discover: GPIO gpiopin20 pinoutput20
+2020-06-30 18:49:50,042 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-06-30 18:49:50,042 NodeServer polyinterface      INFO     spaControl:start: ERROR initializing w1thermSensors 
+2020-06-30 18:49:50,043 NodeServer polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpispa - ST: 0, uom: 2
+2020-06-30 18:49:50,048 NodeServer polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:49:50,049 NodeServer polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:49:50,049 NodeServer polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for RPi Spa_Control(rpispa)
+2020-06-30 18:49:50,068 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:49:50,989 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:49:51,869 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV1: 25.7, uom: 4
+2020-06-30 18:49:51,870 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 49, uom: 44
+2020-06-30 18:49:51,872 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:49:51,877 Controller polyinterface      DEBUG    spaControl:start: 25.687 TempSensor Reading
+2020-06-30 18:49:51,878 Controller polyinterface      DEBUG    spaControl:start: Spa Control start
+2020-06-30 18:49:52,749 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:49:53,630 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 49, uom: 44
+2020-06-30 18:49:53,632 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:49:53,655 Controller polyinterface      DEBUG    spaControl:start: 25.25 TempSensor Reading
+2020-06-30 18:50:04,909 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:50:04,910 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:04,910 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:04,911 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:05,790 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV10: 50, uom: 44
+2020-06-30 18:50:05,792 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:50:05,810 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:06,750 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp2 - GV10: 50, uom: 44
+2020-06-30 18:50:06,751 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:50:19,909 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:50:19,909 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:19,910 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:19,910 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:20,829 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.6, uom: 4
+2020-06-30 18:50:20,831 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV1: 25.6, uom: 4
+2020-06-30 18:50:20,834 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:50:20,841 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:21,789 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:50:34,909 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:50:34,910 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:34,911 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:34,911 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:35,789 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 25.7, uom: 4
+2020-06-30 18:50:35,791 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:50:35,803 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:36,749 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:50:49,910 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-06-30 18:50:49,911 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:49,911 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:50:49,912 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:49,912 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-06-30 18:50:49,913 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:50,829 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:50:50,838 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:50:50,839 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:51,790 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)
+2020-06-30 18:50:51,803 Controller polyinterface      DEBUG    spaControl:update24Hqueue: 24H temp table updated
+2020-06-30 18:50:51,807 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-06-30 18:50:51,807 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:51,808 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-06-30 18:50:51,808 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:52,749 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-06-30 18:50:52,754 Controller polyinterface      DEBUG    spaControl:updateInfo: TempSensor updateInfo
+2020-06-30 18:50:53,022 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-06-30 18:50:53,022 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-06-30 18:50:53,023 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-06-30 18:50:53,023 MQTT       py.warnings        WARNING  warnings:_showwarnmsg: ./spaControl.py:69: RuntimeWarning: No channels have been set up yet - nothing to clean up!  Try cleaning up at the end of your program instead!
+2020-06-30 18:50:53,024 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-06-30 18:50:53,025 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-06-30 18:50:53,629 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor2(rpitemp2)

@@ -16,6 +16,7 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
+RELAY_IO_PINS = [20,21,26]
 out_pin= 21
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
@@ -27,12 +28,18 @@ class Controller(polyinterface.Controller):
         self.name = 'RPi Spa_Control'
         self.address = 'rpispa'
         self.primary = self.address
-        LOGGER.info('_init_  GPIOpins')
-        GPIO.setmode(GPIO.BCM)
-        #for out_pin in IO_PINS_BCM:
-        LOGGER.info( 'Output :' + str(out_pin))
-        GPIO.setup(out_pin, GPIO.OUT)
 
+
+
+
+    def start(self):
+        GPIO.setmode(GPIO.BCM)
+        LOGGER.info('Start  GPIOpins')
+        for out_pin in RELAY_IO_PINS:
+            LOGGER.info( 'Output :' + str(out_pin))
+            GPIO.setup(out_pin, GPIO.OUT)
+
+        LOGGER.info('Start  TempSensors')
         try:
             os.system('modprobe w1-gpio')
             os.system('modprobe w1-therm')
@@ -40,15 +47,8 @@ class Controller(polyinterface.Controller):
         except:
             LOGGER.debug('modprobe OS calls not successful')
             self.setDriver('ST', 0)
-
-    def start(self):
         LOGGER.debug('start - Temp Sensor controller')
         self.check_params(self)
-        LOGGER.info('Start  GPIOpins')
-        GPIO.setmode(GPIO.BCM)
-        #for out_pin in IO_PINS_BCM:
-        LOGGER.info( 'Output :' + str(out_pin))
-        GPIO.setup(out_pin, GPIO.OUT)
 
         try:
             self.mySensors = W1ThermSensor()
@@ -62,6 +62,7 @@ class Controller(polyinterface.Controller):
             self.stop()
         self.updateInfo()
         self.reportDrivers()
+
 
     def stop(self):
         LOGGER.debug('stop - Cleaning up Temp Sensors & GPIO')
@@ -97,12 +98,6 @@ class Controller(polyinterface.Controller):
 
     def discover(self, command=None):
         LOGGER.debug('discover')
-        LOGGER.info('Start  GPIOpins')
-        GPIO.setmode(GPIO.BCM)
-        #for out_pin in IO_PINS_BCM:
-        LOGGER.info( 'Output :' + str(out_pin))
-        GPIO.setup(out_pin, GPIO.OUT)
-
         count = 0
         for mySensor in self.mySensors.get_available_sensors():
             count = count+1
@@ -122,15 +117,16 @@ class Controller(polyinterface.Controller):
 
         # GPIO Pins
         LOGGER.info('Adding GPIO output pins')
-        '''
-        for out_pin in IO_PINS_BCM:
-            LOGGER.info( 'Output :' + str(out_pin))
+        for out_pin in RELAY_IO_PINS :
+            LOGGER.info( ' dis output :' + str(out_pin))
             address = 'gpiopin'+str(out_pin)
-            name = 'Output ' + str(out_pin)
+            name = 'pinoutput' + str(out_pin)
+            LOGGER.debug( address + ' '+ name + ' ' + str(out_pin))
             if not address in self.nodes:
-                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
                 LOGGER.info('GPIO '+ address + ' ' + name)
-        '''
+                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
+
+        
 
     def check_params(self, command=None):
         LOGGER.debug('Check Params' )\
@@ -145,14 +141,17 @@ class Controller(polyinterface.Controller):
 class GPIOcontrol(polyinterface.Node):
     def __init__(self, controller, primary, address, name, GPIOpin):
         self.opin = GPIOpin
+        LOGGER.info('init GPIOControl')
 
     def start(self):
+        LOGGER.info('start GPIOControl')
         print()
     
     def stop(self):
         print()
 
     def ctrlRelay(self, command):
+        LOGGER.info('ctrlRelay GPIOControl')
         cmd = command.get('cmd')
         if cmd in ['DON', 'DOF']:
            GPIO.setup(self.opin, GPIO.OUT) 

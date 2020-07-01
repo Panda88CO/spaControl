@@ -1,5 +1,5 @@
 {
-    "name": "TempSensors",
+    "name": "SpaController",
     "docs": "https://github.com/Panda88CO/spaControl",
     "type": "python3",
     "executable": "spaControl.py",
