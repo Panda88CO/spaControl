@@ -1,5 +1,5 @@
 <nodeDefs>
-    <nodeDef id="RPITEMP" nls="TEMP">
+    <nodeDef id="RPISPA" nls="SPA">
         <editors />
         <sts>
             <st id="ST" editor="BOOL" />
@@ -30,10 +30,10 @@
             <accepts />
         </cmds>
     </nodeDef>
-        <nodeDef id="PINOUT'" nls="POUT">
+    <nodeDef id="PINOUT'" nls="POUT">
         <editors />
         <sts>
-            <st id="GV0" editor="BOOL />
+            <st id="GV0" editor="BOOL" />
         </sts>
         <cmds>
             <sends />

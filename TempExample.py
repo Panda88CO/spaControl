@@ -19,7 +19,7 @@ import json
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
-
+'''
 fileName = './sensors.json'
 sensorList = {}
 with open(fileName)as infile:
@@ -51,7 +51,7 @@ print(max(tQ), min(tQ))
 tQ.append(5)
 tQ.append(3)
 print(max(tQ), min(tQ))
-
+'''
 currentTime1 = datetime.datetime.now()
 currentTime2 = datetime.datetime.now()
 timeDiff = currentTime2 - currentTime1

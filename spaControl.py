@@ -2,9 +2,9 @@
 
 import polyinterface
 import sys
-import json
-import RPi.GPIO as GPIO
 import os
+import RPi.GPIO as GPIO
+import json
 import glob
 import time
 import datetime
@@ -16,7 +16,7 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-GPIO_PINS_BCM = [20, 21, 26]
+out_pin= 21
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
 
@@ -24,9 +24,14 @@ class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
         super().__init__(polyglot)
         LOGGER.info('_init_')
-        self.name = 'Rpi Temp Sensors'
-        self.address = 'rpitemp'
+        self.name = 'RPi Spa_Control'
+        self.address = 'rpispa'
         self.primary = self.address
+        LOGGER.info('_init_  GPIOpins')
+        GPIO.setmode(GPIO.BCM)
+        #for out_pin in IO_PINS_BCM:
+        LOGGER.info( 'Output :' + str(out_pin))
+        GPIO.setup(out_pin, GPIO.OUT)
 
         try:
             os.system('modprobe w1-gpio')
@@ -36,10 +41,14 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('modprobe OS calls not successful')
             self.setDriver('ST', 0)
 
-
     def start(self):
         LOGGER.debug('start - Temp Sensor controller')
         self.check_params(self)
+        LOGGER.info('Start  GPIOpins')
+        GPIO.setmode(GPIO.BCM)
+        #for out_pin in IO_PINS_BCM:
+        LOGGER.info( 'Output :' + str(out_pin))
+        GPIO.setup(out_pin, GPIO.OUT)
 
         try:
             self.mySensors = W1ThermSensor()
@@ -88,6 +97,12 @@ class Controller(polyinterface.Controller):
 
     def discover(self, command=None):
         LOGGER.debug('discover')
+        LOGGER.info('Start  GPIOpins')
+        GPIO.setmode(GPIO.BCM)
+        #for out_pin in IO_PINS_BCM:
+        LOGGER.info( 'Output :' + str(out_pin))
+        GPIO.setup(out_pin, GPIO.OUT)
+
         count = 0
         for mySensor in self.mySensors.get_available_sensors():
             count = count+1
@@ -105,21 +120,24 @@ class Controller(polyinterface.Controller):
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
 
-
         # GPIO Pins
-        GPIO.setmode(GPIO.BCM)
-        for out_pin in GPIO_PINS_BCM:
+        LOGGER.info('Adding GPIO output pins')
+        '''
+        for out_pin in IO_PINS_BCM:
+            LOGGER.info( 'Output :' + str(out_pin))
             address = 'gpiopin'+str(out_pin)
             name = 'Output ' + str(out_pin)
-            if not address in self.node:
+            if not address in self.nodes:
                 self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
+                LOGGER.info('GPIO '+ address + ' ' + name)
+        '''
 
     def check_params(self, command=None):
         LOGGER.debug('Check Params' )\
         # Need to handle Custom Parameters Here ratther than in discovery
 
        
-    id = 'RPITEMP'
+    id = 'RPISPA'
     commands = {'DISCOVER': discover}
     drivers = [{'driver': 'ST', 'value': 1, 'uom': 2}]
 
@@ -129,10 +147,11 @@ class GPIOcontrol(polyinterface.Node):
         self.opin = GPIOpin
 
     def start(self):
-    #
+        print()
     
     def stop(self):
-    #
+        print()
+
     def ctrlRelay(self, command):
         cmd = command.get('cmd')
         if cmd in ['DON', 'DOF']:
@@ -149,7 +168,7 @@ class GPIOcontrol(polyinterface.Node):
     commands = { 'DON' : ctrlRelay,
                  'DOF' : ctrlRelay}
 
-    id = 'PINOUT'
+    id = 'POUT'
 
 class TEMPsensor(polyinterface.Node):
     def __init__(self, controller, primary, address, name, sensorID):
@@ -160,7 +179,7 @@ class TEMPsensor(polyinterface.Node):
 
 
     def start(self):
-        LOGGER.debug('TempSensor start')
+        LOGGER.debug('Spa Control start')
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
         self.tempMinC24H = self.tempC
@@ -244,8 +263,8 @@ class TEMPsensor(polyinterface.Node):
 if __name__ == "__main__":
 
     try:
-        LOGGER.info('Starting Temperaure Server')
-        polyglot = polyinterface.Interface('Temp_Sensors')
+        LOGGER.info('Starting SPA Controller')
+        polyglot = polyinterface.Interface('SPA_Temp_Control')
         polyglot.start()
         control = Controller(polyglot)
         control.runForever()
