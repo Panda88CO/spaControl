@@ -127,10 +127,11 @@ class GPIOcontrol(polyinterface.Node):
         self.opin = GPIOpin
 
     def start(self):
-    #
+        print()
     
     def stop(self):
-    #
+        print()
+
     def ctrlRelay(self, command):
         cmd = command.get('cmd')
         if cmd in ['DON', 'DOF']:
