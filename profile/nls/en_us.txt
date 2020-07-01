@@ -23,8 +23,9 @@ CMD-SENSOR-UPDATE-NAME = Update Temp
 ND-PINOUT-NAME = Relay Control
 ND-PINOUT-ICON = Switch
 ST-POUT-GV0-NAME = Spa Heat
-CMD-POUT-DON-NAME = Heat Away
-CMD-POUT-DOF-NAME = Heat Here
+CMD-POUT-HEATOFF-NAME = Heat Away
+CMD-POUT-HEATON-NAME = Heat Here
 
-POUT_STATE-0 = Heat Away
-POUT_STATE-1 = Heat Here
+HEAT_STATE-0 = Heat Away
+HEAT_STATE-1 = Heat Here
+HEAT_STATE-2 = Unknown

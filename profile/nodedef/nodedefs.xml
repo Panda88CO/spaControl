@@ -33,7 +33,7 @@
     <nodeDef id="PINOUT'" nls="POUT">
         <editors />
         <sts>
-            <st id="GV0" editor="BOOL" />
+            <st id="GV0" editor="SPAHEAT" />
         </sts>
         <cmds>
             <sends />

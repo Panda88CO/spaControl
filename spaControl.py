@@ -148,6 +148,7 @@ class GPIOcontrol(polyinterface.Node):
         print()
     
     def stop(self):
+        LOGGER.info('stop GPIOControl')
         print()
 
     def ctrlRelay(self, command):
@@ -157,9 +158,37 @@ class GPIOcontrol(polyinterface.Node):
            GPIO.setup(self.opin, GPIO.OUT) 
            if cmd == 'DON':
               GPIO.output(self.opin, GPIO.HIGH)
+              self.setDriver('GV0', 1)
            else:
               GPIO.output(self.opin, GPIO.LOW)  
+              self.setDriver('GV0', 0)
 
+
+              
+    def query(self, command=None):
+        LOGGER.debug('TempSensor querry')
+        self.updateInfo()
+
+    def updateInfo(self):
+        LOGGER.debug('TempSensor updateInfo')
+        self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
+        self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
+        if self.tempC < self.tempMinC24H:
+            self.tempMinC24H = self.tempC
+            self.tempMin24HUpdated = True
+        elif self.tempC > self.tempMaxC24H:
+            self.tempMaxC24H = self.tempC
+            self.tempMax24HUpdated = True
+        self.currentTime = datetime.datetime.now()
+        self.setDriver('GV0', round(float(self.tempC),1))
+        self.setDriver('GV1', round(float(self.tempMinC24H),1))
+        self.setDriver('GV2', round(float(self.tempMaxC24H),1))
+        self.setDriver('GV6', int(self.currentTime.strftime("%m")))
+        self.setDriver('GV7', int(self.currentTime.strftime("%d")))
+        self.setDriver('GV8', int(self.currentTime.strftime("%Y")))
+        self.setDriver('GV9', int(self.currentTime.strftime("%H")))
+        self.setDriver('GV10',int(self.currentTime.strftime("%M")))
+        self.reportDrivers()
 
     drivers = [{'driver': 'GV0', 'value': 0, 'uom': 2}
               ] 
