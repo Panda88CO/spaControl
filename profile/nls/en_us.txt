@@ -1,8 +1,8 @@
 # Temp Sensor controller
-ND-RPITEMP-NAME = RPi Temp Controller
-ND-RPITEMP-ICON = GenericCtl
-CMD-TEMP-DISCOVER-NAME = Update
-ST-TEMP-ST-NAME = NodeServer Online
+ND-RPISPA-NAME = RPi Temp Controller
+ND-RPISPA-ICON = GenericCtl
+CMD-SPA-DISCOVER-NAME = Update
+ST-SPA-ST-NAME = NodeServer Online
 STATUS-0 = Off line
 STATUS-1 = On lIne
 
@@ -27,11 +27,11 @@ ST-SENSOR-GV10-NAME = Min
 CMD-SENSOR-UPDATE-NAME = Update Temp
 
 # GPIOs
-ND-POUT-NAME = Relay Control
-ND-POUT-ICON = Switch
+ND-PINOUT-NAME = Relay Control
+ND-PINOUT-ICON = Switch
 ST-POUT-GV0-NAME = Spa Heat
 CMD-POUT-DON-NAME = Heat Away
 CMD-POUT-DOF-NAME = Heat Here
 
-PIN_STATE-0 = Heat Away
-PIN_STATE-1 = Heat Here
+POUT_STATE-0 = Heat Away
+POUT_STATE-1 = Heat Here

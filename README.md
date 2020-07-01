@@ -1,4 +1,4 @@
-# UDI Polyglot v2 Temperature Sensors 
+# UDI Polyglot v2 Spa Controller
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Panda88CO/spaControl/LICENSE)
 
@@ -9,8 +9,8 @@ Make sure that you have a `zip` executable on the system, install using your OS 
 You can install NodeServer from the Polyglot store or manually running
 ```
 cd ~/.polyglot/nodeservers
-git clone https://github.com/Panda88CO/spaControl.git UDI-RPITempSensors
-cd UDI-RPITempSensors
+git clone https://github.com/Panda88CO/spaControl.git spaControl
+cd spaControl
 ./install.sh
 ```
 
