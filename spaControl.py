@@ -28,17 +28,15 @@ class Controller(polyinterface.Controller):
         self.name = 'RPi Spa_Control'
         self.address = 'rpispa'
         self.primary = self.address
-
-
-
-
+                
     def start(self):
         GPIO.setmode(GPIO.BCM)
         LOGGER.info('Start  GPIOpins')
         for out_pin in RELAY_IO_PINS:
             LOGGER.info( 'Output :' + str(out_pin))
             GPIO.setup(out_pin, GPIO.OUT)
-
+        self.discover()
+        '''
         LOGGER.info('Start  TempSensors')
         try:
             os.system('modprobe w1-gpio')
@@ -59,15 +57,14 @@ class Controller(polyinterface.Controller):
         except:
             LOGGER.info('ERROR initializing w1thermSensors ')
             self.setDriver('ST', 0)
-            self.stop()
+            self.stop()           
         self.updateInfo()
         self.reportDrivers()
-
+        '''
 
     def stop(self):
         LOGGER.debug('stop - Cleaning up Temp Sensors & GPIO')
         GPIO.cleanup()
-
 
 
     def shortPoll(self):
@@ -91,13 +88,15 @@ class Controller(polyinterface.Controller):
 
     def query(self, command=None):
         LOGGER.debug('querry')
+        '''
         for node in self.nodes:
             self.nodes[node].updateInfo()
             self.nodes[node].update24Hqueue()
-
+        '''
 
     def discover(self, command=None):
         LOGGER.debug('discover')
+        '''
         count = 0
         for mySensor in self.mySensors.get_available_sensors():
             count = count+1
@@ -114,17 +113,18 @@ class Controller(polyinterface.Controller):
             #LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
-
+        '''    
         # GPIO Pins
         LOGGER.info('Adding GPIO output pins')
         for out_pin in RELAY_IO_PINS :
-            LOGGER.info( ' dis output :' + str(out_pin))
-            address = 'gpiopin'+str(out_pin)
+            LOGGER.info( ' gpio output :' + str(out_pin))
+            address = 'gpiopin'+  str(out_pin)
             name = 'pinoutput' + str(out_pin)
-            LOGGER.debug( address + ' '+ name + ' ' + str(out_pin))
+            LOGGER.info( address + ' '+ name + ' ' + str(out_pin))
             if not address in self.nodes:
-                LOGGER.info('GPIO '+ address + ' ' + name)
-                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
+                LOGGER.info('GPIO '+ self.address + address + ' ' + name, )
+                
+                self.addNode(GPIOcontrol(self, self.address, address, name, str(out_pin)))
 
         
 
@@ -140,11 +140,11 @@ class Controller(polyinterface.Controller):
 
 class GPIOcontrol(polyinterface.Node):
     def __init__(self, controller, primary, address, name, GPIOpin):
-        self.opin = GPIOpin
         GPIO.setup(self.opin, GPIO.OUT) 
         LOGGER.info('init GPIOControl')
 
     def start(self):
+        self.opin = int(GPIOpin)
         LOGGER.info('start GPIOControl')
         self.setDriver('GV0', GPIO.input(self.opin))
         
@@ -185,6 +185,7 @@ class GPIOcontrol(polyinterface.Node):
 
     id = 'PINOUT'
 
+'''
 class TEMPsensor(polyinterface.Node):
     def __init__(self, controller, primary, address, name, sensorID):
         super().__init__(controller, primary, address, name)
@@ -272,7 +273,7 @@ class TEMPsensor(polyinterface.Node):
     id = 'TEMPSENSOR'
     
     commands = { 'UPDATE': updateInfo }
-
+'''
 
 
 if __name__ == "__main__":
