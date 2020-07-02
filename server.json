@@ -4,7 +4,7 @@
     "type": "python3",
     "executable": "spaControl.py",
     "install": "install.sh",
-    "description": "Raspberry Pi with multiple DS18B20 Temperature Sensors ",
+    "description": "Raspberry Pi with multiple DS18B20 Temperature Sensorsand relay control",
     "notice": "Only 1 4.7K Ohm pull up resistor needed for multiple sensors",
     "shortPoll": "15",
     "longPoll": "60",

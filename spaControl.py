@@ -119,12 +119,11 @@ class Controller(polyinterface.Controller):
         for out_pin in RELAY_IO_PINS :
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'gpiopin'+  str(out_pin)
-            name = 'pinoutput' + str(out_pin)
-            LOGGER.info( address + ' '+ name + ' ' + str(out_pin))
+            name = 'pin' + str(out_pin)
+            LOGGER.info( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
-                LOGGER.info('GPIO '+ self.address + address + ' ' + name, )
-                
-                self.addNode(GPIOcontrol(self, self.address, address, name, str(out_pin)))
+                LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name  )
+                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
 
         
 
@@ -139,12 +138,13 @@ class Controller(polyinterface.Controller):
 
 
 class GPIOcontrol(polyinterface.Node):
-    def __init__(self, controller, primary, address, name, GPIOpin):
+    def __init__(self, controller, primary, address, name, opin):
+        super().__init__(controller, primary, address, name)
+        self.opin = opin
         GPIO.setup(self.opin, GPIO.OUT) 
         LOGGER.info('init GPIOControl')
 
     def start(self):
-        self.opin = int(GPIOpin)
         LOGGER.info('start GPIOControl')
         self.setDriver('GV0', GPIO.input(self.opin))
         
@@ -177,10 +177,11 @@ class GPIOcontrol(polyinterface.Node):
         self.setDriver('GV0', GPIO.input(self.opin))
         self.reportDrivers()
 
-    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
+    drivers = [{'driver': 'ST', 'value': 0, 'uom': 25},
+               {'driver': 'GV0', 'value': 0, 'uom': 25}
               ] 
 
-    commands = { 'HEATON' : ctrlRelay,
+    commands = { 'HEATON'  : ctrlRelay,
                  'HEATOFF' : ctrlRelay}
 
     id = 'PINOUT'
@@ -193,7 +194,6 @@ class TEMPsensor(polyinterface.Node):
         self.queue24H = []
         self.sensorID = str(sensorID)
 
-
     def start(self):
         LOGGER.debug('Spa Control start')
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
@@ -205,7 +205,6 @@ class TEMPsensor(polyinterface.Node):
         self.currentTime = datetime.datetime.now()
         self.updateInfo()
         LOGGER.debug(str(self.tempC) + ' TempSensor Reading')
-
 
     def stop(self):
         LOGGER.debug('STOP - Cleaning up Temp Sensors')

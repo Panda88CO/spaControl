@@ -2814,3 +2814,701 @@ AttributeError: 'GPIOcontrol' object has no attribute 'address'
 2020-07-01 18:03:13,967 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
 2020-07-01 18:03:13,969 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
 2020-07-01 18:03:13,970 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 18:36:48,996 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 18:36:48,997 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 18:36:49,012 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 18:36:49,015 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 18:36:49,015 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 18:36:49,016 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 18:36:49,016 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 18:36:49,017 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 18:36:49,028 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 18:36:49,033 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 18:36:49,034 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 18:36:49,035 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 18:36:49,036 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 18:36:49,041 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 18:36:49,055 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 18:36:49,138 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 18:36:49,138 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 18:36:49,139 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 18:36:49,140 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 18:36:49,146 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 18:36:49,147 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 18:36:49,148 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 18:36:49,155 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pinoutput20 20
+2020-07-01 18:36:49,155 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispagpiopin20 pinoutput20
+2020-07-01 18:36:49,180 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 127, in discover
+    self.addNode(GPIOcontrol(self, self.address, address, name, str(out_pin)))
+  File "./spaControl.py", line 143, in __init__
+    GPIO.setup(self.opin, GPIO.OUT)
+AttributeError: 'GPIOcontrol' object has no attribute 'opin'
+2020-07-01 18:37:04,095 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:37:04,095 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:37:04,096 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:37:19,097 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:37:19,097 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:37:19,098 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:37:20,349 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 18:37:20,349 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 18:37:20,350 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 18:37:20,351 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 18:37:20,352 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 18:38:25,616 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 18:38:25,617 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 18:38:25,627 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 18:38:25,630 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 18:38:25,630 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 18:38:25,631 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 18:38:25,632 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 18:38:25,633 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 18:38:25,634 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 18:38:25,648 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 18:38:25,649 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 18:38:25,650 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 18:38:25,651 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 18:38:25,656 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 18:38:25,666 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 18:38:25,710 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 18:38:25,721 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 18:38:25,734 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 18:38:25,734 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 18:38:25,735 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 18:38:25,740 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 18:38:25,741 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 18:38:25,741 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pinoutput20 20
+2020-07-01 18:38:25,742 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispagpiopin20 pinoutput20
+2020-07-01 18:38:25,751 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 127, in discover
+    self.addNode(GPIOcontrol(self, self.address, address, name, str(out_pin)))
+  File "./spaControl.py", line 143, in __init__
+    GPIO.setup(self.opin, GPIO.OUT)
+AttributeError: 'GPIOcontrol' object has no attribute 'opin'
+2020-07-01 18:38:40,671 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:38:40,671 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:38:40,672 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:38:47,598 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 18:38:47,599 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 18:38:47,600 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 18:38:47,600 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 18:38:47,601 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 18:38:59,912 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 18:38:59,913 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 18:38:59,932 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 18:38:59,935 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 18:38:59,936 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 18:38:59,938 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 18:38:59,939 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 18:38:59,940 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 18:38:59,954 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 18:38:59,965 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 18:38:59,967 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 18:38:59,968 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 18:38:59,969 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 18:38:59,975 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 18:38:59,983 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 18:39:00,052 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 18:39:00,053 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 18:39:00,054 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 18:39:00,055 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 18:39:00,056 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 18:39:00,063 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 18:39:00,070 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 18:39:00,078 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 18:39:00,079 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 18:39:00,080 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 18:39:00,137 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 127, in discover
+    self.addNode(GPIOcontrol(self, self.address, address, name, str(out_pin)))
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 907, in addNode
+    if node.address in self._nodes:
+AttributeError: 'GPIOcontrol' object has no attribute 'address'
+2020-07-01 18:39:15,002 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:39:15,005 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:39:15,007 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:39:23,576 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 18:39:23,576 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 18:39:23,578 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 18:39:23,579 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 18:39:23,580 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 18:54:36,676 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 18:54:36,677 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 18:54:36,687 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 18:54:36,689 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 18:54:36,689 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 18:54:36,690 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 18:54:36,691 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 18:54:36,692 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 18:54:36,700 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 18:54:36,706 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 18:54:36,707 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 18:54:36,708 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 18:54:36,709 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 18:54:36,715 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 18:54:36,718 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 18:54:36,769 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 18:54:36,770 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 18:54:36,770 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 18:54:36,776 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 18:54:36,782 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 18:54:36,787 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 18:54:36,793 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 18:54:36,798 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 18:54:36,802 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 18:54:36,802 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 18:54:36,808 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 127, in discover
+    self.addNode(GPIOcontrol(self, self.address, address, name, int(out_pin)))
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 907, in addNode
+    if node.address in self._nodes:
+AttributeError: 'GPIOcontrol' object has no attribute 'address'
+2020-07-01 18:54:51,727 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:54:51,728 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:54:51,728 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:06,731 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:55:06,731 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:06,732 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:21,733 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:55:21,734 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:21,734 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:36,730 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 18:55:36,735 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:36,736 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:55:36,736 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:36,737 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:55:36,738 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:55:36,738 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:36,739 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:51,744 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:55:51,745 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:55:51,746 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:06,736 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:56:06,737 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:06,737 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:21,738 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:56:21,739 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:21,739 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:36,733 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 18:56:36,734 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:36,734 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:56:36,735 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:36,735 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:56:36,739 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:56:36,739 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:36,740 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:51,740 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:56:51,741 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:56:51,741 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:06,742 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:57:06,743 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:06,743 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:21,744 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:57:21,745 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:21,746 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:36,737 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 18:57:36,738 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:36,738 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:57:36,739 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:36,739 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:57:36,747 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:57:36,748 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:36,749 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:51,749 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:57:51,749 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:57:51,750 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:06,750 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:58:06,750 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:06,751 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:21,751 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:58:21,752 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:21,753 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:36,737 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 18:58:36,738 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:36,738 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:58:36,738 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:36,738 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:58:36,749 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:58:36,750 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:36,750 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:51,755 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:58:51,756 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:58:51,756 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:06,759 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:59:06,759 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:06,760 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:21,760 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:59:21,761 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:21,761 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:36,741 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 18:59:36,741 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:36,742 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:59:36,742 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:36,743 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 18:59:36,761 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:59:36,762 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:36,763 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:51,764 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 18:59:51,764 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 18:59:51,765 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:06,768 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:00:06,768 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:06,769 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:21,770 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:00:21,771 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:21,771 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:36,744 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 19:00:36,744 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:36,745 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 19:00:36,745 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:36,745 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 19:00:36,770 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:00:36,770 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:36,771 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:51,773 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:00:51,774 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:00:51,774 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:01:06,774 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:01:06,775 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:01:06,776 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:01:16,435 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:01:16,436 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:01:16,437 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:01:16,438 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:01:16,439 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:01:19,966 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:01:19,967 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:01:19,979 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:01:19,981 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:01:19,981 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:01:19,982 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:01:19,982 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:01:19,987 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:01:19,995 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:01:20,002 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:01:20,003 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:01:20,003 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:01:20,004 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:01:20,008 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:01:20,012 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:01:20,059 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:01:20,059 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:01:20,060 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:01:20,061 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:01:20,061 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:01:20,061 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:01:20,062 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:01:20,062 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:01:20,062 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 19:01:20,063 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :21
+2020-07-01 19:01:20,063 NodeServer polyinterface      INFO     spaControl:discover: gpiopin21 pin21 21
+2020-07-01 19:01:20,063 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin21 pin21
+2020-07-01 19:01:20,064 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :26
+2020-07-01 19:01:20,064 NodeServer polyinterface      INFO     spaControl:discover: gpiopin26 pin26 26
+2020-07-01 19:01:20,064 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin26 pin26
+2020-07-01 19:01:35,026 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:01:35,026 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:01:35,027 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:01:50,032 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:01:50,033 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:01:50,034 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:02:05,033 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:02:05,033 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:02:05,038 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:02:08,857 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:02:08,858 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:02:08,859 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:02:08,861 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:02:08,862 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:08:15,938 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:08:15,944 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:08:15,959 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:08:15,962 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:08:15,963 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:08:15,965 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:08:15,965 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:08:15,967 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:08:15,971 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:08:15,993 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:08:15,994 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:08:15,994 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:08:15,996 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:08:16,000 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:08:16,004 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:08:16,057 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:08:16,074 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:08:16,074 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:08:16,075 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:08:16,075 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:08:16,076 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:08:16,076 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:08:16,077 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:08:16,125 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 125, in discover
+    LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name + out_pin )
+TypeError: can only concatenate str (not "int") to str
+2020-07-01 19:08:31,021 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:08:31,021 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:08:31,022 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:08:41,149 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:08:41,149 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:08:41,151 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:08:41,153 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:08:41,155 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:08:44,677 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:08:44,677 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:08:44,689 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:08:44,691 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:08:44,692 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:08:44,692 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:08:44,693 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:08:44,694 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:08:44,698 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:08:44,709 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:08:44,710 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:08:44,711 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:08:44,712 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:08:44,716 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:08:44,718 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:08:44,769 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:08:44,770 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:08:44,770 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:08:44,770 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:08:44,771 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:08:44,776 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:08:44,784 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:08:44,790 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:08:44,810 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 125, in discover
+    LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name + out_pin )
+TypeError: can only concatenate str (not "int") to str
+2020-07-01 19:08:59,733 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:08:59,735 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:08:59,736 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:09:02,241 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:09:02,246 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:09:02,248 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:09:02,251 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:09:02,252 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:09:05,762 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:09:05,763 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:09:05,774 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:09:05,776 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:09:05,777 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:09:05,778 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:09:05,778 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:09:05,780 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:09:05,781 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:09:05,791 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:09:05,793 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:09:05,793 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:09:05,795 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:09:05,803 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:09:05,809 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:09:05,860 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:09:05,860 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:09:05,861 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:09:05,861 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:09:05,862 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:09:05,862 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:09:05,862 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:09:05,863 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:09:05,863 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 19:09:05,864 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:09:05,873 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin20(gpiopin20)
+2020-07-01 19:09:05,929 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :21
+2020-07-01 19:09:05,930 NodeServer polyinterface      INFO     spaControl:discover: gpiopin21 pin21 21
+2020-07-01 19:09:05,931 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin21 pin21
+2020-07-01 19:09:05,932 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:09:05,932 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin21(gpiopin21)
+2020-07-01 19:09:05,934 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :26
+2020-07-01 19:09:05,934 NodeServer polyinterface      INFO     spaControl:discover: gpiopin26 pin26 26
+2020-07-01 19:09:05,935 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin26 pin26
+2020-07-01 19:09:05,935 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:09:05,936 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin26(gpiopin26)
+2020-07-01 19:09:07,008 Controller polyinterface      ERROR    polyinterface:write: Exception in thread Controller:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 840, in _parseInput
+    self._handleResult(input[key])
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 865, in _handleResult
+    self.nodes[result['addnode']['address']].start()
+  File "./spaControl.py", line 148, in start
+    self.opin = int(GPIOpin)
+NameError: name 'GPIOpin' is not defined
+2020-07-01 19:10:06,937 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:10:06,938 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:10:06,940 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:10:06,941 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:10:06,942 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:10:10,453 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:10:10,455 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:10:10,465 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:10:10,467 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:10:10,468 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:10:10,469 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:10:10,470 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:10:10,471 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:10:10,473 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:10:10,486 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:10:10,487 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:10:10,487 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:10:10,488 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:10:10,494 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:10:10,496 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:10:10,539 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:10:10,540 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:10:10,541 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:10:10,542 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:10:10,542 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:10:10,552 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:10:10,568 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:10:10,573 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:10:10,574 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 19:10:10,593 NodeServer polyinterface      ERROR    polyinterface:write: Exception in thread NodeServer:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "./spaControl.py", line 38, in start
+    self.discover()
+  File "./spaControl.py", line 126, in discover
+    self.addNode(GPIOcontrol(self, self.address, address, name, sTR(out_pin)))
+NameError: name 'sTR' is not defined
+2020-07-01 19:10:25,512 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:10:25,513 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:10:25,513 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:10:31,269 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:10:31,270 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:10:31,271 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:10:31,272 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:10:31,273 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:10:34,741 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:10:34,743 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:10:34,753 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:10:34,755 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:10:34,756 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:10:34,756 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:10:34,757 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:10:34,768 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:10:34,769 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:10:34,781 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:10:34,782 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:10:34,783 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:10:34,784 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:10:34,789 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:10:34,795 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:10:34,839 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:10:34,840 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:10:34,840 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:10:34,841 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:10:34,842 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:10:34,842 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:10:34,843 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:10:34,843 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:10:34,844 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 19:10:34,845 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:10:34,846 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin20(gpiopin20)
+2020-07-01 19:10:34,901 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :21
+2020-07-01 19:10:34,901 NodeServer polyinterface      INFO     spaControl:discover: gpiopin21 pin21 21
+2020-07-01 19:10:34,902 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin21 pin21
+2020-07-01 19:10:34,902 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:10:34,903 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin21(gpiopin21)
+2020-07-01 19:10:34,906 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :26
+2020-07-01 19:10:34,907 NodeServer polyinterface      INFO     spaControl:discover: gpiopin26 pin26 26
+2020-07-01 19:10:34,908 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin26 pin26
+2020-07-01 19:10:34,909 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:10:34,909 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin26(gpiopin26)
+2020-07-01 19:10:34,989 Controller polyinterface      ERROR    polyinterface:write: Exception in thread Controller:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 840, in _parseInput
+    self._handleResult(input[key])
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 865, in _handleResult
+    self.nodes[result['addnode']['address']].start()
+  File "./spaControl.py", line 148, in start
+    self.opin = int(GPIOpin)
+NameError: name 'GPIOpin' is not defined
+2020-07-01 19:13:13,667 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:13:13,667 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:13:13,668 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:13:13,669 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:13:13,670 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:13:17,181 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:13:17,182 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:13:17,199 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:13:17,204 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:13:17,205 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:13:17,208 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:13:17,209 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:13:17,212 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:13:17,227 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:13:17,231 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:13:17,232 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:13:17,233 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:13:17,235 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:13:17,246 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:13:17,250 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:13:17,305 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:13:17,306 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:13:17,306 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:13:17,307 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:13:17,308 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:13:17,314 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:13:17,315 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:13:17,315 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:13:17,316 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 19:13:17,317 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:13:17,318 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin20(gpiopin20)
+2020-07-01 19:13:17,403 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :21
+2020-07-01 19:13:17,403 NodeServer polyinterface      INFO     spaControl:discover: gpiopin21 pin21 21
+2020-07-01 19:13:17,404 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin21 pin21
+2020-07-01 19:13:17,405 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:13:17,405 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin21(gpiopin21)
+2020-07-01 19:13:17,409 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :26
+2020-07-01 19:13:17,411 NodeServer polyinterface      INFO     spaControl:discover: gpiopin26 pin26 26
+2020-07-01 19:13:17,413 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin26 pin26
+2020-07-01 19:13:17,414 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:13:17,416 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin26(gpiopin26)
+2020-07-01 19:13:17,476 Controller polyinterface      ERROR    polyinterface:write: Exception in thread Controller:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 840, in _parseInput
+    self._handleResult(input[key])
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 865, in _handleResult
+    self.nodes[result['addnode']['address']].start()
+  File "./spaControl.py", line 148, in start
+    self.opin = int(GPIOpin)
+NameError: name 'GPIOpin' is not defined
+2020-07-01 19:13:47,654 MQTT       polyinterface      DEBUG    polyinterface:_message: Received stop from Polyglot... Shutting Down.
+2020-07-01 19:13:47,655 MQTT       polyinterface      INFO     polyinterface:stop: Disconnecting from MQTT... localhost:1883
+2020-07-01 19:13:47,656 MQTT       polyinterface      DEBUG    spaControl:stop: stop - Cleaning up Temp Sensors & GPIO
+2020-07-01 19:13:47,656 MQTT       polyinterface      INFO     polyinterface:_disconnect: MQTT Graceful disconnection.
+2020-07-01 19:13:47,657 MQTT       polyinterface      DEBUG    polyinterface:_startMqtt: MQTT Done:
+2020-07-01 19:13:51,242 MainThread polyinterface      INFO     polyinterface:init_interface: Received Config from STDIN.
+2020-07-01 19:13:51,245 MainThread polyinterface      INFO     __init__:<module>: UDI Polyglot v2 Interface 2.0.41 Starting...
+2020-07-01 19:13:51,256 MainThread polyinterface      INFO     spaControl:<module>: Starting SPA Controller
+2020-07-01 19:13:51,260 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gws: {'default': {2: ('192.168.1.1', 'wlan0')}, 2: [('192.168.1.1', 'wlan0', True)]}
+2020-07-01 19:13:51,260 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: gw: default=('192.168.1.1', 'wlan0')
+2020-07-01 19:13:51,261 MainThread polyinterface      DEBUG    polyinterface:get_network_interface: ifad: wlan0=[{'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}]
+2020-07-01 19:13:51,262 MainThread polyinterface      INFO     polyinterface:__init__: Connect: Network Interface: {'addr': '192.168.1.152', 'netmask': '255.255.255.0', 'broadcast': '192.168.1.255'}
+2020-07-01 19:13:51,263 Interface  polyinterface      INFO     polyinterface:_startMqtt: Connecting to MQTT... localhost:1883
+2020-07-01 19:13:51,270 MainThread polyinterface      INFO     spaControl:__init__: _init_
+2020-07-01 19:13:51,301 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Connected with result code 0 (Success)
+2020-07-01 19:13:51,302 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/ns/1 -  MID: 1 Result: 0
+2020-07-01 19:13:51,303 MQTT       polyinterface      INFO     polyinterface:_connect: MQTT Subscribing to topic: udi/polyglot/connections/polyglot -  MID: 2 Result: 0
+2020-07-01 19:13:51,303 MQTT       polyinterface      INFO     polyinterface:_connect: Sent Connected message to Polyglot
+2020-07-01 19:13:51,308 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 1 - QoS: (0,)
+2020-07-01 19:13:51,314 MQTT       polyinterface      INFO     polyinterface:_subscribe: MQTT Subscribed Succesfully for Message ID: 2 - QoS: (0,)
+2020-07-01 19:13:51,370 NodeServer polyinterface      INFO     spaControl:start: Start  GPIOpins
+2020-07-01 19:13:51,370 NodeServer polyinterface      INFO     spaControl:start: Output :20
+2020-07-01 19:13:51,371 NodeServer polyinterface      INFO     spaControl:start: Output :21
+2020-07-01 19:13:51,371 NodeServer polyinterface      INFO     spaControl:start: Output :26
+2020-07-01 19:13:51,372 NodeServer polyinterface      DEBUG    spaControl:discover: discover
+2020-07-01 19:13:51,383 NodeServer polyinterface      INFO     spaControl:discover: Adding GPIO output pins
+2020-07-01 19:13:51,384 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :20
+2020-07-01 19:13:51,384 NodeServer polyinterface      INFO     spaControl:discover: gpiopin20 pin20 20
+2020-07-01 19:13:51,384 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin20 pin20
+2020-07-01 19:13:51,385 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:13:51,390 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin20(gpiopin20)
+2020-07-01 19:13:51,445 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :21
+2020-07-01 19:13:51,446 NodeServer polyinterface      INFO     spaControl:discover: gpiopin21 pin21 21
+2020-07-01 19:13:51,447 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin21 pin21
+2020-07-01 19:13:51,448 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:13:51,449 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin21(gpiopin21)
+2020-07-01 19:13:51,454 NodeServer polyinterface      INFO     spaControl:discover:  gpio output :26
+2020-07-01 19:13:51,455 NodeServer polyinterface      INFO     spaControl:discover: gpiopin26 pin26 26
+2020-07-01 19:13:51,456 NodeServer polyinterface      INFO     spaControl:discover: GPIO rpispa gpiopin26 pin26
+2020-07-01 19:13:51,456 NodeServer polyinterface      INFO     spaControl:__init__: init GPIOControl
+2020-07-01 19:13:51,457 NodeServer polyinterface      INFO     polyinterface:addNode: Adding node pin26(gpiopin26)
+2020-07-01 19:13:51,518 Controller polyinterface      INFO     spaControl:start: start GPIOControl
+2020-07-01 19:13:51,520 Controller polyinterface      INFO     spaControl:start: start GPIOControl
+2020-07-01 19:13:51,521 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver gpiopin21 - GV0: 1, uom: 25
+2020-07-01 19:13:51,523 Controller polyinterface      INFO     spaControl:start: start GPIOControl
+2020-07-01 19:14:06,319 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:14:06,320 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:06,324 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:06,324 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin20(gpiopin20)
+2020-07-01 19:14:06,327 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(gpiopin21)
+2020-07-01 19:14:06,332 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin26(gpiopin26)
+2020-07-01 19:14:21,320 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:14:21,321 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:21,321 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:21,322 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin20(gpiopin20)
+2020-07-01 19:14:21,325 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(gpiopin21)
+2020-07-01 19:14:21,328 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin26(gpiopin26)
+2020-07-01 19:14:36,324 Controller polyinterface      DEBUG    spaControl:shortPoll: shortPoll
+2020-07-01 19:14:36,325 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:36,325 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:36,326 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin20(gpiopin20)
+2020-07-01 19:14:36,329 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(gpiopin21)
+2020-07-01 19:14:36,334 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin26(gpiopin26)
+2020-07-01 19:14:51,322 Controller polyinterface      DEBUG    spaControl:longPoll: longPoll
+2020-07-01 19:14:51,322 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:51,323 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 19:14:51,323 Controller polyinterface      DEBUG    spaControl:updateInfo: Update Info
+2020-07-01 19:14:51,324 Controller polyinterface      DEBUG    spaControl:update24Hqueue: Update24H queue
+2020-07-01 19:14:51,324 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin20(gpiopin20)
+2020-07-01 19:14:51,340 Controller polyinterface      ERROR    polyinterface:write: Exception in thread Controller:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/pi/.local/lib/python3.7/site-packages/polyinterface/polyinterface.py", line 846, in _parseInput
+    self.longPoll()
+  File "./spaControl.py", line 79, in longPoll
+    self.nodes[node].update24Hqueue()
+AttributeError: 'GPIOcontrol' object has no attribute 'update24Hqueue'
