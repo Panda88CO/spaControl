@@ -71,26 +71,30 @@ class Controller(polyinterface.Controller):
 
 
     def shortPoll(self):
-        LOGGER.debug('shortPoll')
+        LOGGER.debug('CTRL shortPoll')
+        count = 0
         for node in self.nodes:
-            self.nodes[node].updateInfo()
+            count = count +1
+            if node != self.address:
+                LOGGER.debug('CTRL shortPoll ' +str(count))
+                self.nodes[node].updateInfo()
+        
+        #for node in self.nodes:
+            #self.nodes[node].updateInfo()
             
     def longPoll(self):
-        LOGGER.debug('longPoll')
+        LOGGER.debug('CTRL longPoll')
         for node in self.nodes:
-            self.nodes[node].updateInfo()
-            self.nodes[node].update24Hqueue()
-
-    def update24Hqueue (self):
-         LOGGER.debug('Update24H queue')
-         pass
+            if node != self.address:
+                self.nodes[node].updateInfo()
+        
 
     def updateInfo(self):
-        LOGGER.debug('Update Info')
+        LOGGER.debug('Update Info CTRL')
         pass
 
     def query(self, command=None):
-        LOGGER.debug('querry')
+        LOGGER.debug('TOP querry')
 
         for node in self.nodes:
             self.nodes[node].updateInfo()
@@ -144,23 +148,33 @@ class GPIOcontrol(polyinterface.Node):
     def __init__(self, controller, primary, address, name, opin):
         super().__init__(controller, primary, address, name)
         self.opin = opin
-        GPIO.setup(self.opin, GPIO.OUT) 
+        
         LOGGER.info('init GPIOControl')
-        self.setDriver('ST', 1)
+
 
     def start(self):
         LOGGER.info('start GPIOControl')
+        GPIO.setup(self.opin, GPIO.OUT) 
         self.setDriver('GV0', GPIO.input(self.opin))
         
     
     def stop(self):
         LOGGER.info('stop GPIOControl')
-        self.setDriver('ST', 0)
+
+    def shortPoll(self):
+        LOGGER.info('shortpoll GPIOControl')
+        self.updateInfo()
+
+
+    def longPoll(self):
+        LOGGER.info('longpoll GPIOControl')
+        self.updateInfo()
         
 
     def ctrlRelay(self, command):
         LOGGER.info('ctrlRelay GPIOControl')
         cmd = command.get('cmd')
+        LOGGER.debug(str(cmd))
         if cmd in ['HEATON', 'HEATOFF']:
            GPIO.setup(self.opin, GPIO.OUT) 
            if cmd == 'HEATON':
@@ -179,15 +193,15 @@ class GPIOcontrol(polyinterface.Node):
         self.updateInfo()
     
     def update24Hqueue (self):
+        LOGGER.info('GPIO 24H queue')
         pass
-    
+
     def updateInfo(self):
-        LOGGER.debug('GPIO UpdateInfo querry')
+        LOGGER.debug('GPIO UpdateInfo')
         self.setDriver('GV0', GPIO.input(self.opin))
         self.reportDrivers()
 
-    drivers = [{'driver': 'ST', 'value': 0, 'uom': 25},
-               {'driver': 'GV0', 'value': 0, 'uom': 25}
+    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
               ] 
 
     commands = { 'HEATON'  : ctrlRelay,
@@ -218,7 +232,15 @@ class TEMPsensor(polyinterface.Node):
     def stop(self):
         LOGGER.debug('STOP - Cleaning up Temp Sensors')
         
+    def shortPoll(self):
+        LOGGER.info('shortpoll Sensor Control')
+        self.updateInfo()
 
+
+    def longPoll(self):
+        LOGGER.info('longpoll Sensor Control')
+        self.updateInfo()
+        self.update24Hqueue()
 
     # keep a 24H log om measuremets and keep Min and Max 
     def update24Hqueue (self):
@@ -255,11 +277,11 @@ class TEMPsensor(polyinterface.Node):
         self.setDriver('GV0', round(float(self.tempC),1))
         self.setDriver('GV1', round(float(self.tempMinC24H),1))
         self.setDriver('GV2', round(float(self.tempMaxC24H),1))
-        self.setDriver('GV6', int(self.currentTime.strftime("%m")))
-        self.setDriver('GV7', int(self.currentTime.strftime("%d")))
-        self.setDriver('GV8', int(self.currentTime.strftime("%Y")))
-        self.setDriver('GV9', int(self.currentTime.strftime("%H")))
-        self.setDriver('GV10',int(self.currentTime.strftime("%M")))
+        self.setDriver('GV3', int(self.currentTime.strftime("%m")))
+        self.setDriver('GV4', int(self.currentTime.strftime("%d")))
+        self.setDriver('GV5', int(self.currentTime.strftime("%Y")))
+        self.setDriver('GV6', int(self.currentTime.strftime("%H")))
+        self.setDriver('GV7',int(self.currentTime.strftime("%M")))
         self.reportDrivers()
 
         #return True                                                    
@@ -273,11 +295,11 @@ class TEMPsensor(polyinterface.Node):
     drivers = [{'driver': 'GV0', 'value': 0, 'uom': 4},
                {'driver': 'GV1', 'value': 0, 'uom': 4},
                {'driver': 'GV2', 'value': 0, 'uom': 4},          
-               {'driver': 'GV6', 'value': 0, 'uom': 47},               
-               {'driver': 'GV7', 'value': 0, 'uom': 9},
-               {'driver': 'GV8', 'value': 0, 'uom': 77},              
-               {'driver': 'GV9', 'value': 0, 'uom': 20},              
-               {'driver': 'GV10', 'value': 0, 'uom': 44}      
+               {'driver': 'GV3', 'value': 0, 'uom': 47},               
+               {'driver': 'GV4', 'value': 0, 'uom': 9},
+               {'driver': 'GV5', 'value': 0, 'uom': 77},              
+               {'driver': 'GV6', 'value': 0, 'uom': 20},              
+               {'driver': 'GV7', 'value': 0, 'uom': 44}      
               ]
     id = 'TEMPSENSOR'
     
