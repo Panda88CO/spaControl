@@ -44,12 +44,11 @@
             <accepts />
         </cmds>
     </nodeDef>
-    
+
     <nodeDef id="PINOUT'" nls="POUT">
         <editors />
         <sts>
-            <st id="ST" editor="RELAY_EN" />
-            <st id="GV0" editor="SPAHEAT" />
+            <st id="GV11" editor="SPAHEAT" />
         </sts>
         <cmds>
             <sends>
