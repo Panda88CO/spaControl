@@ -30,14 +30,6 @@ class Controller(polyinterface.Controller):
         self.primary = self.address
                 
     def start(self):
-        GPIO.setmode(GPIO.BCM)
-        LOGGER.info('Start  GPIOpins')
-        try:
-            for out_pin in RELAY_IO_PINS:
-                LOGGER.info( 'Output :' + str(out_pin))
-                GPIO.setup(out_pin, GPIO.OUT)
-        except:
-            LOGGER.info('Error initializing GPIO pins') 
         LOGGER.info('Start  TempSensors')
         try:
             os.system('modprobe w1-gpio')
@@ -67,7 +59,7 @@ class Controller(polyinterface.Controller):
 
     def stop(self):
         LOGGER.debug('stop - Cleaning up Temp Sensors & GPIO')
-        GPIO.cleanup()
+
 
 
     def shortPoll(self):
@@ -122,7 +114,7 @@ class Controller(polyinterface.Controller):
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
 
         # GPIO Pins
-        LOGGER.info('Adding GPIO output pins')
+        LOGGER.info('Adding GPIO nodes')
         for out_pin in RELAY_IO_PINS :
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'gpiopin'+  str(out_pin)
@@ -148,18 +140,19 @@ class GPIOcontrol(polyinterface.Node):
     def __init__(self, controller, primary, address, name, opin):
         super().__init__(controller, primary, address, name)
         self.opin = opin
-        
         LOGGER.info('init GPIOControl')
 
 
     def start(self):
         LOGGER.info('start GPIOControl')
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.opin, GPIO.OUT) 
         self.setDriver('GV0', GPIO.input(self.opin))
         
     
     def stop(self):
         LOGGER.info('stop GPIOControl')
+        GPIO.cleanup()
 
     def shortPoll(self):
         LOGGER.info('shortpoll GPIOControl')
