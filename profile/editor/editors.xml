@@ -1,13 +1,10 @@
 <editors>
     <editor id="SPAHEAT">
-        <range uom="25" subset="0-2" nls="HEAT_STATE" 
+        <range uom="25" subset="0-2" nls="HEAT_STATE" />
     </editor>
     <editor id="BOOL">
         <range uom="2" subset="0,1" />
     </editor>
-    <editor id="RELAY_EN">
-        <range uom="2" subset="0,1" />
-    </editor>   
     <editor id="TEMPC">
         <range uom="4" min="-40" max="100" step="1" prec="1"/>
     </editor>

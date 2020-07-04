@@ -24,23 +24,19 @@
             <st id="GV7" editor="LAST_UPDATE_M" />
         </sts>
         <cmds>
-            <sends>
+            <sends />
+            <accepts>
                 <cmd id="UPDATE" />
-            </sends>
-            <accepts />
+            </accepts>
         </cmds>
     </nodeDef>
-
-    <nodeDef id="PINOUT'" nls="POUT">
+    <nodeDef id="PINOUT" nls="POUT">
         <editors />
         <sts>
-            <st id="GV11" editor="SPAHEAT" />
+            <st id="GV0" editor="SPAHEAT" />
         </sts>
         <cmds>
-            <sends>
-                <cmd id="HEATON" />
-                <cmd id="HEATOFF" />
-            </sends>
+            <sends />
             <accepts>
                 <cmd id="HEATON" />
                 <cmd id="HEATOFF" />
