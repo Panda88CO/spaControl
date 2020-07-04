@@ -40,6 +40,7 @@
             <accepts>
                 <cmd id="HEATON" />
                 <cmd id="HEATOFF" />
+                <cmd id="UPDATE" />
             </accepts>
         </cmds>
     </nodeDef>

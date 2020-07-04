@@ -1,7 +1,7 @@
 # Temp Sensor controller
 ND-RPISPA-NAME = RPi Temp Controller
 ND-RPISPA-ICON = GenericCtl
-CMD-SPA-DISCOVER-NAME = Update
+CMD-SPA-DISCOVER-NAME = Rediscover
 ST-SPA-ST-NAME = NodeServer Online
 
 # Temp Sensor
@@ -23,6 +23,7 @@ ND-PINOUT-ICON = Output
 ST-POUT-GV0-NAME = Spa Heat
 CMD-POUT-HEATOFF-NAME = Heat Away
 CMD-POUT-HEATON-NAME = Heat Here
+CMD-POUT-UPDATE-NAME = Update Relay
 HEAT_STATE-0 = Heat Away
 HEAT_STATE-1 = Heat Here
 HEAT_STATE-2 = Unknown

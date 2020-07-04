@@ -8,7 +8,7 @@ import json
 import glob
 import time
 import datetime
-import queue
+#import queue
 import os,subprocess
 from subprocess import call
 from w1thermsensor import W1ThermSensor
@@ -16,8 +16,7 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-RELAY_IO_PINS = [20,21,26]
-out_pin= 21
+RELAY_IO_PINS = [20, 21,26]
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
 
@@ -64,24 +63,20 @@ class Controller(polyinterface.Controller):
 
 
     def shortPoll(self):
-        LOGGER.debug('CTRL shortPoll')
+        LOGGER.debug('Controller shortPoll')
         count = 0
         for node in self.nodes:
             count = count +1
             if node != self.address:
-                LOGGER.debug('CTRL shortPoll ' +str(count))
+                LOGGER.debug('Controller shortPoll ' +str(count))
                 self.nodes[node].updateInfo()
-        
-        #for node in self.nodes:
-            #self.nodes[node].updateInfo()
-            
+                   
     def longPoll(self):
-        LOGGER.debug('CTRL longPoll')
+        LOGGER.debug('Controller longPoll')
         for node in self.nodes:
             if node != self.address:
                 self.nodes[node].updateInfo()
         
-
     def updateInfo(self):
         LOGGER.debug('Update Info CTRL')
         pass
@@ -91,7 +86,7 @@ class Controller(polyinterface.Controller):
 
         for node in self.nodes:
             self.nodes[node].updateInfo()
-            self.nodes[node].update24Hqueue()
+            #self.nodes[node].update24Hqueue()
 
 
     def discover(self, command=None):
@@ -122,17 +117,14 @@ class Controller(polyinterface.Controller):
             name = 'pin' + str(out_pin)
             LOGGER.info( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
-                LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name  )
-                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
-                GPIO.setup(out_pin, GPIO.OUT) 
-
-        
+               LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name  )
+               self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
+               GPIO.setup(out_pin, GPIO.OUT) 
 
     def check_params(self, command=None):
-        LOGGER.debug('Check Params' )\
+        LOGGER.debug('Check Params')\
         # Need to handle Custom Parameters Here ratther than in discovery
 
-       
     id = 'RPISPA'
     commands = {'DISCOVER': discover}
     drivers = [{'driver': 'ST', 'value': 1, 'uom': 2}]
@@ -197,7 +189,8 @@ class GPIOcontrol(polyinterface.Node):
               ] 
 
     commands = { 'HEATON'  : ctrlRelay,
-                 'HEATOFF' : ctrlRelay}
+                 'HEATOFF' : ctrlRelay,
+                 'UPDATE'  : updateInfo}
 
     id = 'PINOUT'
 
