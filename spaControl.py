@@ -28,6 +28,7 @@ class Controller(polyinterface.Controller):
         self.name = 'RPi Spa_Control'
         self.address = 'rpispa'
         self.primary = self.address
+        GPIO.setmode(GPIO.BCM)
                 
     def start(self):
         LOGGER.info('Start  TempSensors')
@@ -123,6 +124,7 @@ class Controller(polyinterface.Controller):
             if not address in self.nodes:
                 LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name  )
                 self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
+                GPIO.setup(out_pin, GPIO.OUT) 
 
         
 
@@ -145,8 +147,6 @@ class GPIOcontrol(polyinterface.Node):
 
     def start(self):
         LOGGER.info('start GPIOControl')
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.opin, GPIO.OUT) 
         self.setDriver('GV0', GPIO.input(self.opin))
         
     
@@ -169,7 +169,6 @@ class GPIOcontrol(polyinterface.Node):
         cmd = command.get('cmd')
         LOGGER.debug(str(cmd))
         if cmd in ['HEATON', 'HEATOFF']:
-           GPIO.setup(self.opin, GPIO.OUT) 
            if cmd == 'HEATON':
               GPIO.output(self.opin, GPIO.HIGH)
               self.setDriver('GV0', 1)
