@@ -5,7 +5,10 @@
             <st id="ST" editor="BOOL" />
         </sts>
         <cmds>
-            <sends />
+            <sends>
+                <cmd id="DON" />
+                <cmd id="DOF" />
+            </sends>
             <accepts>
                 <cmd id="DISCOVER" />
             </accepts>
@@ -38,11 +41,7 @@
             <st id="GV0" editor="SPAHEAT" />
         </sts>
         <cmds>
-            <sends>
-                <cmd id="HEATON" />
-                <cmd id="HEATOFF" />
-                <cmd id="UPDATE" />
-            </sends>
+            <sends />
             <accepts>
                 <cmd id="HEATON" />
                 <cmd id="HEATOFF" />

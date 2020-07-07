@@ -27,6 +27,7 @@ class Controller(polyinterface.Controller):
         self.name = 'RPi Spa_Control'
         self.address = 'rpispa'
         self.primary = self.address
+        self.hb = 0
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False) 
                 
@@ -61,7 +62,14 @@ class Controller(polyinterface.Controller):
     def stop(self):
         LOGGER.debug('stop - Cleaning up Temp Sensors & GPIO')
 
-
+    def heartbeat(self):
+        LOGGER.debug('heartbeat: hb={}'.format(self.hb))
+        if self.hb == 0:
+            self.reportCmd("DON",2)
+            self.hb = 1
+        else:
+            self.reportCmd("DOF",2)
+            self.hb = 0
 
     def shortPoll(self):
         LOGGER.debug('Controller shortPoll')
@@ -71,6 +79,7 @@ class Controller(polyinterface.Controller):
                    
     def longPoll(self):
         LOGGER.debug('Controller longPoll')
+        self.heartbeat()
         for node in self.nodes:
             if node != self.address:
                 self.nodes[node].updateInfo()
@@ -85,7 +94,6 @@ class Controller(polyinterface.Controller):
         for node in self.nodes:
             self.nodes[node].updateInfo()
             #self.nodes[node].update24Hqueue()
-
 
     def discover(self, command=None):
         LOGGER.debug('discover')
