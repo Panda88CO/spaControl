@@ -11,6 +11,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+
     <nodeDef id="TEMPSENSOR" nls="SENSOR">
         <editors />
         <sts>
@@ -30,13 +31,18 @@
             </accepts>
         </cmds>
     </nodeDef>
+
     <nodeDef id="PINOUT" nls="POUT">
         <editors />
         <sts>
             <st id="GV0" editor="SPAHEAT" />
         </sts>
         <cmds>
-            <sends />
+            <sends>
+                <cmd id="HEATON" />
+                <cmd id="HEATOFF" />
+                <cmd id="UPDATE" />
+            </sends>
             <accepts>
                 <cmd id="HEATON" />
                 <cmd id="HEATOFF" />

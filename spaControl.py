@@ -28,6 +28,7 @@ class Controller(polyinterface.Controller):
         self.address = 'rpispa'
         self.primary = self.address
         GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False) 
                 
     def start(self):
         LOGGER.info('Start  TempSensors')
@@ -64,11 +65,8 @@ class Controller(polyinterface.Controller):
 
     def shortPoll(self):
         LOGGER.debug('Controller shortPoll')
-        count = 0
         for node in self.nodes:
-            count = count +1
-            if node != self.address:
-                LOGGER.debug('Controller shortPoll ' +str(count))
+             if node != self.address:
                 self.nodes[node].updateInfo()
                    
     def longPoll(self):
@@ -115,14 +113,14 @@ class Controller(polyinterface.Controller):
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'gpiopin'+  str(out_pin)
             name = 'pin' + str(out_pin)
-            LOGGER.info( address + ' ' + name + ' ' + str(out_pin))
+            LOGGER.debug( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
-               LOGGER.info('GPIO '+ self.address +' ' + address + ' ' + name  )
+               LOGGER.debug('GPIO '+ self.address +' ' + address + ' ' + name  )
                self.addNode(GPIOcontrol(self, self.address, address, name, out_pin))
-               GPIO.setup(out_pin, GPIO.OUT) 
+               GPIO.setup(int(out_pin), GPIO.OUT) 
 
     def check_params(self, command=None):
-        LOGGER.debug('Check Params')\
+        LOGGER.debug('Check Params')
         # Need to handle Custom Parameters Here ratther than in discovery
 
     id = 'RPISPA'
@@ -172,7 +170,7 @@ class GPIOcontrol(polyinterface.Node):
         self.reportDrivers()
 
               
-    def query(self, command=None):
+    def query(self, command):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
     
@@ -180,7 +178,7 @@ class GPIOcontrol(polyinterface.Node):
         LOGGER.info('GPIO 24H queue')
         pass
 
-    def updateInfo(self):
+    def updateInfo(self, command=None):
         LOGGER.debug('GPIO UpdateInfo')
         self.setDriver('GV0', GPIO.input(self.opin))
         self.reportDrivers()
@@ -248,7 +246,7 @@ class TEMPsensor(polyinterface.Node):
         self.tempMaxC24HUpdated = False
  
 
-    def updateInfo(self):
+    def updateInfo(self, command=None):
         LOGGER.debug('TempSensor updateInfo')
         self.sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, self.sensorID )
         self.tempC = self.sensor.get_temperature(W1ThermSensor.DEGREES_C)
@@ -272,7 +270,7 @@ class TEMPsensor(polyinterface.Node):
         #return True                                                    
         
     
-    def query(self, command=None):
+    def query(self, command):
         LOGGER.debug('TempSensor querry')
         self.updateInfo()
 
