@@ -117,7 +117,7 @@ class Controller(polyinterface.Controller):
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
 
         # GPIO Pins
-        LOGGER.info('Adding GPIO nodes')
+  
         for out_pin in RELAY_IO_PINS :
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'outpin'+  str(out_pin)
@@ -130,8 +130,8 @@ class Controller(polyinterface.Controller):
 
         for in_pin in INPUT_PINS :
             LOGGER.info( ' gpio input :' + str(in_pin))
-            address = 'inpin'+  str(out_pin)
-            name = 'pin' + str(out_pin)
+            address = 'inpin'+  str(in_pin)
+            name = 'pin' + str(in_pin)
             LOGGER.debug( address + ' ' + name + ' ' + str(in_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
@@ -194,17 +194,13 @@ class GPOUTcontrol(polyinterface.Node):
     def query(self, command):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
-    
-    def update24Hqueue (self):
-        LOGGER.info('GPIO 24H queue')
-        pass
 
     def updateInfo(self, command=None):
-        LOGGER.debug('GPIO UpdateInfo')
+        LOGGER.debug('GPOUT UpdateInfo')
         self.setDriver('GV0', GPIO.input(self.opin))
         self.reportDrivers()
 
-    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
+    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
 
     commands = { 'HEATON'  : ctrlRelay,
@@ -224,26 +220,23 @@ class GPINcontrol(polyinterface.Node):
 
     def start(self):
         LOGGER.info('start GPIOControl')
-        self.setDriver('GV0', self.waterLevelLow )
-        self.lastNMeas.append(GPIO.input(self.opin)))
-        if len(lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            avgLow = sum(lastNMeas)/len(lastNMeas)
+        self.setDriver('GV0', self.waterLevel )
+        self.lastNMeas.append(GPIO.input(self.inpin))
+        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
+            avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
             
-
-
-    
     def stop(self):
         LOGGER.info('stop GPIOControl')
         GPIO.cleanup()
 
     def shortPoll(self):
         LOGGER.info('shortpoll GPIOControl')      
-        self.lastNMeas.append(GPIO.input(self.opin)))
+        self.lastNMeas.append(GPIO.input(self.inpin))
         LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) )
-        if len(lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            avgLow = sum(lastNMeas)/len(lastNMeas)
+        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
+            avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
             self.lastNMeas.pop() 
-            if avgLow < 2/len(lastNMeas):
+            if avgLow < 2/len(self.lastNMeas):
                self.waterLevel = 1
             else:
                self.waterLevel = 0
@@ -254,39 +247,21 @@ class GPINcontrol(polyinterface.Node):
 
     def longPoll(self):
         LOGGER.info('longpoll GPIOControl')
-        self.updateInfo()
+        #self.updateInfo()
         
-
- '''   def ctrlRelay(self, command):
-        LOGGER.info('ctrlRelay GPIOControl')
-        cmd = command.get('cmd')
-        LOGGER.debug(str(cmd))
-        if cmd in ['HEATON', 'HEATOFF']:
-           if cmd == 'HEATON':
-              GPIO.output(self.opin, GPIO.HIGH)
-              self.setDriver('GV0', 1)
-           else:
-              GPIO.output(self.opin, GPIO.LOW)  
-              self.setDriver('GV0', 0)
-        else:
-              self.setDriver('GV0', 2)
-        self.reportDrivers()'''
 
               
     def query(self, command):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
     
-    def update24Hqueue (self):
-        LOGGER.info('GPIO 24H queue')
-        pass
 
     def updateInfo(self, command=None):
-        LOGGER.debug('GPIO UpdateInfo')
+        LOGGER.debug('GPIN UpdateInfo: ' + str(self.waterLevel))
         self.setDriver('GV0', self.waterLevel)
         self.reportDrivers()
 
-    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
+    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
 
     commands = { 'UPDATE'  : updateInfo}

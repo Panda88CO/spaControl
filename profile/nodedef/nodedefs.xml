@@ -51,7 +51,7 @@
     <nodeDef id="PININ" nls="PIN">
         <editors />
         <sts>
-            <st id="GV1" editor="WATERLVLLOW" />
+            <st id="GV1" editor="WATERLEVEL" />
         </sts>
         <cmds>
             <accepts>
