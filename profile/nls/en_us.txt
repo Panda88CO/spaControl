@@ -17,7 +17,7 @@ ST-SENSOR-GV6-NAME = Hour
 ST-SENSOR-GV7-NAME = Min
 CMD-SENSOR-UPDATE-NAME = Update Temp
 
-# GPIOs
+# Outputs
 ND-PINOUT-NAME = Relay Control
 ND-PINOUT-ICON = Output
 ST-POUT-GV0-NAME = Spa Heat
@@ -27,3 +27,12 @@ CMD-POUT-UPDATE-NAME = Update Relay
 HEAT_STATE-0 = Heat Away
 HEAT_STATE-1 = Heat Here
 HEAT_STATE-2 = Unknown
+
+#Inputs
+ND-PININ-NAME = Water Level Low
+ND-PININ-ICON = Input
+ST-PIN-GV0-NAME = Water Level
+CMD-PIN-UPDATE-NAME = Update Water Level
+WATER_LEVEL-0 = Low
+WATER_LEVEL-1 = OK
+WATER_LEVEL-2 = Unknown

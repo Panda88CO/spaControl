@@ -41,10 +41,20 @@
             <st id="GV0" editor="SPAHEAT" />
         </sts>
         <cmds>
-            <sends />
             <accepts>
                 <cmd id="HEATON" />
                 <cmd id="HEATOFF" />
+                <cmd id="UPDATE" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="PININ" nls="PIN">
+        <editors />
+        <sts>
+            <st id="GV1" editor="WATERLVLLOW" />
+        </sts>
+        <cmds>
+            <accepts>
                 <cmd id="UPDATE" />
             </accepts>
         </cmds>
