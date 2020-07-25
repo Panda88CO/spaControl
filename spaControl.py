@@ -232,7 +232,7 @@ class GPINcontrol(polyinterface.Node):
     def shortPoll(self):
         LOGGER.info('shortpoll GPIOControl')      
         self.lastNMeas.append(GPIO.input(self.inpin))
-        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) )
+        LOGGER.info('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(lem(self.lastNMeas))  )
         if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
             self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
             self.lastNMeas.pop() 
