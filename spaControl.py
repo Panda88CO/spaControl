@@ -231,17 +231,6 @@ class GPINcontrol(polyinterface.Node):
 
     def shortPoll(self):
         LOGGER.info('shortpoll GPIOControl')      
-        self.lastNMeas.append(GPIO.input(self.inpin))
-        LOGGER.info('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(lem(self.lastNMeas))  )
-        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
-            self.lastNMeas.pop() 
-            if self.avgLow < 2/len(self.lastNMeas):
-               self.waterLevel = 1
-            else:
-               self.waterLevel = 0
-        else:
-            self.waterLevel = 2
         self.updateInfo()
 
 
@@ -258,6 +247,17 @@ class GPINcontrol(polyinterface.Node):
 
     def updateInfo(self, command=None):
         LOGGER.debug('GPIN UpdateInfo: ' + str(self.waterLevel))
+        self.lastNMeas.append(GPIO.input(self.inpin))
+        LOGGER.info('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(lem(self.lastNMeas))  )
+        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
+            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
+            self.lastNMeas.pop() 
+            if self.avgLow < 2/len(self.lastNMeas):
+               self.waterLevel = 1
+            else:
+               self.waterLevel = 0
+        else:
+            self.waterLevel = 2
         self.setDriver('GV0', self.waterLevel)
         self.reportDrivers()
 
