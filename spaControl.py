@@ -191,7 +191,7 @@ class GPOUTcontrol(polyinterface.Node):
         self.reportDrivers()
 
               
-    def query(self, command):
+    def query(self, command=None):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
 
@@ -223,7 +223,7 @@ class GPINcontrol(polyinterface.Node):
         self.setDriver('GV0', self.waterLevel )
         self.lastNMeas.append(GPIO.input(self.inpin))
         if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
+            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
             
     def stop(self):
         LOGGER.info('stop GPIOControl')
@@ -236,7 +236,7 @@ class GPINcontrol(polyinterface.Node):
         if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
             avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
             self.lastNMeas.pop() 
-            if avgLow < 2/len(self.lastNMeas):
+            if self.avgLow < 2/len(self.lastNMeas):
                self.waterLevel = 1
             else:
                self.waterLevel = 0
@@ -251,7 +251,7 @@ class GPINcontrol(polyinterface.Node):
         
 
               
-    def query(self, command):
+    def query(self, command=None):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
     
@@ -345,7 +345,7 @@ class TEMPsensor(polyinterface.Node):
         #return True                                                    
         
     
-    def query(self, command):
+    def query(self, command=None):
         LOGGER.debug('TempSensor querry')
         self.updateInfo()
 

@@ -35,4 +35,4 @@ ST-PIN-GV0-NAME = Water Level
 CMD-PIN-UPDATE-NAME = Update Water Level
 WATER_LEVEL-0 = Low
 WATER_LEVEL-1 = OK
-WATER_LEVEL-2 = Unknown
+WATER_LEVEL-2 = Insufficeint Meas
