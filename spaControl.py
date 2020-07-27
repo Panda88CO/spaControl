@@ -248,7 +248,7 @@ class GPINcontrol(polyinterface.Node):
     def updateInfo(self, command=None):
         LOGGER.debug('GPIN UpdateInfo: ' + str(self.waterLevel))
         self.lastNMeas.append(GPIO.input(self.inpin))
-        LOGGER.info('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas))  )
+        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas))  )
         if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
             self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
             self.lastNMeas.pop() 
