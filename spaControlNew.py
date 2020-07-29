@@ -16,9 +16,13 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-RELAY_IO_PINS = [20, 21,26]
-INPUT_PINS  = [5, 6, 25]
-BRCM_PORTS = [2,3,17,27,22,10,9,11,5,6,13,19,26,14,15,18,23,24,25,8,7,12,16,20,21] # 4 removed as used for temp sensor
+#RELAY_IO_PINS = [20, 21,26]
+#INPUT_PINS  = {}
+#OUTPUT_PINS = {}
+BRCM_PORTS = {'port2':2, 'port3':3,'port17':17,'port27':27,'port22':22,'port10':10,'port9':9,
+              'port11':11,'port5':5,'port6':6,'port13':13,'port19':19,'port26':26,'port14':14,
+              'port15':15,'port18':18,'port23':23,'port24':24,'port25':25,'port8':8, 'port7':7,
+              'port12':12,'port16':16,'port20':20,'port20':21} # port4 removed as used for temp sensor
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
 
@@ -33,6 +37,8 @@ class Controller(polyinterface.Controller):
         self.internal= []
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False) 
+        self.INPUT_PINS = {}
+        self.OUTPUT_PINS = {}
                 
     def start(self):
         LOGGER.info('Start  TempSensors')
@@ -153,19 +159,23 @@ class Controller(polyinterface.Controller):
                 params[currentSensor]=['NoName']
         if not(params == {}):
             self.addCustommParams(params)
-        params = {} 
-        for inputPin in self.polyConfig['customParams']:
-            if self.polyConfig['customParams'][inputPin] == 'Input':
-                if inputPin.isdigit():
-                    if (int(inputPin) in BRCM_PORTS) and (int(inputPin) <> 4):
-                        if int(inputPin) == 4:
-                            self.addNotice(' BRCM IO port 4 is used for temprerature sensors')
-                        else:
-                            for inputPinName in self.polyConfig['customParams']:
-                                if self.polyConfig['customParams'][inputPin] == 'Input':   
 
-
-
+        for customP in self.polyConfig['customParams']:
+            params = {}
+            if customP in BRCM_PORTS:
+                PortNumber = BRCM_PORTS[customP]
+                PortDef = self.polyConfig['customParams'][customP]
+                PortInfo = PortDef.split(":',1)
+                if PortInfo[0].toupper() == 'IN':
+                    self.INPUT_PINS.update({PortNumber:PortInfo[1]})
+                    self.addCustomParams({PortNumber:PortDef})
+                elif PortInfo[0].toupper() == 'OUT':
+                    self.OUTPUT_PINS.update({PortNumber:PortInfo[1]})
+                    self.addCustomParams({PortNumber:PortDef})
+                else:
+                    self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')
+                    
+        self.save
         
         LOGGER.debug('Check Params')
         # Need to handle Custom Parameters Here ratther than in discovery
