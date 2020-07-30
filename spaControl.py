@@ -16,11 +16,11 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-#RELAY_IO_PINS = [20, 21,26]
-RELAY_IO_PINS = [20, 21,26]
-INPUT_PINS  = [5, 6, 25]
-#INPUT_PINS  = {}
-#OUTPUT_PINS = {}
+#OUTPUT_PINS = [20, 21,26]
+#INPUT_PINS  = [5, 25]
+OUTPUT_PINS = {}
+INPUT_PINS  = {}
+
 BRCM_PORTS = {'port2':2, 'port3':3,'port17':17,'port27':27,'port22':22,'port10':10,'port9':9,
               'port11':11,'port5':5,'port6':6,'port13':13,'port19':19,'port26':26,'port14':14,
               'port15':15,'port18':18,'port23':23,'port24':24,'port25':25,'port8':8, 'port7':7,
@@ -128,10 +128,10 @@ class Controller(polyinterface.Controller):
 
         # GPIO Pins
   
-        for out_pin in RELAY_IO_PINS :
+        for out_pin in OUTPUT_PINS :
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'outpin'+  str(out_pin)
-            name = 'pin' + str(out_pin)
+            name = str(OUTPUT_PINS[out_pin]) + str(out_pin)
             LOGGER.debug( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO out'+ self.address +' ' + address + ' ' + name  )
@@ -141,7 +141,7 @@ class Controller(polyinterface.Controller):
         for in_pin in INPUT_PINS :
             LOGGER.info( ' gpio input :' + str(in_pin))
             address = 'inpin'+  str(in_pin)
-            name = 'pin' + str(in_pin)
+            name = str(OUTPUT_PINS[in_pin]) + str(in_pin)
             LOGGER.debug( address + ' ' + name + ' ' + str(in_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
@@ -170,9 +170,11 @@ class Controller(polyinterface.Controller):
                 PortInfo = PortDef.split(':',1)
                 if PortInfo[0].toupper() == 'IN':
                     self.INPUT_PINS.update({PortNumber:PortInfo[1]})
+                    LOGGER.debug('Input Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
                     #self.addCustomParams({PortNumber:PortDef})
                 elif PortInfo[0].toupper() == 'OUT':
                     self.OUTPUT_PINS.update({PortNumber:PortInfo[1]})
+                    LOGGER.debug('Output Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
                     #self.addCustomParams({PortNumber:PortDef})
                 else:
                     self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')                    
