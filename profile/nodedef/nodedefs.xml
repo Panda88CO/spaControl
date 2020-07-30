@@ -42,12 +42,13 @@
         </sts>
         <cmds>
             <accepts>
-                <cmd id="HEATON" />
-                <cmd id="HEATOFF" />
+                <cmd id="OUT_ON" />
+                <cmd id="OUT_OFF" />
                 <cmd id="UPDATE" />
             </accepts>
         </cmds>
     </nodeDef>
+
     <nodeDef id="PININ" nls="PIN">
         <editors />
         <sts>
