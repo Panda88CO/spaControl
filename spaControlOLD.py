@@ -142,29 +142,7 @@ class Controller(polyinterface.Controller):
 
 
 
-    def check_params(self, command=None):
-        self.removeNoticesAll()
-                params = {}
-        for mySensor in self.mySensors.get_available_sensors():
-            count = count+1
-            currentSensor = mySensor.id.lower() 
-            if not(currentSensor in self.polyConfig['customParams']):
-                params[currentSensor]=['NoName']
-        if not(params == {}):
-            self.addCustommParams(params)
-        params = {} 
-        for inputPin in self.polyConfig['customParams']:
-            if self.polyConfig['customParams'][inputPin] == 'Input':
-                if inputPin.isdigit():
-                    if (int(inputPin) in BRCM_PORTS) and (int(inputPin) <> 4):
-                        if int(inputPin) == 4:
-                            self.addNotice(' BRCM IO port 4 is used for temprerature sensors')
-                        else:
-                            
-
-
-
-        
+    def check_params(self, command=None):      
         LOGGER.debug('Check Params')
         # Need to handle Custom Parameters Here ratther than in discovery
 
