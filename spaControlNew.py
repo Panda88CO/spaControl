@@ -149,7 +149,8 @@ class Controller(polyinterface.Controller):
 
 
     def check_params(self, command=None):
-               
+        LOGGER.debug('Check Params')
+        # Need to handle Custom Parameters Here ratther than in discovery       
         params = {}
         self.removeNoticesAll()
         for mySensor in self.mySensors.get_available_sensors():
@@ -161,24 +162,21 @@ class Controller(polyinterface.Controller):
             self.addCustommParams(params)
 
         for customP in self.polyConfig['customParams']:
-            params = {}
             if customP in BRCM_PORTS:
                 PortNumber = BRCM_PORTS[customP]
                 PortDef = self.polyConfig['customParams'][customP]
-                PortInfo = PortDef.split(":',1)
+                PortInfo = PortDef.split(':',1)
                 if PortInfo[0].toupper() == 'IN':
                     self.INPUT_PINS.update({PortNumber:PortInfo[1]})
-                    self.addCustomParams({PortNumber:PortDef})
+                    #self.addCustomParams({PortNumber:PortDef})
                 elif PortInfo[0].toupper() == 'OUT':
                     self.OUTPUT_PINS.update({PortNumber:PortInfo[1]})
-                    self.addCustomParams({PortNumber:PortDef})
+                    #self.addCustomParams({PortNumber:PortDef})
                 else:
-                    self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')
-                    
-        self.save
+                    self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')                    
+        self.saveCustomParams(self.polyConfig['customParams'])
         
-        LOGGER.debug('Check Params')
-        # Need to handle Custom Parameters Here ratther than in discovery
+
 
     id = 'RPISPA'
     commands = {'DISCOVER': discover}
