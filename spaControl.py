@@ -17,6 +17,8 @@ from w1thermsensor import W1ThermSensor
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
 #RELAY_IO_PINS = [20, 21,26]
+RELAY_IO_PINS = [20, 21,26]
+INPUT_PINS  = [5, 6, 25]
 #INPUT_PINS  = {}
 #OUTPUT_PINS = {}
 BRCM_PORTS = {'port2':2, 'port3':3,'port17':17,'port27':27,'port22':22,'port10':10,'port9':9,
@@ -50,7 +52,6 @@ class Controller(polyinterface.Controller):
             LOGGER.debug('modprobe OS calls not successful')
             self.setDriver('ST', 0)
         LOGGER.debug('start - Temp Sensor controller')
-        self.check_params(self)
 
         try:
             self.mySensors = W1ThermSensor()
@@ -63,6 +64,7 @@ class Controller(polyinterface.Controller):
             self.setDriver('ST', 0)
             self.stop()  
 
+        self.check_params(self)
         self.discover()         
         self.updateInfo()
         self.reportDrivers()
@@ -157,7 +159,7 @@ class Controller(polyinterface.Controller):
             count = count+1
             currentSensor = mySensor.id.lower() 
             if not(currentSensor in self.polyConfig['customParams']):
-                params[currentSensor]=['NoName']
+                params[currentSensor]=['NoName'+str(count)]
         if not(params == {}):
             self.addCustommParams(params)
 
