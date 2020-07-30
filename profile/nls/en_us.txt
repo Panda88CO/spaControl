@@ -21,18 +21,18 @@ CMD-SENSOR-UPDATE-NAME = Update Temp
 ND-PINOUT-NAME = Relay Control
 ND-PINOUT-ICON = Output
 ST-POUT-GV0-NAME = Spa Heat
-CMD-POUT-HEATOFF-NAME = Heat Away
-CMD-POUT-HEATON-NAME = Heat Here
-CMD-POUT-UPDATE-NAME = Update Relay
-HEAT_STATE-0 = Heat Away
-HEAT_STATE-1 = Heat Here
+CMD-POUT-OUT_OFF-NAME = Output Off
+CMD-POUT-OUT_ON-NAME = Output On
+CMD-POUT-UPDATE-NAME = Update Output State
+HEAT_STATE-0 = Output Off
+HEAT_STATE-1 = Output On
 HEAT_STATE-2 = Unknown
 
 #Inputs
-ND-PININ-NAME = Water Level Low
+ND-PININ-NAME = Input Low
 ND-PININ-ICON = Input
-ST-PIN-GV0-NAME = Water Level
-CMD-PIN-UPDATE-NAME = Update Water Level
+ST-PIN-GV0-NAME = Input 
+CMD-PIN-UPDATE-NAME = Update Input
 WATER_LEVEL-0 = Low
-WATER_LEVEL-1 = OK
+WATER_LEVEL-1 = High
 WATER_LEVEL-2 = Insufficeint Meas
