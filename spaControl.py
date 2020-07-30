@@ -171,11 +171,10 @@ class Controller(polyinterface.Controller):
                 if PortInfo[0].toupper() == 'IN':
                     self.INPUT_PINS.update({PortNumber:PortInfo[1]})
                     LOGGER.debug('Input Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
-                    #self.addCustomParams({PortNumber:PortDef})
                 elif PortInfo[0].toupper() == 'OUT':
                     self.OUTPUT_PINS.update({PortNumber:PortInfo[1]})
                     LOGGER.debug('Output Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
-                    #self.addCustomParams({PortNumber:PortDef})
+
                 else:
                     self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')                    
         self.saveCustomParams(self.polyConfig['customParams'])
