@@ -1,0 +1,38 @@
+# Temp Sensor controller
+ND-RPISPA-NAME = RPi Temp Controller
+ND-RPISPA-ICON = GenericCtl
+CMD-SPA-DISCOVER-NAME = Rediscover
+ST-SPA-ST-NAME = NodeServer Online
+
+# Temp Sensor
+ND-TEMPSENSOR-NAME = Temp Sensor
+ND-TEMPSENSOR-ICON = TempSensor
+ST-SENSOR-GV0-NAME = Current Temp C
+ST-SENSOR-GV1-NAME = Temp Min 24H C
+ST-SENSOR-GV2-NAME = Temp Max 24H C
+ST-SENSOR-GV3-NAME = Month
+ST-SENSOR-GV4-NAME = Day
+ST-SENSOR-GV5-NAME = Year 
+ST-SENSOR-GV6-NAME = Hour
+ST-SENSOR-GV7-NAME = Min
+CMD-SENSOR-UPDATE-NAME = Update Temp
+
+# Outputs
+ND-PINOUT-NAME = Relay Control
+ND-PINOUT-ICON = Output
+ST-POUT-GV0-NAME = Spa Heat
+CMD-POUT-HEATOFF-NAME = Heat Away
+CMD-POUT-HEATON-NAME = Heat Here
+CMD-POUT-UPDATE-NAME = Update Relay
+HEAT_STATE-0 = Heat Away
+HEAT_STATE-1 = Heat Here
+HEAT_STATE-2 = Unknown
+
+#Inputs
+ND-PININ-NAME = Water Level Low
+ND-PININ-ICON = Input
+ST-PIN-GV0-NAME = Water Level
+CMD-PIN-UPDATE-NAME = Update Water Level
+WATER_LEVEL-0 = Low
+WATER_LEVEL-1 = OK
+WATER_LEVEL-2 = Insufficeint Meas

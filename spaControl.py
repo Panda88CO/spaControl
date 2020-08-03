@@ -44,6 +44,7 @@ class Controller(polyinterface.Controller):
                 
     def start(self):
         LOGGER.info('Start  TempSensors')
+        self.removeNoticesAll()
         try:
             os.system('modprobe w1-gpio')
             os.system('modprobe w1-therm')
@@ -122,63 +123,86 @@ class Controller(polyinterface.Controller):
             else:
                LOGGER.debug('Default Naming')
                name = 'Sensor'+str(count)
-            #LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
+            LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
+<<<<<<< HEAD
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
                
 
+=======
+               self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=False)
+               LOGGER.debug('Sensor Node Created')
+            else:
+                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=True)
+                LOGGER.debug('Sensor Node Updated')
+>>>>>>> 73d82afaed7651f01d56599ac93f013fff340e7b
         # GPIO Pins
+        LOGGER.debug('OUT_PINS: '+str(self.OUTPUT_PINS))
   
-        for out_pin in OUTPUT_PINS :
+        for out_pin in self.OUTPUT_PINS :
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'outpin'+  str(out_pin)
-            name = str(OUTPUT_PINS[out_pin]) + str(out_pin)
+            name = str(self.OUTPUT_PINS[out_pin]) 
             LOGGER.debug( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO out'+ self.address +' ' + address + ' ' + name  )
-               self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin))
+               self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin), update=False)
+               GPIO.setup(int(out_pin), GPIO.OUT) 
+            else:
+               self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin), update=True)
                GPIO.setup(int(out_pin), GPIO.OUT) 
 
-        for in_pin in INPUT_PINS :
+        LOGGER.debug('IN_PINS: '+str(self.INPUT_PINS))
+        for in_pin in self.INPUT_PINS :
             LOGGER.info( ' gpio input :' + str(in_pin))
             address = 'inpin'+  str(in_pin)
-            name = str(OUTPUT_PINS[in_pin]) + str(in_pin)
+            name = str(self.INPUT_PINS[in_pin]) 
             LOGGER.debug( address + ' ' + name + ' ' + str(in_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
-               self.addNode(GPINcontrol(self, self.address, address, name, in_pin))
+               self.addNode(GPINcontrol(self, self.address, address, name, in_pin), update=False)
                GPIO.setup(int(in_pin), GPIO.IN)   
-
+            else:
+               self.addNode(GPINcontrol(self, self.address, address, name, in_pin), update=True)
+               GPIO.setup(int(in_pin), GPIO.IN)  
 
 
     def check_params(self, command=None):
         LOGGER.debug('Check Params')
+        LOGGER.debug(str(self.polyConfig['customParams']))
         # Need to handle Custom Parameters Here ratther than in discovery       
         params = {}
+        count = 0
         self.removeNoticesAll()
+        self.addNotice('To add IOpin use portN as Key and IN:name or OUT:name as value to define ports')
+        self.addNotice('N is BRCM port number (4 use for temp semnsor)')     
         for mySensor in self.mySensors.get_available_sensors():
             count = count+1
             currentSensor = mySensor.id.lower() 
             if not(currentSensor in self.polyConfig['customParams']):
                 params[currentSensor]=['NoName'+str(count)]
         if not(params == {}):
-            self.addCustommParams(params)
-
+            self.addCustomParam(params)
+        LOGGER.debug(str(params))
+    
         for customP in self.polyConfig['customParams']:
-            if customP in BRCM_PORTS:
-                PortNumber = BRCM_PORTS[customP]
+            LOGGER.debug(str(customP))
+
+            if customP.lower() in BRCM_PORTS:
+                PortNumber = BRCM_PORTS[customP.lower()]
                 PortDef = self.polyConfig['customParams'][customP]
                 PortInfo = PortDef.split(':',1)
-                if PortInfo[0].toupper() == 'IN':
+                LOGGER.debug(str(PortNumber) + ' ' + str(PortInfo))
+                if PortInfo[0].lower() == 'in':
                     self.INPUT_PINS.update({PortNumber:PortInfo[1]})
                     LOGGER.debug('Input Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
-                elif PortInfo[0].toupper() == 'OUT':
+                elif PortInfo[0].lower() == 'out':
                     self.OUTPUT_PINS.update({PortNumber:PortInfo[1]})
                     LOGGER.debug('Output Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
 
                 else:
                     self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')                    
-        self.saveCustomParams(self.polyConfig['customParams'])
+        self.saveCustomData(self.polyConfig['customParams'])
         
 
 
