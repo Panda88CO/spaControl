@@ -51,6 +51,7 @@ class Controller(polyinterface.Controller):
             self.setDriver('ST', 1)
         except:
             LOGGER.debug('modprobe OS calls not successful')
+            self.addNotice('TempSensor detection not successful')
             self.setDriver('ST', 0)
         LOGGER.debug('start - Temp Sensor controller')
 
@@ -125,17 +126,11 @@ class Controller(polyinterface.Controller):
                name = 'Sensor'+str(count)
             LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
-<<<<<<< HEAD
-               self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
-               
-
-=======
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=False)
                LOGGER.debug('Sensor Node Created')
             else:
                 self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=True)
                 LOGGER.debug('Sensor Node Updated')
->>>>>>> 73d82afaed7651f01d56599ac93f013fff340e7b
         # GPIO Pins
         LOGGER.debug('OUT_PINS: '+str(self.OUTPUT_PINS))
   
