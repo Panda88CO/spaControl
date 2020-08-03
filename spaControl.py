@@ -125,6 +125,7 @@ class Controller(polyinterface.Controller):
             #LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
+               
 
         # GPIO Pins
   
