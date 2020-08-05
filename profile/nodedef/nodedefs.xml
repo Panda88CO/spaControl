@@ -52,12 +52,14 @@
     <nodeDef id="PININ" nls="PIN">
         <editors />
         <sts>
-            <st id="GV0" editor="WATERLEVEL" />
+            <st id="GV0" editor="INPUTPIN" />
+            <st in="GV1" editor="PIN_AVERAGE" />
         </sts>
         <cmds>
             <accepts>
                 <cmd id="UPDATE" />
-            </accepts>
+                <cmd id="SET_AVERAGE"/>
+                    <p id= "" editor="AVG_NBR" init="10" nls="READAVG" />
         </cmds>
     </nodeDef>
 </nodeDefs>
