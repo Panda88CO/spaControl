@@ -38,7 +38,7 @@
     <nodeDef id="PINOUT" nls="POUT">
         <editors />
         <sts>
-            <st id="GV0" editor="SPAHEAT" />
+            <st id="GV0" editor="OUTPUTPIN" />
         </sts>
         <cmds>
             <accepts>
@@ -59,7 +59,7 @@
             <accepts>
                 <cmd id="UPDATE" />
                 <cmd id="SET_AVERAGE"/>
-                    <p id= "" editor="AVG_NBR" init="10" nls="READAVG" />
+                    <p id= "" editor="AVG_NBR" init="10" />
         </cmds>
     </nodeDef>
 </nodeDefs>

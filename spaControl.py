@@ -19,7 +19,7 @@ LOGGER = polyinterface.LOGGER
 BRCM_PORTS = {'port2':2, 'port3':3,'port17':17,'port27':27,'port22':22,'port10':10,'port9':9,
               'port11':11,'port5':5,'port6':6,'port13':13,'port19':19,'port26':26,'port14':14,
               'port15':15,'port18':18,'port23':23,'port24':24,'port25':25,'port8':8, 'port7':7,
-              'port12':12,'port16':16,'port20':20,'port20':21} # port4 removed as used for temp sensor
+              'port12':12,'port16':16,'port20':20,'port21':21} # port4 removed as used for temp sensor
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
 
@@ -288,7 +288,6 @@ class GPINcontrol(polyinterface.Node):
         LOGGER.info('longpoll GPIOControl')
         #self.updateInfo()
         
-
               
     def query(self, command=None):
         LOGGER.debug('GPIO querry')
@@ -311,10 +310,17 @@ class GPINcontrol(polyinterface.Node):
         self.setDriver('GV0', self.waterLevel)
         self.reportDrivers()
 
+    def getRollingAverage(self, command):
+        val = int(command.get('value'))
+        LOGGER.debug('Average Count : ' + str(val))
+        self.rollingAverageNbr = val
+
+
     drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
 
-    commands = { 'UPDATE'  : updateInfo}
+    commands = { 'UPDATE'  : updateInfo,
+                 'SET_AVERAGE' : getRollingAverage}
 
     id = 'PININ'
 

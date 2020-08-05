@@ -24,15 +24,17 @@ ST-POUT-GV0-NAME = Spa Heat
 CMD-POUT-OUT_OFF-NAME = Output Off
 CMD-POUT-OUT_ON-NAME = Output On
 CMD-POUT-UPDATE-NAME = Update Output State
-HEAT_STATE-0 = Output Off
-HEAT_STATE-1 = Output On
-HEAT_STATE-2 = Unknown
+
 
 #Inputs
 ND-PININ-NAME = Input Low
 ND-PININ-ICON = Input
-ST-PIN-GV0-NAME = Input 
+ST-PIN-GV0-NAME = Logic Input
+ST-PIN-GV1-NAME = Averaged Logic Input
+
 CMD-PIN-UPDATE-NAME = Update Input
-WATER_LEVEL-0 = Low
-WATER_LEVEL-1 = High
-WATER_LEVEL-2 = Insufficeint Meas
+CMD-PIN-SET_AVERAGE-NAME = Nbr Of Inputs in Avg
+        <range uom="51" subset="0-100" prec ="1" nls="PIN_AVG" />
+    </editor> 
+    <editor id="PIN_AVERAGE">
+         <range uom="0" subset="0-100" prec ="0" nls="AVG_NBR" />

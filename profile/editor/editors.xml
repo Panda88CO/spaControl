@@ -1,9 +1,15 @@
 <editors>
-    <editor id="SPAHEAT">
-        <range uom="25" subset="0-2" nls="HEAT_STATE" />
+    <editor id="PINOUTPUT">
+        <range uom="2" subset="0-1" />
     </editor>
-    <editor id="WATERLEVEL">
-         <range uom="25" subset="0-2" nls="WATER_LEVEL" />
+    <editor id="PININPUT">
+         <range uom="2" subset="0-1"/>
+    </editor> 
+    <editor id="PIN_AVERAGE">
+         <range uom="51" subset="0-100" prec ="1"/>
+    </editor> 
+    <editor id="PIN_AVERAGE">
+         <range uom="0" subset="0-100" prec ="0"  />
     </editor> 
     <editor id="BOOL">
         <range uom="2" subset="0,1" />
