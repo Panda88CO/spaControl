@@ -8,7 +8,7 @@
     <editor id="PIN_AVERAGE">
          <range uom="51" subset="0-100" prec ="1"/>
     </editor> 
-    <editor id="PIN_AVERAGE">
+    <editor id="AVG_NBR">
          <range uom="0" subset="0-100" prec ="0"  />
     </editor> 
     <editor id="BOOL">

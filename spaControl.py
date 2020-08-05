@@ -264,9 +264,8 @@ class GPINcontrol(polyinterface.Node):
         super().__init__(controller, primary, address, name)
         self.inpin = inpin
         LOGGER.info('init GPIOControl')
-        self.waterLevel  = 2 # Unknown
-        self.measAverage = 10
         self.lastNMeas = []
+        self.rollingAverageNbr = 5 # Random default
 
     def start(self):
         LOGGER.info('start GPIOControl')
@@ -296,19 +295,16 @@ class GPINcontrol(polyinterface.Node):
 
     def updateInfo(self, command=None):
         LOGGER.debug('GPIN UpdateInfo: ' + str(self.waterLevel))
-        self.lastNMeas.append(GPIO.input(self.inpin))
+        inputLevel = GPIO.input(self.inpin)
+        self.lastNMeas.append(inputLevel)
+        avgLevel = sum(self.lastNMeas)/len(self.lastNMeas)
         LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas))  )
-        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
+        if len(self.lastNMeas) >= self.rollingAverageNbr: # should only reach equal but to be safe
             self.lastNMeas.pop() 
-            if self.avgLow < 2/len(self.lastNMeas):
-               self.waterLevel = 1
-            else:
-               self.waterLevel = 0
-        else:
-            self.waterLevel = 2
-        self.setDriver('GV0', self.waterLevel)
-        self.reportDrivers()
+
+        self.setDriver('GV0', inputLevel)
+        self.setDriver('GV1', avgLevel)
+        #self.reportDrivers()
 
     def getRollingAverage(self, command):
         val = int(command.get('value'))
@@ -316,7 +312,8 @@ class GPINcontrol(polyinterface.Node):
         self.rollingAverageNbr = val
 
 
-    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
+    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25},
+               {'driver': 'GV1', 'value': 0, 'uom' : 51}
               ] 
 
     commands = { 'UPDATE'  : updateInfo,
@@ -424,8 +421,8 @@ class TEMPsensor(polyinterface.Node):
 if __name__ == "__main__":
 
     try:
-        LOGGER.info('Starting SPA Controller')
-        polyglot = polyinterface.Interface('SPA_Temp_Control')
+        LOGGER.info('Starting TempIO Controller')
+        polyglot = polyinterface.Interface('TempIO_Control')
         polyglot.start()
         control = Controller(polyglot)
         control.runForever()
