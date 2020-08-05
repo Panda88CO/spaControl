@@ -306,7 +306,7 @@ class GPINcontrol(polyinterface.Node):
             self.lastNMeas.pop() 
 
         self.setDriver('GV0', inputLevel)
-        self.setDriver('GV1', avgLevel)
+        self.setDriver('GV1', avgLevel*100) #percentage
         #self.reportDrivers()
 
     def getRollingAverage(self, command):
