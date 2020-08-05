@@ -269,11 +269,13 @@ class GPINcontrol(polyinterface.Node):
 
     def start(self):
         LOGGER.info('start GPIOControl')
-        self.setDriver('GV0', self.waterLevel )
-        self.lastNMeas.append(GPIO.input(self.inpin))
-        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
-            
+        #self.setDriver('GV0', GPIO.input(self.inpin) )
+        #self.lastNMeas.append(GPIO.input(self.inpin))
+        #if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
+            #self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
+        self.updateInfo()
+        
+
     def stop(self):
         LOGGER.info('stop GPIOControl')
         GPIO.cleanup()
