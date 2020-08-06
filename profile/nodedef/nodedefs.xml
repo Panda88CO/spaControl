@@ -38,7 +38,7 @@
     <nodeDef id="PINOUT" nls="POUT">
         <editors />
         <sts>
-            <st id="GV0" editor="OUTPUTPIN" />
+            <st id="GV0" editor="PINOUTPUT" />
         </sts>
         <cmds>
             <accepts>
@@ -52,8 +52,8 @@
     <nodeDef id="PININ" nls="PIN">
         <editors />
         <sts>
-            <st id="GV0" editor="INPUTPIN" />
-            <st in="GV1" editor="PIN_AVERAGE" />
+            <st id="GV0" editor="PININPUT" />
+            <st id="GV1" editor="PIN_AVERAGE" />
         </sts>
         <cmds>
             <accepts>

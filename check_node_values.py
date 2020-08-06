@@ -26,19 +26,19 @@ for item in root:
                 print ('ERROR in editor',item.attrib['id'], 'subset and prec')
                 issues += 1
             if 'min' not in ranges.attrib or 'max' not in ranges.attrib:
-                print ('ERROR in editor',item.attrib['id'], 'prec requires min and max')
+                print ('ERROR in editor' + item.attrib['id'] + 'prec requires min and max')
                 issues += 1
 
         if 'step' in ranges.attrib:
             if 'subset' in ranges.attrib:
-                print ('ERROR in editor',item.attrib['id'], 'subset and step')
+                print ('ERROR in editor' + item.attrib['id'] + 'subset and step')
                 issues += 1
             if 'min' not in ranges.attrib or 'max' not in ranges.attrib:
-                print ('ERROR in editor',item.attrib['id'], 'step requires min and max')
+                print ('ERROR in editor'  + item.attrib['id'] +'step requires min and max')
                 issues += 1
 
         if ranges.attrib['uom'] == 25 and 'nls' not in ranges.attrib:
-            print ('ERROR in editor',item.attrib['id'], 'NLS missing')
+            print ('ERROR in editor' + item.attrib['id'] + 'NLS missing')
             issues += 1
 
 if issues == 0:
@@ -66,7 +66,7 @@ for item in root:
             for status in node:
                 # status has attributes id and editor
                 if 'editor' not in status.attrib:
-                    print ("WARNING: node status", status.attrib['id'], "has no editor defined.")
+                    print ("WARNING: node status" + status.attrib['id'] + "has no editor defined.")
                     print("\t{'driver': '%s', 'value': 0, 'uom': --}," % (status.attrib['id']))
                 else:
                     print("\t{'driver': '%s', 'value': 0, 'uom': %s}," % (status.attrib['id'], editors[status.attrib['editor']]))
