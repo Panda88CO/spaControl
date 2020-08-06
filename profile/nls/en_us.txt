@@ -18,7 +18,7 @@ ST-SENSOR-GV7-NAME = Min
 CMD-SENSOR-UPDATE-NAME = Update Temp
 
 # Outputs
-ND-PINOUT-NAME = Relay Control
+ND-PINOUT-NAME = Output Pin
 ND-PINOUT-ICON = Output
 ST-POUT-GV0-NAME = Spa Heat
 CMD-POUT-OUT_OFF-NAME = Output Off
@@ -27,7 +27,7 @@ CMD-POUT-UPDATE-NAME = Update Output State
 
 
 #Inputs
-ND-PININ-NAME = Input Low
+ND-PININ-NAME = Input Pin
 ND-PININ-ICON = Input
 ST-PIN-GV0-NAME = Logic Input
 ST-PIN-GV1-NAME = Averaged Logic Input
