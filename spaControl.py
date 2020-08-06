@@ -164,7 +164,7 @@ class Controller(polyinterface.Controller):
         count = 0
         self.removeNoticesAll()
         self.addNotice('To add IOpin use portN as Key and IN:name or OUT:name as value to define ports')
-        self.addNotice('N is BRCM port number (4 use for temp semnsor)')     
+        self.addNotice('N is BRCM port number (port4 is used for temp sensor)')     
         for mySensor in self.mySensors.get_available_sensors():
             count = count+1
             currentSensor = mySensor.id.lower() 
@@ -248,7 +248,7 @@ class GPOUTcontrol(polyinterface.Node):
     def updateInfo(self, command=None):
         LOGGER.debug('GPOUT UpdateInfo')
         self.setDriver('GV0', GPIO.input(self.opin))
-        self.reportDrivers()
+        #self.reportDrivers()
 
     drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
@@ -269,10 +269,6 @@ class GPINcontrol(polyinterface.Node):
 
     def start(self):
         LOGGER.info('start GPIOControl')
-        #self.setDriver('GV0', GPIO.input(self.inpin) )
-        #self.lastNMeas.append(GPIO.input(self.inpin))
-        #if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            #self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
         self.updateInfo()
 
 
@@ -316,10 +312,10 @@ class GPINcontrol(polyinterface.Node):
 
 
     drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25},
-               {'driver': 'GV1', 'value': 0, 'uom' : 51}
+               {'driver': 'GV1', 'value': 0, 'uom': 51}
               ] 
 
-    commands = { 'UPDATE'  : updateInfo,
+    commands = { 'UPDATE'      : updateInfo,
                  'SET_AVERAGE' : getRollingAverage}
 
     id = 'PININ'
@@ -395,8 +391,8 @@ class TEMPsensor(polyinterface.Node):
         self.setDriver('GV4', int(self.currentTime.strftime("%d")))
         self.setDriver('GV5', int(self.currentTime.strftime("%Y")))
         self.setDriver('GV6', int(self.currentTime.strftime("%H")))
-        self.setDriver('GV7',int(self.currentTime.strftime("%M")))
-        self.reportDrivers()
+        self.setDriver('GV7', int(self.currentTime.strftime("%M")))
+        #self.reportDrivers()
 
         #return True                                                    
         
