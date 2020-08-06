@@ -88,9 +88,9 @@ class Controller(polyinterface.Controller):
     def longPoll(self):
         LOGGER.debug('Controller longPoll')
         self.heartbeat()
-        for node in self.nodes:
-            if node != self.address:
-                self.nodes[node].updateInfo()
+        #for node in self.nodes:
+        #    if node != self.address:
+        #        self.nodes[node].updateInfo()
         
     def updateInfo(self):
         LOGGER.debug('Update Info CTRL')
@@ -292,23 +292,23 @@ class GPINcontrol(polyinterface.Node):
     
 
     def updateInfo(self, command=None):
-        
         inputLevel = GPIO.input(self.inpin)
         LOGGER.debug('GPIN UpdateInfo: ' + str(inputLevel))
         self.lastNMeas.append(inputLevel)
         avgLevel = sum(self.lastNMeas)/len(self.lastNMeas)
-        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas))  )
+        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas)), + 'avg = ' + str(int(avgLevel*100)))  )
         if len(self.lastNMeas) >= self.rollingAverageNbr: # should only reach equal but to be safe
             self.lastNMeas.pop() 
 
         self.setDriver('GV0', inputLevel)
         self.setDriver('GV1', avgLevel*100) #percentage
-        #self.reportDrivers()
+        self.reportDrivers()
 
     def getRollingAverage(self, command):
         val = int(command.get('value'))
         LOGGER.debug('Average Count : ' + str(val))
         self.rollingAverageNbr = val
+        self.lastNMeas = []
 
 
     drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25},
