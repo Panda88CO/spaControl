@@ -222,7 +222,7 @@ class GPOUTcontrol(polyinterface.Node):
 
     def longPoll(self):
         LOGGER.info('longpoll GPIOControl')
-        self.updateInfo()
+        #self.updateInfo()
         
 
     def ctrlOutput(self, command):
@@ -236,8 +236,7 @@ class GPOUTcontrol(polyinterface.Node):
            else:
               GPIO.output(self.opin, GPIO.LOW)  
               self.setDriver('GV0', 0)
-        else:
-              self.setDriver('GV0', 2)
+
         self.reportDrivers()
 
               
@@ -248,9 +247,9 @@ class GPOUTcontrol(polyinterface.Node):
     def updateInfo(self, command=None):
         LOGGER.debug('GPOUT UpdateInfo')
         self.setDriver('GV0', GPIO.input(self.opin))
-        #self.reportDrivers()
+        self.reportDrivers()
 
-    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
+    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
               ] 
 
     commands = { 'OUT_ON'  : ctrlOutput,
@@ -311,7 +310,7 @@ class GPINcontrol(polyinterface.Node):
         self.lastNMeas = []
 
 
-    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25},
+    drivers = [{'driver': 'GV0', 'value': 1, 'uom': 25},
                {'driver': 'GV1', 'value': 0, 'uom': 51}
               ] 
 
