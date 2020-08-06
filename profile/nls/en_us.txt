@@ -31,10 +31,5 @@ ND-PININ-NAME = Input Low
 ND-PININ-ICON = Input
 ST-PIN-GV0-NAME = Logic Input
 ST-PIN-GV1-NAME = Averaged Logic Input
-
 CMD-PIN-UPDATE-NAME = Update Input
 CMD-PIN-SET_AVERAGE-NAME = Nbr Of Inputs in Avg
-        <range uom="51" subset="0-100" prec ="1" nls="PIN_AVG" />
-    </editor> 
-    <editor id="PIN_AVERAGE">
-         <range uom="0" subset="0-100" prec ="0" nls="AVG_NBR" />

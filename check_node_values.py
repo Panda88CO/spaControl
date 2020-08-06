@@ -26,24 +26,24 @@ for item in root:
                 print ('ERROR in editor',item.attrib['id'], 'subset and prec')
                 issues += 1
             if 'min' not in ranges.attrib or 'max' not in ranges.attrib:
-                print 'ERROR in editor',item.attrib['id'], 'prec requires min and max'
+                print ('ERROR in editor',item.attrib['id'], 'prec requires min and max')
                 issues += 1
 
         if 'step' in ranges.attrib:
             if 'subset' in ranges.attrib:
-                print 'ERROR in editor',item.attrib['id'], 'subset and step'
+                print ('ERROR in editor',item.attrib['id'], 'subset and step')
                 issues += 1
             if 'min' not in ranges.attrib or 'max' not in ranges.attrib:
-                print 'ERROR in editor',item.attrib['id'], 'step requires min and max'
+                print ('ERROR in editor',item.attrib['id'], 'step requires min and max')
                 issues += 1
 
         if ranges.attrib['uom'] == 25 and 'nls' not in ranges.attrib:
-            print 'ERROR in editor',item.attrib['id'], 'NLS missing'
+            print ('ERROR in editor',item.attrib['id'], 'NLS missing')
             issues += 1
 
 if issues == 0:
-    print "No errors found in editors.xml"
-    print ""
+    print ("No errors found in editors.xml")
+    print ("")
 
 # Read in the NLS file and build a dictionary.
 nls = {}
@@ -61,16 +61,16 @@ for item in root:
     # this is a node definition
     for node in item:
         if node.tag == 'sts':
-            print "Driver array for node", item.attrib['id']
-            print "drivers = ["
+            print ("Driver array for node", item.attrib['id'])
+            print ("drivers = [")
             for status in node:
                 # status has attributes id and editor
                 if 'editor' not in status.attrib:
-                    print "WARNING: node status", status.attrib['id'], "has no editor defined."
+                    print ("WARNING: node status", status.attrib['id'], "has no editor defined.")
                     print("\t{'driver': '%s', 'value': 0, 'uom': --}," % (status.attrib['id']))
                 else:
                     print("\t{'driver': '%s', 'value': 0, 'uom': %s}," % (status.attrib['id'], editors[status.attrib['editor']]))
-            print "\t]"
+            print ("\t]")
 
 node_tree = ET.parse('profile/nodedef/nodedefs.xml')
 root = node_tree.getroot()

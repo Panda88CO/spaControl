@@ -60,6 +60,7 @@
                 <cmd id="UPDATE" />
                 <cmd id="SET_AVERAGE"/>
                     <p id= "" editor="AVG_NBR" init="5" />
+            </accepts >
         </cmds>
     </nodeDef>
 </nodeDefs>
