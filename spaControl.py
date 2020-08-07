@@ -15,11 +15,9 @@ from w1thermsensor import W1ThermSensor
 
 
 LOGGER = polyinterface.LOGGER
-
-BRCM_PORTS = {'port2':2, 'port3':3,'port17':17,'port27':27,'port22':22,'port10':10,'port9':9,
-              'port11':11,'port5':5,'port6':6,'port13':13,'port19':19,'port26':26,'port14':14,
-              'port15':15,'port18':18,'port23':23,'port24':24,'port25':25,'port8':8, 'port7':7,
-              'port12':12,'port16':16,'port20':20,'port21':21} # port4 removed as used for temp sensor
+#BRCM pin naming - 3 IOpin on my relay board
+RELAY_IO_PINS = [20, 21,26]
+INPUT_PINS  = [5, 6, 25]
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
 
@@ -27,28 +25,24 @@ class Controller(polyinterface.Controller):
     def __init__(self, polyglot):
         super().__init__(polyglot)
         LOGGER.info('_init_')
-        self.name = 'RPi Temp_IO_Control'
-        self.address = 'rpitempIO'
+        self.name = 'RPi Spa_Control'
+        self.address = 'rpispa'
         self.primary = self.address
         self.hb = 0
-        self.internal= []
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False) 
-        self.INPUT_PINS = {}
-        self.OUTPUT_PINS = {}
                 
     def start(self):
         LOGGER.info('Start  TempSensors')
-        self.removeNoticesAll()
         try:
             os.system('modprobe w1-gpio')
             os.system('modprobe w1-therm')
             self.setDriver('ST', 1)
         except:
             LOGGER.debug('modprobe OS calls not successful')
-            self.addNotice('TempSensor detection not successful')
             self.setDriver('ST', 0)
         LOGGER.debug('start - Temp Sensor controller')
+        self.check_params(self)
 
         try:
             self.mySensors = W1ThermSensor()
@@ -61,7 +55,6 @@ class Controller(polyinterface.Controller):
             self.setDriver('ST', 0)
             self.stop()  
 
-        self.check_params(self)
         self.discover()         
         self.updateInfo()
         self.reportDrivers()
@@ -81,9 +74,9 @@ class Controller(polyinterface.Controller):
 
     def shortPoll(self):
         LOGGER.debug('Controller shortPoll')
-        for node in self.nodes:
-             if node != self.address:
-                self.nodes[node].updateInfo()
+        #for node in self.nodes:
+        #     if node != self.address:
+        #        self.nodes[node].updateInfo()
                    
     def longPoll(self):
         LOGGER.debug('Controller longPoll')
@@ -119,80 +112,37 @@ class Controller(polyinterface.Controller):
             else:
                LOGGER.debug('Default Naming')
                name = 'Sensor'+str(count)
-            LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
+            #LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
-               LOGGER.debug('Sensor Node Created')
-            #else:
-            #    self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=True)
-            #    LOGGER.debug('Sensor Node Updated')
+
         # GPIO Pins
-        LOGGER.debug('OUT_PINS: '+str(self.OUTPUT_PINS))
   
-        for out_pin in self.OUTPUT_PINS :
+        for out_pin in RELAY_IO_PINS :
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'outpin'+  str(out_pin)
-            name = str(self.OUTPUT_PINS[out_pin]) 
+            name = 'pin' + str(out_pin)
             LOGGER.debug( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO out'+ self.address +' ' + address + ' ' + name  )
                self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin))
                GPIO.setup(int(out_pin), GPIO.OUT) 
-          #  else:
-          #     self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin), update=True)
-          #     GPIO.setup(int(out_pin), GPIO.OUT) 
 
-        LOGGER.debug('IN_PINS: '+str(self.INPUT_PINS))
-        for in_pin in self.INPUT_PINS :
+        for in_pin in INPUT_PINS :
             LOGGER.info( ' gpio input :' + str(in_pin))
             address = 'inpin'+  str(in_pin)
-            name = str(self.INPUT_PINS[in_pin]) 
+            name = 'pin' + str(in_pin)
             LOGGER.debug( address + ' ' + name + ' ' + str(in_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
                self.addNode(GPINcontrol(self, self.address, address, name, in_pin))
                GPIO.setup(int(in_pin), GPIO.IN)   
-           # else:
-           #    self.addNode(GPINcontrol(self, self.address, address, name, in_pin), update=True)
-           #    GPIO.setup(int(in_pin), GPIO.IN)  
+
 
 
     def check_params(self, command=None):
         LOGGER.debug('Check Params')
-        LOGGER.debug(str(self.polyConfig['customParams'])) 
-        params = {}
-        count = 0
-        self.removeNoticesAll()
-        self.addNotice('To add IOpin use portN as Key and IN:name or OUT:name as value to define ports')
-        self.addNotice('N is BRCM port number (port4 is used for temp sensor)')     
-        for mySensor in self.mySensors.get_available_sensors():
-            count = count+1
-            currentSensor = mySensor.id.lower() 
-            if not(currentSensor in self.polyConfig['customParams']):
-                params[currentSensor]=['NoName'+str(count)]
-        if not(params == {}):
-            self.addCustomParam(params)
-        LOGGER.debug(str(params))
-    
-        for customP in self.polyConfig['customParams']:
-            LOGGER.debug(str(customP))
-            if customP.lower() in BRCM_PORTS:
-                PortNumber = BRCM_PORTS[customP.lower()]
-                PortDef = self.polyConfig['customParams'][customP]
-                PortInfo = PortDef.split(':',1)
-                LOGGER.debug(str(PortNumber) + ' ' + str(PortInfo))
-                if PortInfo[0].lower() == 'in':
-                    self.INPUT_PINS.update({PortNumber:PortInfo[1]})
-                    LOGGER.debug('Input Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
-                elif PortInfo[0].lower() == 'out':
-                    self.OUTPUT_PINS.update({PortNumber:PortInfo[1]})
-                    LOGGER.debug('Output Pin: '+str(PortNumber) + ' ' + str(PortInfo[1]))
-
-                else:
-                    self.addNotice('Must use IN or OUT:name(port 4 is used for temp sensors)')                    
-        self.saveCustomData(self.polyConfig['customParams'])
-        
-
+        # Need to handle Custom Parameters Here ratther than in discovery
 
     id = 'RPISPA'
     commands = {'DISCOVER': discover}
@@ -222,25 +172,26 @@ class GPOUTcontrol(polyinterface.Node):
 
     def longPoll(self):
         LOGGER.info('longpoll GPIOControl')
-        #self.updateInfo()
+        self.updateInfo()
         
 
-    def ctrlOutput(self, command):
+    def ctrlRelay(self, command):
         LOGGER.info('ctrlRelay GPIOControl')
         cmd = command.get('cmd')
         LOGGER.debug(str(cmd))
-        if cmd in ['OUT_ON', 'OUT_OFF']:
-           if cmd == 'OUT_ON':
+        if cmd in ['HEATON', 'HEATOFF']:
+           if cmd == 'HEATON':
               GPIO.output(self.opin, GPIO.HIGH)
               self.setDriver('GV0', 1)
            else:
               GPIO.output(self.opin, GPIO.LOW)  
               self.setDriver('GV0', 0)
-
+        else:
+              self.setDriver('GV0', 2)
         self.reportDrivers()
 
               
-    def query(self, command=None):
+    def query(self, command):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
 
@@ -249,11 +200,11 @@ class GPOUTcontrol(polyinterface.Node):
         self.setDriver('GV0', GPIO.input(self.opin))
         self.reportDrivers()
 
-    drivers = [{'driver': 'GV0', 'value': 0, 'uom': 25}
+    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
 
-    commands = { 'OUT_ON'  : ctrlOutput,
-                 'OUT_OFF' : ctrlOutput,
+    commands = { 'HEATON'  : ctrlRelay,
+                 'HEATOFF' : ctrlRelay,
                  'UPDATE'  : updateInfo}
 
     id = 'PINOUT'
@@ -263,20 +214,34 @@ class GPINcontrol(polyinterface.Node):
         super().__init__(controller, primary, address, name)
         self.inpin = inpin
         LOGGER.info('init GPIOControl')
+        self.waterLevel  = 2 # Unknown
+        self.measAverage = 10
         self.lastNMeas = []
-        self.rollingAverageNbr = 5 # Random default
 
     def start(self):
         LOGGER.info('start GPIOControl')
-        self.updateInfo()
-
-
+        self.setDriver('GV0', self.waterLevel )
+        self.lastNMeas.append(GPIO.input(self.inpin))
+        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
+            avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
+            
     def stop(self):
         LOGGER.info('stop GPIOControl')
         GPIO.cleanup()
 
     def shortPoll(self):
         LOGGER.info('shortpoll GPIOControl')      
+        self.lastNMeas.append(GPIO.input(self.inpin))
+        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) )
+        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
+            avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
+            self.lastNMeas.pop() 
+            if avgLow < 2/len(self.lastNMeas):
+               self.waterLevel = 1
+            else:
+               self.waterLevel = 0
+        else:
+            self.waterLevel = 2
         self.updateInfo()
 
 
@@ -284,38 +249,22 @@ class GPINcontrol(polyinterface.Node):
         LOGGER.info('longpoll GPIOControl')
         #self.updateInfo()
         
+
               
-    def query(self, command=None):
+    def query(self, command):
         LOGGER.debug('GPIO querry')
         self.updateInfo()
     
 
     def updateInfo(self, command=None):
-        inputLevel = GPIO.input(self.inpin)
-        LOGGER.debug('GPIN UpdateInfo: ' + str(inputLevel))
-        self.lastNMeas.append(inputLevel)
-        avgLevel = sum(self.lastNMeas)/len(self.lastNMeas)
-        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len =' + str(len(self.lastNMeas)) + ' avg = ' + str(int(avgLevel*100)))
-        if len(self.lastNMeas) >= self.rollingAverageNbr: # should only reach equal but to be safe
-            self.lastNMeas.pop() 
-
-        self.setDriver('GV0', inputLevel)
-        self.setDriver('GV1', avgLevel*100) #percentage
+        LOGGER.debug('GPIN UpdateInfo: ' + str(self.waterLevel))
+        self.setDriver('GV0', self.waterLevel)
         self.reportDrivers()
 
-    def getRollingAverage(self, command):
-        val = int(command.get('value'))
-        LOGGER.debug('Average Count : ' + str(val))
-        self.rollingAverageNbr = val
-        self.lastNMeas = []
-
-
-    drivers = [{'driver': 'GV0', 'value': 1, 'uom': 25},
-               {'driver': 'GV1', 'value': 0, 'uom': 51}
+    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
 
-    commands = { 'UPDATE'      : updateInfo,
-                 'SET_AVERAGE' : getRollingAverage}
+    commands = { 'UPDATE'  : updateInfo}
 
     id = 'PININ'
 
@@ -390,13 +339,13 @@ class TEMPsensor(polyinterface.Node):
         self.setDriver('GV4', int(self.currentTime.strftime("%d")))
         self.setDriver('GV5', int(self.currentTime.strftime("%Y")))
         self.setDriver('GV6', int(self.currentTime.strftime("%H")))
-        self.setDriver('GV7', int(self.currentTime.strftime("%M")))
-        #self.reportDrivers()
+        self.setDriver('GV7',int(self.currentTime.strftime("%M")))
+        self.reportDrivers()
 
         #return True                                                    
         
     
-    def query(self, command=None):
+    def query(self, command):
         LOGGER.debug('TempSensor querry')
         self.updateInfo()
 
@@ -419,8 +368,8 @@ class TEMPsensor(polyinterface.Node):
 if __name__ == "__main__":
 
     try:
-        LOGGER.info('Starting TempIO Controller')
-        polyglot = polyinterface.Interface('TempIO_Control')
+        LOGGER.info('Starting SPA Controller')
+        polyglot = polyinterface.Interface('SPA_Temp_Control')
         polyglot.start()
         control = Controller(polyglot)
         control.runForever()

@@ -59,7 +59,7 @@
             <accepts>
                 <cmd id="UPDATE" />
                 <cmd id="SET_AVERAGE"/>
-                    <p id= "" editor="AVG_NBR" init="5" />
+                    <p id= "" editor="AVG_NBR" init="5" nls="SET_AVERAGE" />
             </accepts >
         </cmds>
     </nodeDef>
