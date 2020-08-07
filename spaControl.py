@@ -121,11 +121,11 @@ class Controller(polyinterface.Controller):
                name = 'Sensor'+str(count)
             LOGGER.debug( address + ' '+ name + ' ' + currentSensor)
             if not address in self.nodes:
-               self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=False)
+               self.addNode(TEMPsensor(self, self.address, address, name, currentSensor))
                LOGGER.debug('Sensor Node Created')
-            else:
-                self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=True)
-                LOGGER.debug('Sensor Node Updated')
+            #else:
+            #    self.addNode(TEMPsensor(self, self.address, address, name, currentSensor), update=True)
+            #    LOGGER.debug('Sensor Node Updated')
         # GPIO Pins
         LOGGER.debug('OUT_PINS: '+str(self.OUTPUT_PINS))
   
@@ -136,11 +136,11 @@ class Controller(polyinterface.Controller):
             LOGGER.debug( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO out'+ self.address +' ' + address + ' ' + name  )
-               self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin), update=False)
+               self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin))
                GPIO.setup(int(out_pin), GPIO.OUT) 
-            else:
-               self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin), update=True)
-               GPIO.setup(int(out_pin), GPIO.OUT) 
+          #  else:
+          #     self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin), update=True)
+          #     GPIO.setup(int(out_pin), GPIO.OUT) 
 
         LOGGER.debug('IN_PINS: '+str(self.INPUT_PINS))
         for in_pin in self.INPUT_PINS :
@@ -150,11 +150,11 @@ class Controller(polyinterface.Controller):
             LOGGER.debug( address + ' ' + name + ' ' + str(in_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
-               self.addNode(GPINcontrol(self, self.address, address, name, in_pin), update=False)
+               self.addNode(GPINcontrol(self, self.address, address, name, in_pin))
                GPIO.setup(int(in_pin), GPIO.IN)   
-            else:
-               self.addNode(GPINcontrol(self, self.address, address, name, in_pin), update=True)
-               GPIO.setup(int(in_pin), GPIO.IN)  
+           # else:
+           #    self.addNode(GPINcontrol(self, self.address, address, name, in_pin), update=True)
+           #    GPIO.setup(int(in_pin), GPIO.IN)  
 
 
     def check_params(self, command=None):
@@ -295,7 +295,7 @@ class GPINcontrol(polyinterface.Node):
         LOGGER.debug('GPIN UpdateInfo: ' + str(inputLevel))
         self.lastNMeas.append(inputLevel)
         avgLevel = sum(self.lastNMeas)/len(self.lastNMeas)
-        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas)) + 'avg = ' + str(int(avgLevel*100)))
+        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len =' + str(len(self.lastNMeas)) + ' avg = ' + str(int(avgLevel*100)))
         if len(self.lastNMeas) >= self.rollingAverageNbr: # should only reach equal but to be safe
             self.lastNMeas.pop() 
 
