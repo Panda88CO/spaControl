@@ -24,3 +24,12 @@ ST-POUT-GV0-NAME = Spa Heat
 CMD-POUT-OUT_OFF-NAME = Output Off
 CMD-POUT-OUT_ON-NAME = Output On
 CMD-POUT-UPDATE-NAME = Update Output State
+
+
+#Inputs
+ND-PININ-NAME = Input Pin
+ND-PININ-ICON = Input
+ST-PIN-GV0-NAME = Logic Input
+ST-PIN-GV1-NAME = Averaged Logic Input
+CMD-PIN-UPDATE-NAME = Update Input
+CMD-PIN-SET_AVERAGE-NAME = Nbr Of Inputs in Avg

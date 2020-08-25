@@ -16,8 +16,8 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-RELAY_IO_PINS = [20, 21,26]
-INPUT_PINS  = [5, 6, 25]
+RELAY_IO_PINS = [20]
+INPUT_PINS  = []
 BRCM_PORTS = [2,3,17,27,22,10,9,11,5,6,13,19,26,14,15,18,23,24,25,8,7,12,16,20,21] # 4 removed as used for temp sensor
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
@@ -130,16 +130,6 @@ class Controller(polyinterface.Controller):
                self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin))
                GPIO.setup(int(out_pin), GPIO.OUT) 
 
-        for in_pin in INPUT_PINS :
-            LOGGER.info( ' gpio input :' + str(in_pin))
-            address = 'inpin'+  str(in_pin)
-            name = 'pin' + str(in_pin)
-            LOGGER.debug( address + ' ' + name + ' ' + str(in_pin))
-            if not address in self.nodes:
-               LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
-               self.addNode(GPINcontrol(self, self.address, address, name, in_pin))
-               GPIO.setup(int(in_pin), GPIO.IN)   
-
 
 
     def check_params(self, command=None):      
@@ -211,64 +201,6 @@ class GPOUTcontrol(polyinterface.Node):
 
     id = 'PINOUT'
 
-class GPINcontrol(polyinterface.Node):
-    def __init__(self, controller, primary, address, name, inpin):
-        super().__init__(controller, primary, address, name)
-        self.inpin = inpin
-        LOGGER.info('init GPIOControl')
-        self.waterLevel  = 2 # Unknown
-        self.measAverage = 10
-        self.lastNMeas = []
-
-    def start(self):
-        LOGGER.info('start GPIOControl')
-        self.setDriver('GV0', self.waterLevel )
-        self.lastNMeas.append(GPIO.input(self.inpin))
-        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
-            
-    def stop(self):
-        LOGGER.info('stop GPIOControl')
-        GPIO.cleanup()
-
-    def shortPoll(self):
-        LOGGER.info('shortpoll GPIOControl')      
-        self.updateInfo()
-
-
-    def longPoll(self):
-        LOGGER.info('longpoll GPIOControl')
-        #self.updateInfo()
-        
-
-              
-    def query(self, command=None):
-        LOGGER.debug('GPIO querry')
-        self.updateInfo()
-    
-
-    def updateInfo(self, command=None):
-        LOGGER.debug('GPIN UpdateInfo: ' + str(self.waterLevel))
-        self.lastNMeas.append(GPIO.input(self.inpin))
-        LOGGER.debug('INPUT ' + str(self.inpin)+ ' = ' + str(self.lastNMeas[-1]) + ' len ' + str(len(self.lastNMeas))  )
-        if len(self.lastNMeas) >= self.measAverage: # should only reach equal but to be safe
-            self.avgLow = sum(self.lastNMeas)/len(self.lastNMeas)
-            self.lastNMeas.pop() 
-            if self.avgLow < 2/len(self.lastNMeas):
-               self.waterLevel = 1
-            else:
-               self.waterLevel = 0
-        else:
-            self.waterLevel = 2
-        self.setDriver('GV0', self.waterLevel)
-        self.reportDrivers()
-
-    drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
-              ] 
-
-    commands = { 'UPDATE'  : updateInfo}
-
-    id = 'PININ'
 
 class TEMPsensor(polyinterface.Node):
     def __init__(self, controller, primary, address, name, sensorID):
