@@ -171,8 +171,8 @@ class GPOUTcontrol(polyinterface.Node):
         LOGGER.info('ctrlRelay GPIOControl')
         cmd = command.get('cmd')
         LOGGER.debug(str(cmd))
-        if cmd in ['HEATON', 'HEATOFF']:
-           if cmd == 'HEATON':
+        if cmd in ['OUT_OFF', 'OUT_ON']:
+           if cmd == 'OUT_ON':
               GPIO.output(self.opin, GPIO.HIGH)
               self.setDriver('GV0', 1)
            else:
@@ -195,8 +195,8 @@ class GPOUTcontrol(polyinterface.Node):
     drivers = [{'driver': 'GV0', 'value': 2, 'uom': 25}
               ] 
 
-    commands = { 'HEATON'  : ctrlRelay,
-                 'HEATOFF' : ctrlRelay,
+    commands = { 'OUT_OFF'  : ctrlRelay,
+                 'OUT_ON' : ctrlRelay,
                  'UPDATE'  : updateInfo}
 
     id = 'PINOUT'
