@@ -16,8 +16,8 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-RELAY_IO_PINS = [20, 21,26]
-INPUT_PINS  = [5, 6, 25]
+RELAY_IO_PINS = [21]
+INPUT_PINS  = []
 BRCM_PORTS = [2,3,17,27,22,10,9,11,5,6,13,19,26,14,15,18,23,24,25,8,7,12,16,20,21] # 4 removed as used for temp sensor
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
@@ -124,13 +124,13 @@ class Controller(polyinterface.Controller):
             LOGGER.info( ' gpio output :' + str(out_pin))
             address = 'outpin'+  str(out_pin)
             name = 'pin' + str(out_pin)
-            LOGGER.debug( address + ' ' + name + ' ' + str(out_pin))
+            LOGGER.info( address + ' ' + name + ' ' + str(out_pin))
             if not address in self.nodes:
                LOGGER.debug('GPIO out'+ self.address +' ' + address + ' ' + name  )
                self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin))
                GPIO.setup(int(out_pin), GPIO.OUT) 
 
-        for in_pin in INPUT_PINS :
+        '''for in_pin in INPUT_PINS :
             LOGGER.info( ' gpio input :' + str(in_pin))
             address = 'inpin'+  str(in_pin)
             name = 'pin' + str(in_pin)
@@ -138,7 +138,7 @@ class Controller(polyinterface.Controller):
             if not address in self.nodes:
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
                self.addNode(GPINcontrol(self, self.address, address, name, in_pin))
-               GPIO.setup(int(in_pin), GPIO.IN)   
+               GPIO.setup(int(in_pin), GPIO.IN)  ''' 
 
 
 

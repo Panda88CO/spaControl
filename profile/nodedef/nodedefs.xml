@@ -42,8 +42,8 @@
         </sts>
         <cmds>
             <accepts>
-                <cmd id="OUT_ON" />
-                <cmd id="OUT_OFF" />
+                <cmd id="HEATON" />
+                <cmd id="HEATOFF" />
                 <cmd id="UPDATE" />
             </accepts>
         </cmds>

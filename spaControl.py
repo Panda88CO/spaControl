@@ -16,8 +16,8 @@ from w1thermsensor import W1ThermSensor
 
 LOGGER = polyinterface.LOGGER
 #BRCM pin naming - 3 IOpin on my relay board
-RELAY_IO_PINS = [20, 21,26]
-INPUT_PINS  = [5, 6, 25]
+RELAY_IO_PINS = [20
+INPUT_PINS  = []
 PORT_MODE = {0:'GPIO.OUT', 1:'GPIO.IN', -1:'GPIO.UNKNOWN'}
 
 
@@ -128,7 +128,7 @@ class Controller(polyinterface.Controller):
                self.addNode(GPOUTcontrol(self, self.address, address, name, out_pin))
                GPIO.setup(int(out_pin), GPIO.OUT) 
 
-        for in_pin in INPUT_PINS :
+        '''for in_pin in INPUT_PINS :
             LOGGER.info( ' gpio input :' + str(in_pin))
             address = 'inpin'+  str(in_pin)
             name = 'pin' + str(in_pin)
@@ -137,7 +137,7 @@ class Controller(polyinterface.Controller):
                LOGGER.debug('GPIO in'+ self.address +' ' + address + ' ' + name  )
                self.addNode(GPINcontrol(self, self.address, address, name, in_pin))
                GPIO.setup(int(in_pin), GPIO.IN)   
-
+            '''
 
 
     def check_params(self, command=None):

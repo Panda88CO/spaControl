@@ -2,7 +2,7 @@
     "name": "SpaController",
     "docs": "https://github.com/Panda88CO/spaControl",
     "type": "python3",
-    "executable": "spaControl.py",
+    "executable": "spaControlOLD.py",
     "install": "install.sh",
     "description": "Raspberry Pi with multiple DS18B20 Temperature Sensors and IO control",
     "notice": "Only 1 4.7K Ohm pull up resistor needed for multiple sensors",
