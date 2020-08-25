@@ -22966,3 +22966,163 @@
 2020-08-25 13:43:44,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
 2020-08-25 13:43:44,599 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
 2020-08-25 13:43:44,600 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:43:58,675 Controller polyinterface      DEBUG    spaControlOLD:longPoll: Controller longPoll
+2020-08-25 13:43:58,676 Controller polyinterface      DEBUG    spaControlOLD:heartbeat: heartbeat: hb=1
+2020-08-25 13:43:58,678 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:43:58,679 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:43:59,547 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:43:59,568 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:43:59,572 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:43:59,577 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:43:59,578 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:43:59,579 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:44:00,426 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 44, uom: 44
+2020-08-25 13:44:00,428 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:44:00,441 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:44:00,446 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:44:13,689 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:44:13,689 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:44:13,690 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:44:14,587 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 24.0, uom: 4
+2020-08-25 13:44:14,590 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:44:14,607 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:44:14,608 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:44:28,689 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:44:28,692 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:44:28,693 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:44:29,546 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 23.9, uom: 4
+2020-08-25 13:44:29,550 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:44:29,567 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:44:29,569 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:44:43,691 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:44:43,692 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:44:43,692 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:44:44,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:44:44,601 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:44:44,603 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:44:58,675 Controller polyinterface      DEBUG    spaControlOLD:longPoll: Controller longPoll
+2020-08-25 13:44:58,676 Controller polyinterface      DEBUG    spaControlOLD:heartbeat: heartbeat: hb=0
+2020-08-25 13:44:58,678 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:44:58,680 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:44:59,547 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 24.0, uom: 4
+2020-08-25 13:44:59,560 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:44:59,584 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:44:59,585 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:44:59,588 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:44:59,590 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:44:59,591 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:45:00,427 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 45, uom: 44
+2020-08-25 13:45:00,429 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:45:00,445 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:45:00,451 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:45:13,696 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:45:13,697 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:45:13,697 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:45:14,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:45:14,600 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:45:14,601 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:45:28,699 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:45:28,700 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:45:28,700 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:45:29,546 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 24.1, uom: 4
+2020-08-25 13:45:29,549 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:45:29,560 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:45:29,560 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:45:43,708 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:45:43,709 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:45:43,709 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:45:44,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:45:44,598 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:45:44,605 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:45:58,676 Controller polyinterface      DEBUG    spaControlOLD:longPoll: Controller longPoll
+2020-08-25 13:45:58,677 Controller polyinterface      DEBUG    spaControlOLD:heartbeat: heartbeat: hb=1
+2020-08-25 13:45:58,679 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:45:58,679 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:45:59,547 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:45:59,561 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:45:59,562 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:45:59,565 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:45:59,569 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:45:59,570 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:46:00,426 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 46, uom: 44
+2020-08-25 13:46:00,429 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:46:00,439 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:46:00,440 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:46:13,702 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:46:13,703 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:46:13,703 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:46:14,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:46:14,598 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:46:14,599 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:46:28,702 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:46:28,703 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:46:28,703 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:46:29,547 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV0: 24.2, uom: 4
+2020-08-25 13:46:29,550 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV2: 24.2, uom: 4
+2020-08-25 13:46:29,554 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:46:29,572 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:46:29,573 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:46:43,707 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:46:43,708 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:46:43,709 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:46:44,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:46:44,600 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:46:44,601 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:46:58,677 Controller polyinterface      DEBUG    spaControlOLD:longPoll: Controller longPoll
+2020-08-25 13:46:58,678 Controller polyinterface      DEBUG    spaControlOLD:heartbeat: heartbeat: hb=0
+2020-08-25 13:46:58,680 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:46:58,681 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:46:59,547 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:46:59,561 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:46:59,563 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:46:59,566 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:46:59,567 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:46:59,567 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:47:00,426 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 47, uom: 44
+2020-08-25 13:47:00,428 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:47:00,441 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:47:00,442 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:47:13,706 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:47:13,706 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:47:13,721 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:47:14,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:47:14,602 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:47:14,608 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:47:28,711 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:47:28,712 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:47:28,712 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:47:29,547 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:47:29,563 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:47:29,565 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:47:43,709 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:47:43,710 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:47:43,710 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:47:44,587 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:47:44,604 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:47:44,605 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:47:58,678 Controller polyinterface      DEBUG    spaControlOLD:longPoll: Controller longPoll
+2020-08-25 13:47:58,679 Controller polyinterface      DEBUG    spaControlOLD:heartbeat: heartbeat: hb=1
+2020-08-25 13:47:58,680 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:47:58,686 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:47:59,546 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:47:59,559 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:47:59,560 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:47:59,564 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:47:59,569 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:47:59,569 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:48:00,426 Controller polyinterface      INFO     polyinterface:reportDriver: Updating Driver rpitemp1 - GV7: 48, uom: 44
+2020-08-25 13:48:00,431 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:48:00,440 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:48:00,441 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:48:13,711 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:48:15,028 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:48:15,029 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:48:15,866 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:48:15,881 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:48:15,884 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)
+2020-08-25 13:48:28,714 Controller polyinterface      DEBUG    spaControlOLD:shortPoll: Controller shortPoll
+2020-08-25 13:48:28,715 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: Update Info CTRL
+2020-08-25 13:48:28,715 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: TempSensor updateInfo
+2020-08-25 13:48:29,627 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for Sensor1(rpitemp1)
+2020-08-25 13:48:29,641 Controller polyinterface      DEBUG    spaControlOLD:updateInfo: GPOUT UpdateInfo
+2020-08-25 13:48:29,643 Controller polyinterface      INFO     polyinterface:reportDrivers: Updating All Drivers to ISY for pin21(outpin21)

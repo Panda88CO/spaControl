@@ -42,10 +42,25 @@
         </sts>
         <cmds>
             <accepts>
-                <cmd id="HEATON" />
-                <cmd id="HEATOFF" />
+                <cmd id="OUT_ON" />
+                <cmd id="OUT_OFF" />
                 <cmd id="UPDATE" />
             </accepts>
+        </cmds>
+    </nodeDef>
+
+    <nodeDef id="PININ" nls="PIN">
+        <editors />
+        <sts>
+            <st id="GV0" editor="PININPUT" />
+            <st id="GV1" editor="PIN_AVERAGE" />
+        </sts>
+        <cmds>
+            <accepts>
+                <cmd id="UPDATE" />
+                <cmd id="SET_AVERAGE"/>
+                    <p id= "" editor="AVG_NBR" init="5" nls="SET_AVERAGE" />
+            </accepts >
         </cmds>
     </nodeDef>
 </nodeDefs>
